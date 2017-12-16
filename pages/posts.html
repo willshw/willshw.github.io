@@ -2,18 +2,25 @@
 layout: default
 title: Posts
 permalink: /posts/
+feature-img: "assets/img/pexels/book-coffee.jpeg"
 hide: false
 pagination:
   enabled: true
 ---
 
+<article {% if page.feature-img %}class="feature-image"{% endif %}>
+  <header id="main" style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
+    <h1 id="{{ page.title | default: "" | cgi_escape }}" class="title">
+        {{ page.title }}
+    </h1>
+
+    {% if page.subtitle %}
+    <h2 class="subtitle">{{ page.subtitle }}</h2>
+    {% endif %}
+  </header>
+</article>
+
 <div class="post_page">
-  {% if site.theme_settings.header_text %}
-  <div id="main" class="call-out"
-  style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
-    {{ site.theme_settings.header_text }}
-  </div>
-  {% endif %}
 
   <div class="posts">
     {% for post in paginator.posts %}
