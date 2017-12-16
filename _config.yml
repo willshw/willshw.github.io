@@ -29,7 +29,7 @@ theme_settings:
   stack_exchange:  https://stackoverflow.com/users/4926659/william-wang
   twitter: "willshwang"
   vimeo:
-  youtube: 
+  youtube:
 
   # Scripts / Features
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
@@ -88,6 +88,6 @@ sass:
   style: :compressed
 
 plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-redirect-from]
-theme: type-on-strap # If using the theme as a jekyll theme gem
+# theme: type-on-strap # If using the theme as a jekyll theme gem
 remote_theme: Sylhare/Type-on-Strap
 exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png"]
