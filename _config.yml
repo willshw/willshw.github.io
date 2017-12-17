@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/willshw"
-# url: "https://willshw.github.io"
+# baseurl: "/willshw"
+url: "https://willshw.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
