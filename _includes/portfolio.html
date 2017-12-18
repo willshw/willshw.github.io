@@ -1,17 +1,50 @@
 <!-- Portfolio Grid Section -->
 <section class="portfolio">
     <div class="row">
+
         {% for item in site.portfolio %}
-        <div class="col-sm-4 col-xs-4 portfolio-item">
-            <a href="{{ site.baseurl }}{{ item.url }}" class="portfolio-link" data-keyboard="true">
-                <div class="caption" title="{{ item.title }}">
-                    <div class="caption-content">
-                        <i class="fa fa-search-plus fa-3x"></i>
-                    </div>
-                </div>
-                <img src="{{ site.baseurl }}/{{ item.img }}" class="" alt="">
-            </a>
-        </div>
+          {% assign num_portfolio_hanging =  forloop.length | modulo: 3 %}
+          {% if num_portfolio_hanging == 0 %}
+            <!-- no item hanging -->
+            <div class="col-sm-4 col-xs-4 portfolio-item">
+              {% include portfolio_grid.html %}
+            </div>
+
+          {% elsif num_portfolio_hanging == 1 %}
+            <!-- one item hanging -->
+            {% if forloop.rindex > 1 %}
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                {% include portfolio_grid.html %}
+              </div>
+
+            {% else %}
+              <div class="col-sm-4 col-xs-4 col-sm-offset-4 col-xs-offset-4 portfolio-item">
+                {% include portfolio_grid.html %}
+              </div>
+
+            {% endif %}
+
+          {% else %}
+            <!-- two items hanging -->
+            {% if forloop.rindex > 2 %}
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                {% include portfolio_grid.html %}
+              </div>
+
+            {% elsif forloop.rindex > 1 %}
+              <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 portfolio-item">
+                {% include portfolio_grid.html %}
+              </div>
+
+            {% else %}
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                {% include portfolio_grid.html %}
+              </div>
+
+            {% endif %}
+
+          {% endif %}
+
         {% endfor %}
     </div>
 </section>
