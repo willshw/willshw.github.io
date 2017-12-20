@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom.css">
+
 <article {% if page.feature-img %}class="feature-image"{% endif %}>
   <header id="main" style="background-image: url('{{ site.baseurl }}/{{ page.feature-img }}')">
     <h1 id="{{ page.title | cgi_escape }}" class="title">{{ page.title }}</h1>
@@ -10,7 +13,16 @@ layout: default
     {% if page.author %} - {{ page.author }}{% endif %}
     </p>
   </header>
-  <section class="post-content">{{ content }}</section>
+
+  <section class="post-content">
+    {% if page.feature-vid %}
+    <div class="video_container" align="middle">
+      <iframe src="{{ page.feature-vid }}" class="video" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+    <hr>
+    {% endif %}
+    {{ content }}
+  </section>
 
    <!-- Tag list -->
   {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}

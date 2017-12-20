@@ -9,9 +9,9 @@ tags: [Credit]
 
 This is a credit page for elements used in this website.
 
-**Website Theme:** [Type on Strap](https://github.com/sylhare/Type-on-Strap)
+**Website Theme** modified from: [Type on Strap](https://github.com/sylhare/Type-on-Strap)
 
-**Website Avatar:** [Brain by Eucalyp from the Noun Project](https://thenounproject.com/search/?q=brain%20robot&i=1450086)
+**Website Avatar** modified from: [Brain by Eucalyp from the Noun Project](https://thenounproject.com/search/?q=brain%20robot&i=1450086)
 
 * Original Icon:
 
