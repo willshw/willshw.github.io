@@ -3,7 +3,7 @@ layout: post
 title: Sawyer's Travels
 img: "assets/img/portfolio/sawyerstravels_img_icon.jpg"
 feature-img: "assets/img/portfolio/maze_sol.png"
-feature-vid: "https://www.youtube.com/embed/X8-3FjEdjhU?rel=0"
+feature-vid: "https://www.youtube.com/embed/YX71EugPKcU?rel=0"
 date: 2017-12-06
 tags: [Class Project, Portfolio, MSR, Robotics, Northwestern University]
 ---

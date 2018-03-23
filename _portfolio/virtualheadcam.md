@@ -13,7 +13,7 @@ tags: [Work Project, Portfolio, USC ICT]
 
 [VHC][VHC] can be integrated into a motion capture space where the location of actors and actresses can be accurately tracked in high refresh rate. VHC can quickly adjust the mirror angles, zoom, and focus, according to the motion tracking data centered the subject in the camera frame. A system of multiple VHCs installed in a motion tracking space can potentially replace the traditional head mounted camera system.
 
-This research project was one of my work projects [USC ICT][ICT], and it was presented at [SIGGRAPH 2015][SIG2015] poster session.
+This research project was one of my work projects at [USC ICT][ICT], and it was presented at [SIGGRAPH 2015][SIG2015] poster session.
 
 **For more detailed of this project, please visit the [project page on USC ICT Graphics Lab website][VHC]**.
 
