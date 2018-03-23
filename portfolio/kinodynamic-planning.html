@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/willshw/assets/js/jquery-3.2.1.min.js" ></script>
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/willshw/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/willshw/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/willshw/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://localhost:4000/willshw/portfolio/kinodynamic-planning">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="http://localhost:4000//willshw//feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/willshw/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX 0.8.3 -->
+    
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="/willshw/assets/css/katex.min.css">
+    <script src="/willshw/assets/js/katex.min.js">
+    </script>
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Kinodynamic Planning</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Kinodynamic Planning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About Kinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle." />
+<meta property="og:description" content="About Kinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle." />
+<link rel="canonical" href="http://localhost:4000/willshw/portfolio/kinodynamic-planning" />
+<meta property="og:url" content="http://localhost:4000/willshw/portfolio/kinodynamic-planning" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-23T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"About Kinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.","@type":"BlogPosting","url":"http://localhost:4000/willshw/portfolio/kinodynamic-planning","headline":"Kinodynamic Planning","dateModified":"2018-03-23T00:00:00-05:00","datePublished":"2018-03-23T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/willshw/portfolio/kinodynamic-planning"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Kinodynamic Planning | William Wang</title>
+    <meta name="description" content="AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/willshw/">
+			<img class="avatar" src="/willshw/assets/img/brain.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/willshw/">William Wang</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/willshw/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/willshw/portfolio">
+                Portfolio
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/willshw/cv">
+                CV
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/willshw/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/willshw/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/willshw/assets/css/custom.css">
+
+<article class="feature-image">
+  <header id="main" style="background-image: url('/willshw/assets/pexels/search-map.jpeg')">
+    <h1 id="Kinodynamic+Planning" class="title">Kinodynamic Planning</h1>
+    <p class="meta">
+    March 23, 2018
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <h3 id="about">About</h3>
+<p><strong>Kinodynamic Motion Planning</strong> was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.</p>
+
+<h3 id="overview">Overview</h3>
+<p>In this project, I aimed to reproduce result from a research paper, <a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">Anytime computation of time-optimal off-road vehicle maneuvers
+using the RRT*</a> from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.</p>
+
+<h3 id="vehicle-dynamics-model">Vehicle Dynamics Model</h3>
+<p>Vehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction.</p>
+
+<script type="math/tex; mode=display">m\dot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)</script>
+
+<p>more</p>
+
+<h3 id="rrt-star">RRT-Star</h3>
+<p>RRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.</p>
+
+<p><img src="../assets/img/portfolio/rrt-star-1.png" alt="RRT-STAR-ALGO-1" />
+<img src="../assets/img/portfolio/rrt-star-2.png" alt="RRT-STAR-ALGO-2" /></p>
+
+<p>RRT-Star with 10K Node:
+<img src="../assets/img/portfolio/n-rrt-star.png" alt="RRT-STAR-N-MAP" /></p>
+
+<h3 id="planning-space">Planning Space</h3>
+<p>The full dynamic model of the car has 8 DOF (<script type="math/tex">x</script>, <script type="math/tex">\dot{x}</script>, <script type="math/tex">y</script>, <script type="math/tex">\dot{y}</script>, <script type="math/tex">\Psi</script>, <script type="math/tex">\dot{\Psi}</script>, <script type="math/tex">\omega_F</script>, <script type="math/tex">\omega_R</script>). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">V</script> (<script type="math/tex">\sqrt{\dot{x}^2+\dot{y}^2}</script>), <script type="math/tex">\Psi</script> assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.</p>
+
+<h3 id="control">Control</h3>
+<p>When solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.</p>
+
+<p>more</p>
+
+<p><img src="../assets/img/portfolio/kino-circle.gif" alt="KINO-CIRCLE" />
+<img src="../assets/img/portfolio/snake-manu.gif" alt="KINO-SNAKE " /></p>
+
+<h3 id="conclusion-and-future-work">Conclusion and Future Work</h3>
+<p>A motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time.In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.</p>
+
+<p>more</p>
+
+<h3 id="reference">Reference</h3>
+<ol>
+  <li><a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.</a></li>
+  <li><a href="http://arl.cs.utah.edu/pubs/ICRA2013-1.pdf">Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.</a></li>
+  <li><a href="http://msl.cs.uiuc.edu/~lavalle/papers/LavKuf01b.pdf">LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400.</a></li>
+</ol>
+
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/willshw/tags#Class Project">
+            <p><i class="fa fa-tag fa-fw"></i> Class Project</p>
+          </a>
+        
+          <a class="button" href="/willshw/tags#MSR">
+            <p><i class="fa fa-tag fa-fw"></i> MSR</p>
+          </a>
+        
+          <a class="button" href="/willshw/tags#Motion Planning">
+            <p><i class="fa fa-tag fa-fw"></i> Motion Planning</p>
+          </a>
+        
+          <a class="button" href="/willshw/tags#Northwestern University">
+            <p><i class="fa fa-tag fa-fw"></i> Northwestern University</p>
+          </a>
+        
+          <a class="button" href="/willshw/tags#Portfolio">
+            <p><i class="fa fa-tag fa-fw"></i> Portfolio</p>
+          </a>
+        
+          <a class="button" href="/willshw/tags#Robotics">
+            <p><i class="fa fa-tag fa-fw"></i> Robotics</p>
+          </a>
+        
+          <a class="button" href="/willshw/tags#Winter Project">
+            <p><i class="fa fa-tag fa-fw"></i> Winter Project</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+
+    </div>
+    
+<footer class="site-footer">
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+
+    
+    <a href="http://localhost:4000/willshw/credit/">Website Credit</a>
+    
+  </p>
+
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/willshwang" title="Follow on Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+</footer>
+
+
+  </body>
+</html>
