@@ -17,10 +17,10 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="http://localhost:4000/search/">
+    <link rel="canonical" href="https://willshw.github.io/search/">
 
     <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="William Wang" href="http://localhost:4000///feed.xml"/>
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
 
     <!-- Font Awesome -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
@@ -49,10 +49,10 @@
 <meta name="generator" content="Jekyll v3.6.2" />
 <meta property="og:title" content="Search" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/search/" />
-<meta property="og:url" content="http://localhost:4000/search/" />
+<link rel="canonical" href="https://willshw.github.io/search/" />
+<meta property="og:url" content="https://willshw.github.io/search/" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/search/","headline":"Search","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"https://willshw.github.io/search/","headline":"Search","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -114,7 +114,7 @@
 
         
         <li>
-            <a class="clear" href="http://localhost:4000/portfolio">
+            <a class="clear" href="https://willshw.github.io/portfolio">
                 Portfolio
             </a>
         </li>
@@ -122,7 +122,7 @@
 
         
         <li>
-            <a class="clear" href="http://localhost:4000/cv">
+            <a class="clear" href="https://willshw.github.io/cv">
                 CV
             </a>
         </li>
@@ -130,7 +130,7 @@
 
         
         <li>
-            <a class="clear" href="http://localhost:4000/search">
+            <a class="clear" href="https://willshw.github.io/search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </li>
@@ -138,7 +138,7 @@
 
         
         <li>
-            <a class="clear" href="http://localhost:4000/tags">
+            <a class="clear" href="https://willshw.github.io/tags">
                 <i class="fa fa-tags" aria-hidden="true"></i>
             </a>
         </li>
@@ -206,7 +206,7 @@
                             "tags"     : " Class Project, Winter Project, Motion Planning, Portfolio, MSR, Robotics, Northwestern University",
                             "url"      : "/portfolio/kinodynamic-planning",
                             "date"     : "March 23, 2018",
-                            "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.OverviewIn this project, I aimed to reproduce result from a research paper, Anytime computation of time-optimal off-road vehicle maneuversusing the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction.moreRRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star with 10K Node:Planning SpaceThe full dynamic model of the car has 8 DOF (, , , , , , , ). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in , ,  (),  assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.moreConclusion and Future WorkA motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time.In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.moreReference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
+                            "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.OverviewIn this project, I aimed to reproduce result from a research paper, Anytime computation of time-optimal off-road vehicle maneuversusing the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction.more to typeRRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star with 10K Node:Planning SpaceThe full dynamic model of the car has 8 DOF (, , , , , , , ). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in , ,  (),  assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.more to typeConclusion and Future WorkA motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time.In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.more to typeReference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
                          
                        } 
                      
@@ -239,7 +239,7 @@
     <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a>
 
     
-    <a href="http://localhost:4000/credit/">Website Credit</a>
+    <a href="https://willshw.github.io/credit/">Website Credit</a>
     
   </p>
 
