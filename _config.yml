@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-# baseurl: "/willshw"
-url: "https://willshw.github.io"
+baseurl: "/willshw"
+# url: "https://willshw.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -31,7 +31,7 @@ theme_settings:
   # Scripts / Features
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname: willswang
-  katex: true # Enable if using math markup
+  katex: false # Enable if using math markup
   portfolio: true
   search: true
   tags: true
