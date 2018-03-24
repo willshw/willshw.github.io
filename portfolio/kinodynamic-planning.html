@@ -158,7 +158,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
 
 <article class="feature-image">
-  <header id="main" style="background-image: url('/assets/pexels/search-map.jpeg')">
+  <header id="main" style="background-image: url('/assets/img/pexels/search-map.jpeg')">
     <h1 id="Kinodynamic+Planning" class="title">Kinodynamic Planning</h1>
     <p class="meta">
     March 23, 2018
@@ -172,24 +172,77 @@
 <p><strong>Kinodynamic Motion Planning</strong> was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.</p>
 
 <h3 id="overview">Overview</h3>
-<p>In this project, I aimed to reproduce result from a research paper, <a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">Anytime computation of time-optimal off-road vehicle maneuvers
+<p>In this project, I aimed at reproducing result from a research paper, <a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">Anytime computation of time-optimal off-road vehicle maneuvers
 using the RRT*</a> from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.</p>
 
 <h3 id="vehicle-dynamics-model">Vehicle Dynamics Model</h3>
-<p>Vehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction.</p>
+<p>Vehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction. Vehicle model has 8 states (<script type="math/tex">x</script>, <script type="math/tex">\dot{x}</script>, <script type="math/tex">y</script>, <script type="math/tex">\dot{y}</script>, <script type="math/tex">\Psi</script>, <script type="math/tex">\dot{\Psi}</script>, <script type="math/tex">\omega_F</script>, <script type="math/tex">\omega_R</script>), and 3 input value (<script type="math/tex">T_F</script>, <script type="math/tex">T_R</script>, <script type="math/tex">\delta</script>)</p>
 
-<script type="math/tex; mode=display">m\dot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)</script>
+<p>Here is an illustration of the bicycle model:</p>
 
-<p>more to type</p>
+<p align="center">
+<img src="../assets/img/portfolio/bicycle-model.png" width="80%" />
+</p>
+<!-- ![BICYCLE-MODEL](../assets/img/portfolio/bicycle-model.png=100x) -->
+
+<p><strong>Notations</strong>:</p>
+
+<p>(<script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">\dot{x}</script>, <script type="math/tex">\dot{y}</script>, <script type="math/tex">\ddot{x}</script>, <script type="math/tex">\ddot{y}</script>): Position, velocity, acceleration at the center of the vehicle</p>
+
+<p><script type="math/tex">m</script>: Mass of vehicle</p>
+
+<p><script type="math/tex">I_z</script>: Inertia of vehicle</p>
+
+<p><script type="math/tex">I_i</script>, <script type="math/tex">r_i</script>, <script type="math/tex">\omega_i</script>, <script type="math/tex">i =(F, R)</script>: Moment of inertia, radius, angular velocity of front and rear wheels</p>
+
+<p><script type="math/tex">f_{ij}</script>, <script type="math/tex">i=(F, R), j=(x, y)</script>: Longitudinal and lateral front and rear tire forces:</p>
+
+<p><script type="math/tex">\Psi</script>: Vehicle orientation/ yaw angle</p>
+
+<p><script type="math/tex">\beta</script>: Slip angle</p>
+
+<p><script type="math/tex">T_i</script>, <script type="math/tex">i=(F, R)</script>: Torque input at front and rear wheels</p>
+
+<p><script type="math/tex">\delta</script>: Steering angle input</p>
+
+<p><strong>Equation of motion</strong>:</p>
+
+<script type="math/tex; mode=display">m\ddot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)</script>
+
+<script type="math/tex; mode=display">m\ddot{y} = f_{Fx}sin(\Psi + \delta) + f_{Fy}cos(\Psi + \delta) + f_{Rx}sin(\Psi) + f_{Ry}cos(\Psi)</script>
+
+<script type="math/tex; mode=display">I_z\ddot{\Psi} = (f_{Fy}cos(\delta) + f_{Fx}sin(\delta))l_F - f_{Ry}l_R</script>
+
+<script type="math/tex; mode=display">I_F\dot{\omega}_F = T_F - f_{Fx}r_F</script>
+
+<script type="math/tex; mode=display">I_R\dot{\omega}_F = T_R - f_{Rx}r_R</script>
+
+<p>Tire force <script type="math/tex">f_{ij}</script> depends on normal force <script type="math/tex">f_z</script> and friction coefficient <script type="math/tex">\mu_{ij}</script> determined by <strong>Pacejka’s Magic Formula</strong>:</p>
+
+<p><script type="math/tex">f_{ij} = \mu_{ij}f_{iz}</script>     <script type="math/tex">(i = F,R, j=x,y)</script></p>
+
+<p><script type="math/tex">\mu_{ij} = -\frac{s_{ij}}{s_i}\mu_i(s_i)</script>     <script type="math/tex">(i = F,R, j=x,y)</script></p>
+
+<p><script type="math/tex">\mu_i(s_i) = D_i sin(C_i arctan(B_i s_i))</script>     <script type="math/tex">(i = F,R)</script></p>
+
+<p>For more details about the vehicle dynamic model, please refer to <a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">Anytime computation of time-optimal off-road vehicle maneuvers
+using the RRT*</a></p>
 
 <h3 id="rrt-star">RRT-Star</h3>
 <p>RRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.</p>
 
-<p><img src="../assets/img/portfolio/rrt-star-1.png" alt="RRT-STAR-ALGO-1" />
-<img src="../assets/img/portfolio/rrt-star-2.png" alt="RRT-STAR-ALGO-2" /></p>
+<p>RRT-Star Algorithm:</p>
+<p align="center">
+<img src="../assets/img/portfolio/rrt-star-1.png" width="60%" />
+<img src="../assets/img/portfolio/rrt-star-2.png" width="60%" />
+</p>
+<!-- ![RRT-STAR-ALGO-1](../assets/img/portfolio/rrt-star-1.png) -->
+<!-- ![RRT-STAR-ALGO-2](../assets/img/portfolio/rrt-star-2.png) -->
 
-<p>RRT-Star with 10K Node:
-<img src="../assets/img/portfolio/n-rrt-star.png" alt="RRT-STAR-N-MAP" /></p>
+<p>RRT-Star with 10K Node:</p>
+<p align="center">
+<img src="../assets/img/portfolio/n-rrt-star.png" width="80%" />
+</p>
 
 <h3 id="planning-space">Planning Space</h3>
 <p>The full dynamic model of the car has 8 DOF (<script type="math/tex">x</script>, <script type="math/tex">\dot{x}</script>, <script type="math/tex">y</script>, <script type="math/tex">\dot{y}</script>, <script type="math/tex">\Psi</script>, <script type="math/tex">\dot{\Psi}</script>, <script type="math/tex">\omega_F</script>, <script type="math/tex">\omega_R</script>). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">V</script> (<script type="math/tex">\sqrt{\dot{x}^2+\dot{y}^2}</script>), <script type="math/tex">\Psi</script> assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.</p>
@@ -199,8 +252,13 @@ using the RRT*</a> from MIT. Authors of the paper proposed a solution to generat
 
 <p>more to type</p>
 
-<p><img src="../assets/img/portfolio/kino-circle.gif" alt="KINO-CIRCLE" />
-<img src="../assets/img/portfolio/snake-manu.gif" alt="KINO-SNAKE " /></p>
+<p align="center">
+<img src="../assets/img/portfolio/kino-circle.gif" width="60%" />
+<img src="../assets/img/portfolio/snake-manu.gif" width="60%" />
+</p>
+<!--
+![KINO-CIRCLE](../assets/img/portfolio/kino-circle.gif)
+![KINO-SNAKE ](../assets/img/portfolio/snake-manu.gif) -->
 
 <h3 id="conclusion-and-future-work">Conclusion and Future Work</h3>
 <p>A motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time.In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.</p>
