@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/search/">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Search</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Search" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://willshw.github.io/search/" />
+<meta property="og:url" content="https://willshw.github.io/search/" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"https://willshw.github.io/search/","headline":"Search","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Search | William Wang</title>
+    <meta name="description" content="A growing roboticist">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/brain.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/posts/index.html">
+                Posts
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/portfolio">
+                Portfolio
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/cv">
+                CV
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/pexels/search-map.jpeg')">
+    <h1 id="Search" class="title">
+        Search
+    </h1>
+    
+    
+      
+  </header>
+  <section class="post-content"><!-- Html Elements for Search -->
+<input type="text" id="search-input" placeholder="Enter keywords..." class="search-bar">
+<br>
+<br>
+<ul id="results-container"></ul>
+
+<section>
+    <!-- Script pointing to jekyll-search.js -->
+    <script src="/assets/js/jekyll-search.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            json: [
+                    
+                     ,
+                     
+                       {
+                         
+                            "title"    : "Virtual Headcam",
+                            "category" : "AboutVirtual Headcam (VHC) is a device designed for facial performance capture. VHC equips with two motorized mirrors (mirrors mounted on motors) with rotational axes aligned...",
+                            "tags"     : " Work Project, Portfolio, USC ICT",
+                            "url"      : "/portfolio/virtualheadcam",
+                            "date"     : "August 12, 2015",
+                            "content"  : "AboutVirtual Headcam (VHC) is a device designed for facial performance capture. VHC equips with two motorized mirrors (mirrors mounted on motors) with rotational axes aligned perpendicularly and a fixed camera pointing at one of the mirrors. The two motorized mirrors can redirect the optical path of the mounted camera. With a motor controller, the stationary camera can virtually pan and tilt in a certain angular range in a tracked space volume.VHC can be integrated into a motion capture space where the location of actors and actresses can be accurately tracked in high refresh rate. VHC can quickly adjust the mirror angles, zoom, and focus, according to the motion tracking data centered the subject in the camera frame. A system of multiple VHCs installed in a motion tracking space can potentially replace the traditional head mounted camera system.This research project was one of my work projects at USC ICT, and it was presented at SIGGRAPH 2015 poster session.For more detailed of this project, please visit the project page on USC ICT Graphics Lab website."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Sawyer&#39;s Travels",
+                            "category" : "AboutSawyer’s Travels was one of the final projects of Northwestern University’s ME 495: Embedded Systems in Robotics in Fall 2017. The goal of this project...",
+                            "tags"     : " Class Project, Portfolio, MSR, Robotics, Northwestern University",
+                            "url"      : "/portfolio/sawyerstravels",
+                            "date"     : "December 6, 2017",
+                            "content"  : "AboutSawyer’s Travels was one of the final projects of Northwestern University’s ME 495: Embedded Systems in Robotics in Fall 2017. The goal of this project was to write a ROS program for Sawyer to navigate a ball through a labyrinth using vision feedback.The ROS program written in this project included three major parts, computer vision, path planning, and robot control. At first, computer vision part of the program took care of extracting maze, ball tracking and final goal recognition. With all the vision information, then path planning program could solve for a global path plan to reach goal and dynamically solve for local path plans when the ball drifts off the global path plan. Finally, robot control program implemented PID controller on both joint velocity control and joint position control of the robot to manipulate the end effector to control the movement of the ball.In this project, I was responsible for writing the control program. It was my first exposure to ROS and Sawyer robot.For more details, please view the README and source code of this project on Github.Credit: Mazes were generated by Maze Generator."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Kinodynamic Planning",
+                            "category" : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion...",
+                            "tags"     : " Class Project, Winter Project, Motion Planning, Portfolio, MSR, Robotics, Northwestern University",
+                            "url"      : "/portfolio/kinodynamic-planning",
+                            "date"     : "March 23, 2018",
+                            "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.OverviewIn this project, I aimed at reproducing the result from a research paper, Anytime computation of time-optimal off-road vehicle maneuversusing the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction. Vehicle model has 8 states ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$), and 3 input value ($T_F$, $T_R$, $\delta$)Here is an illustration of the bicycle model:Notations:$x$, $y$, $\dot{x}$, $\dot{y}$, $\ddot{x}$, $\ddot{y}$: Position, velocity, acceleration at the center of the vehicle$m$: Mass of vehicle$I_z$: Inertia of vehicle$I_i$, $r_i$, $\omega_i$, $i =(F, R)$: Moment of inertia, radius, angular velocity of front and rear wheels$f_{ij}$, $i=(F, R), j=(x, y)$: Longitudinal and lateral front and rear tire forces:$\Psi$: Vehicle orientation/ yaw angle$\beta$: Slip angle$T_i$, $i=(F, R)$: Torque input at front and rear wheels$\delta$: Steering angle inputEquation of motion:$m\ddot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)$$m\ddot{y} = f_{Fx}sin(\Psi + \delta) + f_{Fy}cos(\Psi + \delta) + f_{Rx}sin(\Psi) + f_{Ry}cos(\Psi)$$I_z\ddot{\Psi} = (f_{Fy}cos(\delta) + f_{Fx}sin(\delta))l_F - f_{Ry}l_R$$I_F\dot{\omega}_ F = T_F - f_{Fx}r_F$$I_R\dot{\omega}_ R = T_R - f_{Rx}r_R$Tire force $f_{ij}$ depends on normal force $f_z$ and friction coefficient $\mu_{ij}$ determined by Pacejka’s Magic Formula:$f_{ij} = \mu_{ij}f_{iz} $  $(i = F,R, j=x,y)$$\mu_{ij} = -\frac{s_{ij}}{s_i}\mu_i(s_i) $  $(i = F,R, j=x,y)$$\mu_i(s_i) = D_i sin(C_i arctan(B_i s_i)) $   $(i = F,R)$For more details about the vehicle dynamic model, please refer to Anytime computation of time-optimal off-road vehicle maneuversusing the RRT*RRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star Algorithm:RRT-Star with 10K Node:Planning SpaceThe full dynamic model of the car has 8 DOF ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in $x$, $y$, $V$($\sqrt{\dot{x}^2+\dot{y}^2}$), $\Psi$assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.more to typeConclusion and Future WorkA motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time. In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.more to typeReference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
+                         
+                       } 
+                     
+                    
+                  ],
+            searchResultTemplate: '<div class="search-title"><a href="{url}"><h3> {title}</h3></a><div class="meta">{date} <div class="right"><i class="fa fa-tag"></i> {tags}</div></div><p>{category}</p></div><hr> ',
+            noResultsText: 'No results found',
+            limit: 10,
+            fuzzy: true,
+            exclude: []
+        })
+    </script>
+</section>
+</section>
+    
+    
+  <!-- Tag list for portfolio -->
+  
+  
+
+
+
+    
+</article>
+
+    </div>
+    
+<footer class="site-footer">
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+    <a href="https://willshw.github.io/credit/">Website Credit</a>
+    
+  </p>
+
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/willshwang" title="Follow on Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+</footer>
+
+
+  </body>
+</html>
