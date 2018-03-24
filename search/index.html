@@ -6,10 +6,7 @@
 
     <!-- JQuery (used for bootstrap and jekyll search) -->
     <script src="/assets/js/jquery-3.2.1.min.js" ></script>
-<<<<<<< HEAD
     <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
-=======
->>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
 
     <!-- Main JS (navbar.js and katex_init.js)-->
     <script defer=true src="/assets/js/main.min.js"></script>
@@ -35,23 +32,12 @@
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
     
 
-<<<<<<< HEAD
     <!-- KaTeX -->
-=======
-    <!-- KaTeX 0.8.3 -->
-    
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/katex.min.css">
-    <script src="/assets/js/katex.min.js">
-    </script>
->>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
     
 
     <!-- Google Analytics -->
     
 
-<<<<<<< HEAD
     <!-- MathJax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
@@ -66,8 +52,6 @@
         });
     </script>
 
-=======
->>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Search</title>
@@ -136,7 +120,6 @@
         
         
         
-<<<<<<< HEAD
         
         <li>
             <a class="clear" href="/posts/index.html">
@@ -145,8 +128,6 @@
         </li>
         
         
-=======
->>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
 
         
         <li>
@@ -242,11 +223,7 @@
                             "tags"     : " Class Project, Winter Project, Motion Planning, Portfolio, MSR, Robotics, Northwestern University",
                             "url"      : "/portfolio/kinodynamic-planning",
                             "date"     : "March 23, 2018",
-<<<<<<< HEAD
                             "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.OverviewIn this project, I aimed at reproducing the result from a research paper, Anytime computation of time-optimal off-road vehicle maneuversusing the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction. Vehicle model has 8 states ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$), and 3 input value ($T_F$, $T_R$, $\delta$)Here is an illustration of the bicycle model:Notations:$x$, $y$, $\dot{x}$, $\dot{y}$, $\ddot{x}$, $\ddot{y}$: Position, velocity, acceleration at the center of the vehicle$m$: Mass of vehicle$I_z$: Inertia of vehicle$I_i$, $r_i$, $\omega_i$, $i =(F, R)$: Moment of inertia, radius, angular velocity of front and rear wheels$f_{ij}$, $i=(F, R), j=(x, y)$: Longitudinal and lateral front and rear tire forces:$\Psi$: Vehicle orientation/ yaw angle$\beta$: Slip angle$T_i$, $i=(F, R)$: Torque input at front and rear wheels$\delta$: Steering angle inputEquation of motion:$m\ddot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)$$m\ddot{y} = f_{Fx}sin(\Psi + \delta) + f_{Fy}cos(\Psi + \delta) + f_{Rx}sin(\Psi) + f_{Ry}cos(\Psi)$$I_z\ddot{\Psi} = (f_{Fy}cos(\delta) + f_{Fx}sin(\delta))l_F - f_{Ry}l_R$$I_F\dot{\omega}_ F = T_F - f_{Fx}r_F$$I_R\dot{\omega}_ R = T_R - f_{Rx}r_R$Tire force $f_{ij}$ depends on normal force $f_z$ and friction coefficient $\mu_{ij}$ determined by Pacejka’s Magic Formula:$f_{ij} = \mu_{ij}f_{iz} $  $(i = F,R, j=x,y)$$\mu_{ij} = -\frac{s_{ij}}{s_i}\mu_i(s_i) $  $(i = F,R, j=x,y)$$\mu_i(s_i) = D_i sin(C_i arctan(B_i s_i)) $   $(i = F,R)$For more details about the vehicle dynamic model, please refer to Anytime computation of time-optimal off-road vehicle maneuversusing the RRT*RRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star Algorithm:RRT-Star with 10K Node:Planning SpaceThe full dynamic model of the car has 8 DOF ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in $x$, $y$, $V$($\sqrt{\dot{x}^2+\dot{y}^2}$), $\Psi$assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.more to typeConclusion and Future WorkA motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time. In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.more to typeReference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
-=======
-                            "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.OverviewIn this project, I aimed at reproducing result from a research paper, Anytime computation of time-optimal off-road vehicle maneuversusing the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction. Vehicle model has 8 states (, , , , , , , ), and 3 input value (, , )Here is an illustration of the bicycle model:Notations:(, , , , , ): Position, velocity, acceleration at the center of the vehicle: Mass of vehicle: Inertia of vehicle, , , : Moment of inertia, radius, angular velocity of front and rear wheels, : Longitudinal and lateral front and rear tire forces:: Vehicle orientation/ yaw angle: Slip angle, : Torque input at front and rear wheels: Steering angle inputEquation of motion:Tire force  depends on normal force  and friction coefficient  determined by Pacejka’s Magic Formula:               For more details about the vehicle dynamic model, please refer to Anytime computation of time-optimal off-road vehicle maneuversusing the RRT*RRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star Algorithm:RRT-Star with 10K Node:Planning SpaceThe full dynamic model of the car has 8 DOF (, , , , , , , ). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in , ,  (),  assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.more to typeConclusion and Future WorkA motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time.In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.more to typeReference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
->>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
                          
                        } 
                      
@@ -276,11 +253,7 @@
     
 <footer class="site-footer">
   <p class="text">
-<<<<<<< HEAD
     <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
-=======
-    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a>
->>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
 
     
     <a href="https://willshw.github.io/credit/">Website Credit</a>
