@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 var elements = document.getElementsByTagName('script');
 
 Array.prototype.forEach.call(elements, function (element) {
     if (element.type.indexOf('math/tex') !== -1) {
+=======
+var elements = document.getElementsByTagName('script')
+
+Array.prototype.forEach.call(elements, function (element) {
+    if (element.type.indexOf('math/tex') != -1) {
+>>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
         // Extract math markdown
         var textToRender = element.innerText || element.textContent;
 
@@ -13,7 +20,11 @@ Array.prototype.forEach.call(elements, function (element) {
         var katexElement = document.createElement('span');
 
         // Support inline and display math
+<<<<<<< HEAD
         if (element.type.indexOf('mode=display') !== -1) {
+=======
+        if (element.type.indexOf('mode=display') != -1) {
+>>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
             katexElement.className += "math-display";
             textToRender = '\\displaystyle {' + textToRender + '}';
         } else {

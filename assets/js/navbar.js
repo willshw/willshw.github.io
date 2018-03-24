@@ -4,7 +4,11 @@
 $(function () {
     var pull = $('#pull');
     menu = $('nav ul');
+<<<<<<< HEAD
     //menuHeight = menu.height();
+=======
+    menuHeight = menu.height();
+>>>>>>> 9277491a936429c0484d5e97976824b58cd9933b
 
     $(pull).on('click', function (e) {
         menu.slideToggle();
