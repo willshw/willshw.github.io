@@ -17,18 +17,18 @@ Follow the steps (in Chrome):
 2. Right click on the streaming page.
 3. Select **Inspect**, Chrome developer tools window will show up in your browser.
 
-    ![]({{site.url}}/assets/img/post/2018-04-27-ad-removal-1.png)
+    ![ad-removal-1]({{site.url}}/assets/img/post/2018-04-27-ad-removal-1.png)
 
 4. Go to the developer tools window, find **elements** tap on the very top, and select.
 5. Now, a boat load of html code shows up. Don't panic, stay calm. We are almost there.
 6. You will see sections of the web page are highlighted as you place the pointer on the code blocks. Keep moving until the **Ad** is highlighted. Sometime you need to click on the little triangle to expand the code block and search for the code block for the **Ad**.
 7. Right click on the **Ad** html code section, select **hide element**.
 
-    ![]({{site.url}}/assets/img/post/2018-04-27-ad-removal-2.png)
+    ![ad-removal-2]({{site.url}}/assets/img/post/2018-04-27-ad-removal-2.png)
 
 8. **BOOM!!! The Ad is gone!!!**.
 
-    ![]({{site.url}}/assets/img/post/2018-04-27-ad-removal-3.png)
+    ![ad-removal-3]({{site.url}}/assets/img/post/2018-04-27-ad-removal-3.png)
 
 9. Repeat 6 and 7 until all Ads are gone.
 
