@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/portfolio/visual-servoing">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Visual Servoing of Objects without Object Models</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Visual Servoing of Objects without Object Models" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About" />
+<meta property="og:description" content="About" />
+<link rel="canonical" href="https://willshw.github.io/portfolio/visual-servoing" />
+<meta property="og:url" content="https://willshw.github.io/portfolio/visual-servoing" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-13T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"About","@type":"BlogPosting","url":"https://willshw.github.io/portfolio/visual-servoing","headline":"Visual Servoing of Objects without Object Models","dateModified":"2018-06-13T00:00:00-05:00","datePublished":"2018-06-13T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/portfolio/visual-servoing"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Visual Servoing of Objects without Object Models | William Wang</title>
+    <meta name="description" content="About">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/brain.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+		</h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/post/index.html">
+                Post
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/portfolio">
+                Portfolio
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/cv">
+                CV
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<article >
+  <header id="main" style="background-image: url('/')">
+    <h1 id="Visual+Servoing+of+Objects+without+Object+Models" class="title">Visual Servoing of Objects without Object Models</h1>
+    <p class="meta">
+    June 13, 2018
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <div class="video_container" align="middle">
+      <iframe src="https://www.youtube.com/embed/5kR0tAGiMBY?rel=0" class="video" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+    <hr>
+    
+    <h2 id="about">About</h2>
+
+<p>This is my MSR program’s capstone project with <a href="http://users.eecs.northwestern.edu/~argall/">Prof. Argall</a>’s research lab at <a href="https://www.sralab.org/">Shirley Ryan AbilityLab</a>. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to grasp an object without prior knowledge of the object (geometry model of the object). The ROS package is designed to be generic so it can be easily used for different type of robotic arms.</p>
+
+<h2 id="challenges-and-applications">Challenges and Applications</h2>
+
+<p>The challenges this project will encounter includes a robust visual servoing control, point cloud processing on objects, grasp point generation, etc. Since the project aims at achieving grasping without a model, the problem just became much more difficult.</p>
+
+<p>If we want to integrate robots into our daily life to work efficiently around humans, grasping a wide range of object is a task they must master. While grasping is an easy task for humans, it takes quite a bit of effort for a robot to figure out how to grasp an object and pick up an object successfully. A satisfying result of this project can benefit robot applications like factor/warehouse oject sorting, personal assistant robot and home robots where manipulation tasks are required.</p>
+
+<h2 id="current-progress">Current Progress</h2>
+
+<p>By 06-14-2018, a GitHub repository has been created with working position based visual servoing code.</p>
+
+<h2 id="whats-coming-up-next">What’s Coming Up Next</h2>
+
+<ol>
+  <li>Joint limit and singularity avoidance on position based visual servoing</li>
+  <li>Image base visual servoing</li>
+  <li>Visual servoing using RGBD camera</li>
+  <li>Visual servoing on object with known model</li>
+  <li>Visual servoing on object with unknown model</li>
+</ol>
+
+<h2 id="github"><a href="https://github.com/willshw/ArmVS">Github</a></h2>
+
+<hr />
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/tags#Control">
+            <p><i class="fa fa-tag fa-fw"></i> Control</p>
+          </a>
+        
+          <a class="button" href="/tags#Final Project">
+            <p><i class="fa fa-tag fa-fw"></i> Final Project</p>
+          </a>
+        
+          <a class="button" href="/tags#Grasping">
+            <p><i class="fa fa-tag fa-fw"></i> Grasping</p>
+          </a>
+        
+          <a class="button" href="/tags#Kinematics">
+            <p><i class="fa fa-tag fa-fw"></i> Kinematics</p>
+          </a>
+        
+          <a class="button" href="/tags#Portfolio">
+            <p><i class="fa fa-tag fa-fw"></i> Portfolio</p>
+          </a>
+        
+          <a class="button" href="/tags#ROS">
+            <p><i class="fa fa-tag fa-fw"></i> ROS</p>
+          </a>
+        
+          <a class="button" href="/tags#Visual Servoing">
+            <p><i class="fa fa-tag fa-fw"></i> Visual Servoing</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/portfolio/ifm-calibration">
+        Camera Angle Calibration
+      </a>
+  </div>
+  
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+    <a href="https://willshw.github.io/credit/">Website Credit</a>
+    
+  </p>
+
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/willshwang" title="Follow on Twitter" class="type">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+</footer>
+
+
+  </body>
+</html>
