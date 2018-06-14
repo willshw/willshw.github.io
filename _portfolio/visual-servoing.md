@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Visual Servoing of Objects without Object Models
-# img: "assets/img/portfolio/vhc-icon.jpg"
+img: "assets/img/portfolio/visual-servoing-icon.jpg"
 # feature-img: "assets/img/portfolio/vhc-feature-camera-array.jpg"
-# feature-vid: "https://www.youtube.com/embed/dYVtsQsaA-g?rel=0"
+feature-vid: "https://www.youtube.com/embed/5kR0tAGiMBY?rel=0"
 date: 2018-06-13
 tags: [Final Project, Portfolio, Visual Servoing, Grasping, ROS, Kinematics, Control]
 ---
