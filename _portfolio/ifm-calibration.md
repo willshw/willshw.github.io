@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Camera Angle Calibration
-img: "assets/img/portfolio/ifm-calibration-icon.jpg"
+img: "assets/img/portfolio/ifm-calibration-icon.png"
 feature-img: "assets/img/portfolio/ifm-calibration-feature.jpg"
 # feature-vid: "https://www.youtube.com/embed/dYVtsQsaA-g?rel=0"
 date: 2018-06-13

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Visual Servoing of Objects without Object Models
-img: "assets/img/portfolio/visual-servoing-icon.jpg"
+img: "assets/img/portfolio/visual-servoing-icon.png"
 # feature-img: "assets/img/portfolio/vhc-feature-camera-array.jpg"
 feature-vid: "https://www.youtube.com/embed/5kR0tAGiMBY?rel=0"
 date: 2018-06-13
