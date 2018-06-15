@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kinodynamic Motion Planning
-img: "assets/img/portfolio/kino-icon-grey.jpg"
+img: "assets/img/portfolio/kino-icon.jpg"
 feature-img: "assets/img/pexels/search-map.jpeg"
 date: 2018-03-23
 tags: [Class Project, Winter Project, Motion Planning, Portfolio, MSR, Robotics, Northwestern University]

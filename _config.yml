@@ -36,7 +36,7 @@ theme_settings:
   portfolio: true
   search: true
   tags: true
-  cv: true
+  resume: true
   credit: true
 
 

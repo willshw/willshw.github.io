@@ -30,7 +30,6 @@ By 06-14-2018, a GitHub repository has been created with working position based 
 4. Visual servoing on object with known model
 5. Visual servoing on object with unknown model
 
-
 ## [Github][ArmVS]
 
 ***
