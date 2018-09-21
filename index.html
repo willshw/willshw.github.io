@@ -1,11 +1,415 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <meta charset="utf-8">
-  <title>Redirecting&hellip;</title>
-  <link rel="canonical" href="https://willshw.github.io/portfolio/">
-  <meta http-equiv="refresh" content="0; url=https://willshw.github.io/portfolio/">
-  <meta name="robots" content="noindex">
-  <h1>Redirecting&hellip;</h1>
-  <a href="https://willshw.github.io/portfolio/">Click here if you are not redirected.</a>
-  <script>location="https://willshw.github.io/portfolio/"</script>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="http://localhost:4000/">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="http://localhost:4000///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Project</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Project" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","headline":"Project","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Project | William Wang</title>
+    <meta name="description" content="A growing roboticist">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/brain.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/post/index.html">
+                Post
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/project">
+                Project
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="http://localhost:4000/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Bootstrap-3.3.7 isolation CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-iso.min.css">
+
+<!-- Bootstrap JS -->
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<article class="feature-image" >
+    <header id="main" style="background-image: url('/assets/img/pexels/computer.jpeg')">
+        <h1 class="title">Project</h1> 
+    </header>
+
+    
+
+
+
+    <!-- Bootstrap will work within this div -->
+    <section>
+        <div class="bootstrap-iso">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 centered">
+            <!-- Project Grid Section -->
+<section class="portfolio">
+    <div class="row">
+
+        
+        
+
+          
+          
+            <!-- two items hanging -->
+            
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                <a href="/project/visual-servoing" class="portfolio-link" data-keyboard="true">
+  <div class="caption" title="Visual Servoing of Objects without Object Models">
+    <div class="caption-content centered">
+      <i class="fa fa-search-plus fa-2x" style="margin: 0 auto"><br>Visual Servoing of Objects without Object Models</i>
+    </div>
+  </div>
+  <img src="/assets/img/project/visual-servoing-icon.png" title="Visual Servoing of Objects without Object Models" class="" alt="">
+</a>
+              </div>
+
+            
+
+          
+
+        
+
+          
+          
+            <!-- two items hanging -->
+            
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                <a href="/project/ifm-calibration" class="portfolio-link" data-keyboard="true">
+  <div class="caption" title="Camera Angle Calibration">
+    <div class="caption-content centered">
+      <i class="fa fa-search-plus fa-2x" style="margin: 0 auto"><br>Camera Angle Calibration</i>
+    </div>
+  </div>
+  <img src="/assets/img/project/ifm-calibration-icon.png" title="Camera Angle Calibration" class="" alt="">
+</a>
+              </div>
+
+            
+
+          
+
+        
+
+          
+          
+            <!-- two items hanging -->
+            
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                <a href="/project/kinodynamic-planning" class="portfolio-link" data-keyboard="true">
+  <div class="caption" title="Kinodynamic Motion Planning">
+    <div class="caption-content centered">
+      <i class="fa fa-search-plus fa-2x" style="margin: 0 auto"><br>Kinodynamic Motion Planning</i>
+    </div>
+  </div>
+  <img src="/assets/img/project/kino-icon.jpg" title="Kinodynamic Motion Planning" class="" alt="">
+</a>
+              </div>
+
+            
+
+          
+
+        
+
+          
+          
+            <!-- two items hanging -->
+            
+              <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 portfolio-item">
+                <a href="/project/sawyerstravels" class="portfolio-link" data-keyboard="true">
+  <div class="caption" title="Sawyer's Travels">
+    <div class="caption-content centered">
+      <i class="fa fa-search-plus fa-2x" style="margin: 0 auto"><br>Sawyer's Travels</i>
+    </div>
+  </div>
+  <img src="/assets/img/project/sawyerstravels-icon.jpg" title="Sawyer's Travels" class="" alt="">
+</a>
+              </div>
+
+            
+
+          
+
+        
+
+          
+          
+            <!-- two items hanging -->
+            
+              <div class="col-sm-4 col-xs-4 portfolio-item">
+                <a href="/project/virtualheadcam" class="portfolio-link" data-keyboard="true">
+  <div class="caption" title="Virtual Headcam">
+    <div class="caption-content centered">
+      <i class="fa fa-search-plus fa-2x" style="margin: 0 auto"><br>Virtual Headcam</i>
+    </div>
+  </div>
+  <img src="/assets/img/project/vhc-icon.jpg" title="Virtual Headcam" class="" alt="">
+</a>
+              </div>
+
+            
+
+          
+
+        
+    </div>
+</section>
+
+
+            </div>    
+            <div class="col-md-1"></div>
+        </div>
+    </section>
+
+    
+    
+</article>
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+    <a href="http://localhost:4000/credit/">Website Credit</a>
+    
+  </p>
+</footer>
+
+
+  </body>
 </html>
