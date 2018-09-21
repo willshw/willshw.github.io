@@ -24,7 +24,7 @@ theme_settings:
   github: "willshw"
   linkedin:  https://www.linkedin.com/in/williamswang/ # Full URL
   stack_exchange:  https://stackoverflow.com/users/4926659/william-wang
-  twitter: "willshwang"
+  twitter:
   vimeo:
   youtube:
 
@@ -33,7 +33,7 @@ theme_settings:
   disqus_shortname: willswang
   katex: false # Enable if using math markup
   post: true
-  portfolio: true
+  project: true
   search: true
   tags: true
   resume: true
@@ -70,9 +70,9 @@ pagination:
     before: 2 # The number of links before the current page
     after: 2  # The number of links after the current page
 
-# PORTFOLIO
+# PROJECT
 collections:
-  portfolio:
+  project:
     output: true
     permalink: /:collection/:name
 

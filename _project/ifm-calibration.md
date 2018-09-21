@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Camera Angle Calibration
-img: "assets/img/portfolio/ifm-calibration-icon.png"
-feature-img: "assets/img/portfolio/ifm-calibration-feature.jpg"
+img: "assets/img/project/ifm-calibration-icon.png"
+feature-img: "assets/img/project/ifm-calibration-feature.jpg"
 # feature-vid: "https://www.youtube.com/embed/dYVtsQsaA-g?rel=0"
 date: 2018-06-13
-tags: [IFM, Portfolio, Calibration, Camera, ROS, Kinematics, UR Robot]
+tags: [IFM, Project, Calibration, Camera, ROS, Kinematics, UR Robot]
 ---
 
 ## About
@@ -13,6 +13,8 @@ tags: [IFM, Portfolio, Calibration, Camera, ROS, Kinematics, UR Robot]
 This is a project in collaboration with [Intelligent Flying Machine (IFM)][IFM] where I worked with IFM on a proprietary camera calibration process using an robot arm.
 
 More details are coming soon.
+
+
 
 ***
 [IFM]: https://www.ifm-tech.com/

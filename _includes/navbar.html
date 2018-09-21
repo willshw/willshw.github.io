@@ -8,11 +8,12 @@
 
 		<h1 class="site-title">
 			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
-		</h1>
+        </h1>
 	</div>
 
     <!-- Toggle menu -->
     <nav class="clear">
+
     <a id="pull" class="toggle" href="#">
     <i class="fa fa-bars fa-lg"></i>
     </a>
@@ -29,10 +30,10 @@
         {% endif %}
         {% endfor %}
 
-        {% if site.theme_settings.portfolio %}
+        {% if site.theme_settings.project %}
         <li>
-            <a class="clear" href="{{ site.url }}{{ site.baseurl }}/portfolio">
-                Portfolio
+            <a class="clear" href="{{ site.url }}{{ site.baseurl }}/project">
+                Project
             </a>
         </li>
         {% endif %}
@@ -60,7 +61,6 @@
             </a>
         </li>
         {% endif %}
-
     </ul>
 
 	</nav>

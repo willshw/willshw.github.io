@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Virtual Headcam
-img: "assets/img/portfolio/vhc-icon.jpg"
-feature-img: "assets/img/portfolio/vhc-feature-camera-array.jpg"
+img: "assets/img/project/vhc-icon.jpg"
+feature-img: "assets/img/project/vhc-feature-camera-array.jpg"
 feature-vid: "https://www.youtube.com/embed/dYVtsQsaA-g?rel=0"
 date: 2015-08-12
-tags: [Work Project, Portfolio, USC ICT]
+tags: [Work Project, Project, USC ICT]
 ---
 
 ## About

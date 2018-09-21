@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Kinodynamic Motion Planning
-img: "assets/img/portfolio/kino-icon.jpg"
+img: "assets/img/project/kino-icon.jpg"
 feature-img: "assets/img/pexels/search-map.jpeg"
 date: 2018-03-23
-tags: [Class Project, Winter Project, Motion Planning, Portfolio, MSR, Robotics, Northwestern University]
+tags: [Class Project, Winter Project, Motion Planning, Project, MSR, Robotics, Northwestern University]
 ---
 
 ### About
@@ -19,8 +19,8 @@ Vehicle dynamics model employed in this project was a bicycle model, and Pacejka
 
 Here is an illustration of the bicycle model:
 
-<p align="center"><img src="../assets/img/portfolio/kino-bicycle-model.png" width="100%"></p>
-<!-- ![BICYCLE-MODEL](../assets/img/portfolio/bicycle-model.png=100x) -->
+<p align="center"><img src="../assets/img/project/kino-bicycle-model.png" width="100%"></p>
+<!-- ![BICYCLE-MODEL](../assets/img/project/bicycle-model.png=100x) -->
 
 **Notations:**
 
@@ -58,15 +58,15 @@ RRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure
 **RRT-Star Algorithm:**
 
 <p align="center">
-<img src="../assets/img/portfolio/kino-rrt-star-algo-1.png" width="80%">
-<img src="../assets/img/portfolio/kino-rrt-star-algo-2.png" width="80%">
+<img src="../assets/img/project/kino-rrt-star-algo-1.png" width="80%">
+<img src="../assets/img/project/kino-rrt-star-algo-2.png" width="80%">
 </p>
 
-<!-- ![RRT-STAR-ALGO-1](../assets/img/portfolio/rrt-star-1.png) -->
-<!-- ![RRT-STAR-ALGO-2](../assets/img/portfolio/rrt-star-2.png) -->
+<!-- ![RRT-STAR-ALGO-1](../assets/img/project/rrt-star-1.png) -->
+<!-- ![RRT-STAR-ALGO-2](../assets/img/project/rrt-star-2.png) -->
 
 **RRT-Star with 10K Node (Path Planning):**
-<p align="center"><img src="../assets/img/portfolio/kino-n-rrt-star.png" width="80%"></p>
+<p align="center"><img src="../assets/img/project/kino-n-rrt-star.png" width="80%"></p>
 
 ### Planning Space
 
@@ -83,19 +83,19 @@ Here are two GIFs of vehicle following predefined states.
 - **Green Arrow**: Veloity of Vehicle
 
 <p align="center">
-<img src="../assets/img/portfolio/kino-circle.gif" width="80%">
-<img src="../assets/img/portfolio/kino-snake-manu.gif" width="80%">
+<img src="../assets/img/project/kino-circle.gif" width="80%">
+<img src="../assets/img/project/kino-snake-manu.gif" width="80%">
 </p>
 
 <!--
-![KINO-CIRCLE](../assets/img/portfolio/kino-circle.gif)
-![KINO-SNAKE ](../assets/img/portfolio/snake-manu.gif) -->
+![KINO-CIRCLE](../assets/img/project/kino-circle.gif)
+![KINO-SNAKE ](../assets/img/project/snake-manu.gif) -->
 
-### Conclusion and Future Work
+### Current State
 
-A motion planning problem is rather complicated even the planning scenario is simple. The program was not efficient enough to find a complete motion plan ending at goal.
+This project is expected to continue. This motion planning problem is rather complicated. The program was not efficient enough to find a complete motion plan in reasonable amount of time.
 
-**Dfficulties in this project:**
+**Dfficulties Encountered:**
 
 - The planner suffers from the performance issues of low efficiecy at searching for a set of constant control to connect two states
 - The rate of sampling a valid and reachable state was low thus sampling time was too long.
@@ -103,9 +103,9 @@ A motion planning problem is rather complicated even the planning scenario is si
 
 The planner was not able to finish the whole planning task as shown in following figures:
 
-|<img src="../assets/img/portfolio/kino-corner-1.png" width="100%">|<img src="../assets/img/portfolio/kino-corner-2.png" width="100%">|
+|<img src="../assets/img/project/kino-corner-1.png" width="100%">|<img src="../assets/img/project/kino-corner-2.png" width="100%">|
 
-**What To improve in future work:**
+**Things be worked on:**
 
 - A fast numerical solver for the stiff problem must need to implemented to improve the state connection calculation time.
 - Instead of looking for a fast ODE solver, utilizing a physics simulation engine to handle the state integration can be a great approach, since physics simulation engines are often fast at solving for complex physics model with some sacrifices on accuracy. (Focus on sovling motion planning instead of solving physics model)

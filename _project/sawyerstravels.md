@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Sawyer's Travels
-img: "assets/img/portfolio/sawyerstravels-icon.jpg"
-feature-img: "assets/img/portfolio/sawyerstravels-feature-maze.png"
+img: "assets/img/project/sawyerstravels-icon.jpg"
+feature-img: "assets/img/project/sawyerstravels-feature-maze.png"
 feature-vid: "https://www.youtube.com/embed/YX71EugPKcU?rel=0"
 date: 2017-12-06
-tags: [Class Project, Portfolio, MSR, Robotics, Northwestern University]
+tags: [Class Project, Project, MSR, Robotics, Northwestern University]
 ---
 
 ## About
