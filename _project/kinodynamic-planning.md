@@ -105,7 +105,7 @@ The planner was not able to finish the whole planning task as shown in following
 
 |<img src="../assets/img/project/kino-corner-1.png" width="100%">|<img src="../assets/img/project/kino-corner-2.png" width="100%">|
 
-**Things be worked on:**
+**Things to be worked on:**
 
 - A fast numerical solver for the stiff problem must need to implemented to improve the state connection calculation time.
 - Instead of looking for a fast ODE solver, utilizing a physics simulation engine to handle the state integration can be a great approach, since physics simulation engines are often fast at solving for complex physics model with some sacrifices on accuracy. (Focus on sovling motion planning instead of solving physics model)
