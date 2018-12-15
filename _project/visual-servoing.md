@@ -3,7 +3,7 @@ layout: post
 title: Visual Servoing of Objects without Object Models
 img: "assets/img/project/visual-servoing-icon.png"
 # feature-img: "assets/img/project/vhc-feature-camera-array.jpg"
-feature-vid: "https://www.youtube.com/embed/5kR0tAGiMBY?rel=0"
+feature-vid: "https://www.youtube.com/embed/veAIuLdbgJU"
 date: 2018-06-13
 tags: [Final Project, Project, Visual Servoing, Grasping, ROS, Kinematics, Control, Point Cloud, PCL, RGBD, Depth Camera]
 ---
