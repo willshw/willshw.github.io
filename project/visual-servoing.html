@@ -192,29 +192,47 @@
     
     <h2 id="about">About</h2>
 
-<p>This is my MSR program’s capstone project with <a href="http://users.eecs.northwestern.edu/~argall/">Prof. Argall</a>’s research lab at <a href="https://www.sralab.org/">Shirley Ryan AbilityLab</a>. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to grasp an object without prior knowledge of the object (geometry model of the object). The ROS package is designed to be generic so it can be easily used for different type of robotic arms.</p>
+<p>This is my MSR program’s capstone project with <a href="http://users.eecs.northwestern.edu/~argall/">Prof. Argall</a>’s research lab at <a href="https://www.sralab.org/">Shirley Ryan AbilityLab</a>. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping objects without prior knowledge of the objects (geometry model of the object). The ROS package is designed to be generic and modular so it can be easily used for different type of robotic arms.</p>
 
 <h2 id="challenges-and-applications">Challenges and Applications</h2>
 
-<p>The challenges this project will encounter includes a robust visual servoing control, point cloud processing on objects, grasp point generation, etc. Since the project aims at achieving grasping without a model, the problem just became much more difficult.</p>
+<p>The challenges this project will encounter includes a robust visual servoing control, point cloud processing on objects and computation for all previous components on limited computing power, etc. Since the project aims at achieving robust visual servoing without a model, the problem just became much more difficult.</p>
 
-<p>If we want to integrate robots into our daily life to work efficiently around humans, grasping a wide range of object is a task they must master. While grasping is an easy task for humans, it takes quite a bit of effort for a robot to figure out how to grasp an object and pick up an object successfully. A satisfying result of this project can benefit robot applications like factor/warehouse oject sorting, personal assistant robot and home robots where manipulation tasks are required.</p>
+<p>If we want to integrate robots into our daily life to work efficiently around humans, grasping a wide range of object is a task they must master. However, a lot of the grasping would happend in scenarios where objects are dynamic before the grasp moment. Since robot need to track objects it has never seen (no prior knowledge about the object model), visual servoing can be difficult to implement on objects without known geometry.</p>
 
-<h2 id="current-progress">Current Progress</h2>
+<p>While it is easy for humans to track the object and grasp it whether it’s moving fast or moving slowly, it takes quite a bit of effort for a robot to figure out how to track an object it has never seen. A satisfying result of this project can benefit robot applications like human robot collaboration, personal assistant robot and home robots where manipulation tasks are required.</p>
 
-<p>By 06-14-2018, a GitHub repository has been created with working position based visual servoing code.</p>
+<h2 id="approach">Approach</h2>
 
-<h2 id="whats-coming-up-next">What’s Coming Up Next</h2>
+<p>This project combines object recognition/detection, object tracking, point cloud segmentation and point cloud pose estimation and position based visual servoing to achieve visual servoing on unknown objects. The whole structure of the object can be devided into four parts in high level:</p>
 
 <ol>
-  <li>Joint limit and singularity avoidance on position based visual servoing</li>
-  <li>Image base visual servoing</li>
-  <li>Visual servoing using RGBD camera</li>
-  <li>Visual servoing on object with known model</li>
-  <li>Visual servoing on object with unknown model</li>
+  <li>Object Recognition and Tracking</li>
+  <li>Point Cloud Extraction</li>
+  <li>Point Cloud Pose Estimation</li>
+  <li>Posisiton Based Visual Servoing</li>
 </ol>
 
-<h2 id="github"><a href="https://github.com/willshw/ArmVS">Github</a></h2>
+<h3 id="1-object-recognition-and-tracking">1. Object Recognition and Tracking</h3>
+
+<p>This module handles a task finding the object of interest, keep track of this object and tell the extractor where the object is in the image space.</p>
+
+<p>The way to achieve a robust tracking in the image space is to use object recognition algorithms like YOLO or alternatives to recognize the object of interest in the image and does it on every frame. Howevere, object recognition will often fail detecting object in some frames. We added a non-deeplearning type image tracker to locate the object when recognition fails. Whenever the object can be detected, image tracker will be reinitialized. The reinitialization of the image tracker also limit the drifting of the image tracker. The amalgamation of object recognition and tracking enables robust and accurate tracking. With a kalman filter implimented to predict object position in between frames, uninterrupted object location information can be send to point cloud extraction to remove irrelavent points in the raw point cloud.</p>
+
+<h3 id="2-point-cloud-extraction">2. Point Cloud Extraction</h3>
+
+<p>The data from RGBD sensor is structured which mean each point in the point cloud cooresponds to one pixel in the RGB image, and point cloud is organized in same fashion as the RGB image. With the structured point cloud, we can use the object location information and the size of boudning box region of the object to extract points from structured point cloud only based on x and y axis. Therefore we can have a point cloud of the object with only a few unwanted points which can be eliminate by simple segmentation.</p>
+
+<h3 id="3-point-cloud-pose-estimation">3. Point Cloud Pose Estimation</h3>
+
+<p>At the begining of the visua servoing session, a point cloud template of the object need to be taken. In pose estimation, particle filter or ICP can be use. The algorithms use the template to match the extracted point cloud and calculate rigid transform. And pre-grasp pose can be set relative to the matched template.</p>
+
+<h3 id="4-posisiton-based-visual-servoing">4. Posisiton Based Visual Servoing</h3>
+
+<p>Since the pre-grasp pose has 6DOF which are the traslantions (x, y, z) and the rotations (roll, pitch, yaw), position based visual servoing technique can be apply here to guide a end effector frame on the robot arm to approach the pre-grasp pose.</p>
+
+<h2 id="implementation">Implementation</h2>
+<p>Please see <a href="https://github.com/willshw/mfvs">Github</a> for more detail</p>
 
 <hr />
 
@@ -236,6 +254,10 @@
             <p><i class="fa fa-tag fa-fw"></i> Control</p>
           </a>
         
+          <a class="button" href="/tags#Depth Camera">
+            <p><i class="fa fa-tag fa-fw"></i> Depth Camera</p>
+          </a>
+        
           <a class="button" href="/tags#Final Project">
             <p><i class="fa fa-tag fa-fw"></i> Final Project</p>
           </a>
@@ -248,8 +270,20 @@
             <p><i class="fa fa-tag fa-fw"></i> Kinematics</p>
           </a>
         
+          <a class="button" href="/tags#PCL">
+            <p><i class="fa fa-tag fa-fw"></i> PCL</p>
+          </a>
+        
+          <a class="button" href="/tags#Point Cloud">
+            <p><i class="fa fa-tag fa-fw"></i> Point Cloud</p>
+          </a>
+        
           <a class="button" href="/tags#Project">
             <p><i class="fa fa-tag fa-fw"></i> Project</p>
+          </a>
+        
+          <a class="button" href="/tags#RGBD">
+            <p><i class="fa fa-tag fa-fw"></i> RGBD</p>
           </a>
         
           <a class="button" href="/tags#ROS">
