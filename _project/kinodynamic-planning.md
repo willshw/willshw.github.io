@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kinodynamic Motion Planning
-img: "assets/img/project/kino-icon.jpg"
+img: "assets/img/project/kinodynamic-planning/kino-circle-icon.gif"
 feature-img: "assets/img/pexels/search-map.jpeg"
 date: 2018-03-23
 tags: [Class Project, Winter Project, Motion Planning, Project, MSR, Robotics, Northwestern University]
@@ -19,7 +19,7 @@ Vehicle dynamics model employed in this project was a bicycle model, and Pacejka
 
 Here is an illustration of the bicycle model:
 
-<p align="center"><img src="../assets/img/project/kino-bicycle-model.png" width="100%"></p>
+<p align="center"><img src="../assets/img/project/kinodynamic-planning/kino-bicycle-model.png" width="100%"></p>
 <!-- ![BICYCLE-MODEL](../assets/img/project/bicycle-model.png=100x) -->
 
 **Notations:**
@@ -58,15 +58,15 @@ RRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure
 **RRT-Star Algorithm:**
 
 <p align="center">
-<img src="../assets/img/project/kino-rrt-star-algo-1.png" width="80%">
-<img src="../assets/img/project/kino-rrt-star-algo-2.png" width="80%">
+<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-1.png" width="80%">
+<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-2.png" width="80%">
 </p>
 
 <!-- ![RRT-STAR-ALGO-1](../assets/img/project/rrt-star-1.png) -->
 <!-- ![RRT-STAR-ALGO-2](../assets/img/project/rrt-star-2.png) -->
 
 **RRT-Star with 10K Node (Path Planning):**
-<p align="center"><img src="../assets/img/project/kino-n-rrt-star.png" width="80%"></p>
+<p align="center"><img src="../assets/img/project/kinodynamic-planning/kino-n-rrt-star.png" width="80%"></p>
 
 ### Planning Space
 
@@ -83,8 +83,8 @@ Here are two GIFs of vehicle following predefined states.
 - **Green Arrow**: Veloity of Vehicle
 
 <p align="center">
-<img src="../assets/img/project/kino-circle.gif" width="80%">
-<img src="../assets/img/project/kino-snake-manu.gif" width="80%">
+<img src="../assets/img/project/kinodynamic-planning/kino-circle.gif" width="80%">
+<img src="../assets/img/project/kinodynamic-planning/kino-snake-manu.gif" width="80%">
 </p>
 
 <!--
@@ -103,7 +103,7 @@ This project is expected to continue. This motion planning problem is rather com
 
 The planner was not able to finish the whole planning task as shown in following figures:
 
-|<img src="../assets/img/project/kino-corner-1.png" width="100%">|<img src="../assets/img/project/kino-corner-2.png" width="100%">|
+|<img src="../assets/img/project/kinodynamic-planning/kino-corner-1.png" width="100%">|<img src="../assets/img/project/kinodynamic-planning/kino-corner-2.png" width="100%">|
 
 **Things to be worked on:**
 

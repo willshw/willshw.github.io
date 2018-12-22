@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Virtual Headcam
-img: "assets/img/project/vhc-icon.jpg"
-feature-img: "assets/img/project/vhc-feature-camera-array.jpg"
+img: "assets/img/project/vhc/vhc-icon.jpg"
+feature-img: "assets/img/project/vhc/vhc-feature-camera-array.jpg"
 feature-vid: "https://www.youtube.com/embed/dYVtsQsaA-g?rel=0"
 date: 2015-08-12
 tags: [Work Project, Project, USC ICT]

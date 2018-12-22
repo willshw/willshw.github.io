@@ -17,3 +17,6 @@ The AprilTag frame and camera frame are illustrated as below:
 ![frame-illustration]({{site.url}}/assets/img/post/2018-04-27-april-tag.png)
 
 The lesson here is to make sure you know the frame orientation of your camera and tag when using packages like **apriltag2_ros**, especially when the camera or tag needs to be attached to other tf nodes.
+
+**UPDATE 12/22/2018:**
+The left handed camera frame had been corrected. Now it's right handed and fixed to correct location.
