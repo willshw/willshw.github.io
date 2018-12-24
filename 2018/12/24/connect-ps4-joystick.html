@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://willshw.github.io/2018/04/27/apriltag2-ros-frame.html">
+    <link rel="canonical" href="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html">
 
     <!-- RSS -->
     <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
@@ -54,24 +54,24 @@
 
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>AprilTag Frame Transforms</title>
+<title>Connect Sony PlayStation DualShock 4 Joystick to ROS</title>
 <meta name="generator" content="Jekyll v3.6.2" />
-<meta property="og:title" content="AprilTag Frame Transforms" />
+<meta property="og:title" content="Connect Sony PlayStation DualShock 4 Joystick to ROS" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great for detecting tags or tag bundles and getting the transform between the camera and the tag on tag bundle." />
-<meta property="og:description" content="In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great for detecting tags or tag bundles and getting the transform between the camera and the tag on tag bundle." />
-<link rel="canonical" href="https://willshw.github.io/2018/04/27/apriltag2-ros-frame.html" />
-<meta property="og:url" content="https://willshw.github.io/2018/04/27/apriltag2-ros-frame.html" />
+<meta name="description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4." />
+<meta property="og:description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4." />
+<link rel="canonical" href="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html" />
+<meta property="og:url" content="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-04-27T00:00:00-05:00" />
+<meta property="article:published_time" content="2018-12-24T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great for detecting tags or tag bundles and getting the transform between the camera and the tag on tag bundle.","@type":"BlogPosting","url":"https://willshw.github.io/2018/04/27/apriltag2-ros-frame.html","headline":"AprilTag Frame Transforms","dateModified":"2018-04-27T00:00:00-05:00","datePublished":"2018-04-27T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/2018/04/27/apriltag2-ros-frame.html"},"@context":"http://schema.org"}</script>
+{"description":"I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.","@type":"BlogPosting","url":"https://willshw.github.io/2018/12/24/connect-ps4-joystick.html","headline":"Connect Sony PlayStation DualShock 4 Joystick to ROS","dateModified":"2018-12-24T00:00:00-06:00","datePublished":"2018-12-24T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/2018/12/24/connect-ps4-joystick.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
     <!--
-    <title>AprilTag Frame Transforms | William Wang</title>
-    <meta name="description" content="In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great f...">
+    <title>Connect Sony PlayStation DualShock 4 Joystick to ROS | William Wang</title>
+    <meta name="description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drive...">
     -->
 </head>
 
@@ -176,30 +176,98 @@
 
 <article >
   <header id="main" style="background-image: url('/')">
-    <h1 id="AprilTag+Frame+Transforms" class="title">AprilTag Frame Transforms</h1>
+    <h1 id="Connect+Sony+PlayStation+DualShock+4+Joystick+to+ROS" class="title">Connect Sony PlayStation DualShock 4 Joystick to ROS</h1>
     <p class="meta">
-    April 27, 2018
+    December 24, 2018
     
     </p>
   </header>
 
   <section class="post-content">
     
-    <p>In recent work, I used the <a href="https://github.com/dmalyuta/apriltags2_ros"><strong>apriltags2_ros</strong></a> ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great for detecting tags or tag bundles and getting the transform between the camera and the tag on tag bundle.</p>
+    <p>I bought two <a href="https://en.wikipedia.org/wiki/DualShock#DualShock_4">Sony PlayStation DualShock 4 joysticks</a> (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current <a href="http://wiki.ros.org/joystick_drivers">joystick_drivers</a> in ROS does not support DS4.</p>
 
-<p>In my application, I had a camera attached to a robot arm, and the camera pointed to the AprilTags. With the <strong>apriltag2_ros</strong> package, I can easily lookup the transform from tag to the camera, and tag to the baselink of the robot.</p>
+<p>To connect DS4 to Linux, I need to installl <a href="ds4drv">ds4drv</a> to connect to the DS4 joysticks.</p>
 
-<p>When the tf was initially setup from the tag to the baselink of the robot, the tag to baselink transform was not correct. The transform showed the tag had movements in x-axis and y-axis but there was only y-axis movement. In rviz, I noticed that the frame of the robot’s end effector didn’t align with the camera frame (they had a 90 degree difference around the z-axis), so I applied a static transform to tf to fix the problem.</p>
+<p>Following are the steps to connect joysticks:</p>
 
-<p>The AprilTag frame and camera frame are illustrated as below:
-(This should apply to all apriltags. Origin locates at the first pixel of the image sensor; it follows the convention of image coordinate.)</p>
+<p><strong>1. Install &amp; Run <em>ds4drv</em></strong>:</p>
 
-<p><img src="https://willshw.github.io/assets/img/post/2018-04-27-april-tag.png" alt="frame-illustration" /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pip install ds4drv
+<span class="nb">sudo </span>ds4drv
+</code></pre></div></div>
 
-<p>The lesson here is to make sure you know the frame orientation of your camera and tag when using packages like <strong>apriltag2_ros</strong>, especially when the camera or tag needs to be attached to other tf nodes.</p>
+<hr />
 
-<p><strong>UPDATE 12/22/2018:</strong>
-The left handed camera frame had been corrected. Now it’s right handed and fixed to correct location.</p>
+<p><strong>2. Connect DS4 joystick</strong></p>
+
+<p>Hold <strong>SHARE</strong> and <strong>PS</strong> button untill joystick indicator flashes. <strong>ds4drv</strong> will automatically search for device and establish connection.
+(If there is more than one joystick need to connect, just repeat the connection process for the first joystick.)
+<img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-joystick.jpg" alt="ds4drv_connection" />
+<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-joystick.jpg" width="100%"></p> --></p>
+
+<p>You can see print out like:
+<img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-ds4drv.png" alt="ds4drv_connection" />
+<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-ds4drv.png" width="100%"></p> --></p>
+
+<p>Joysticks has been assigned to <strong>/dev/input/js0</strong> and <strong>/dev/input/js1</strong>.</p>
+
+<hr />
+
+<p><strong>3. Check Connection In ROS</strong></p>
+
+<p>In a new terminal,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roscore
+</code></pre></div></div>
+
+<p>In a new terminal, use roslaunch to start nodes for two joy sticks,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch ros_launch_file.launch
+</code></pre></div></div>
+
+<p>Launch file to launch two <strong>joy_node</strong>,</p>
+<pre><code class="language-XML">&lt;?xml version="1.0"?&gt;
+&lt;launch&gt;
+
+    &lt;group ns="j0"&gt;
+        &lt;node name="ds4_joystick" pkg="joy" type="joy_node"&gt;
+                &lt;param name="dev" value="/dev/input/js0" /&gt;
+        &lt;/node&gt;
+    &lt;/group&gt;
+
+    &lt;group ns="j1"&gt;
+        &lt;node name="ds4_joystick" pkg="joy" type="joy_node"&gt;
+                &lt;param name="dev" value="/dev/input/js1" /&gt;
+        &lt;/node&gt;
+    &lt;/group&gt;
+
+&lt;/launch&gt;
+</code></pre>
+
+<hr />
+
+<p><strong>4. Check joysticks’ output</strong></p>
+
+<p><strong>Use ROS</strong>
+In two new terminals,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic <span class="nb">echo</span> /j0/joy
+rostopic <span class="nb">echo</span> /j1/joy
+</code></pre></div></div>
+
+<p>and see print out changes as you press the buttons.</p>
+
+<p><strong>Or</strong></p>
+
+<p><strong>Use jstest</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install jstest-gtk
+jstest-gtk
+</code></pre></div></div>
+
+<p><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" alt="ds4drv_connection" />
+<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" width="100%"></p> --></p>
+
+<p><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" alt="ds4drv_connection" />
+<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" width="100%"></p> --></p>
+
 
   </section>
 
@@ -215,16 +283,12 @@ The left handed camera frame had been corrected. Now it’s right handed and fix
         
             
         
-          <a class="button" href="/tags#AprilTag">
-            <p><i class="fa fa-tag fa-fw"></i> AprilTag</p>
+          <a class="button" href="/tags#Joystick">
+            <p><i class="fa fa-tag fa-fw"></i> Joystick</p>
           </a>
         
           <a class="button" href="/tags#ROS">
             <p><i class="fa fa-tag fa-fw"></i> ROS</p>
-          </a>
-        
-          <a class="button" href="/tags#tf">
-            <p><i class="fa fa-tag fa-fw"></i> tf</p>
           </a>
         
         </div>
@@ -257,18 +321,11 @@ The left handed camera frame had been corrected. Now it’s right handed and fix
   
   <div id="previous-post" class="post-nav-post">
       <p>Previous post</p>
-      <a href="/2018/04/27/ad-removal.html">
-        Remove Ad in Free Sport Live Stream
+      <a href="/2018/04/27/apriltag2-ros-frame.html">
+        AprilTag Frame Transforms
       </a>
   </div>
   
-  
-  <div id="next-post" class="post-nav-post">
-      <p>Next post</p>
-      <a href="/2018/12/24/connect-ps4-joystick.html">
-        Connect Sony PlayStation DualShock 4 Joystick to ROS
-      </a>
-  </div>
   
 </div>
 

@@ -194,6 +194,15 @@
                     
                      
                         {
+                          "title"    : "Connect Sony PlayStation DualShock 4 Joystick to ROS",
+                          "category" : "I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers...",
+                          "tags"     : " ROS, Joystick",
+                          "url"      : "/2018/12/24/connect-ps4-joystick.html",
+                          "date"     : "December 24, 2018",
+                          "content"  : "I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.To connect DS4 to Linux, I need to installl ds4drv to connect to the DS4 joysticks.Following are the steps to connect joysticks:1. Install &amp; Run ds4drv:sudo pip install ds4drvsudo ds4drv2. Connect DS4 joystickHold SHARE and PS button untill joystick indicator flashes. ds4drv will automatically search for device and establish connection.(If there is more than one joystick need to connect, just repeat the connection process for the first joystick.)You can see print out like:Joysticks has been assigned to /dev/input/js0 and /dev/input/js1.3. Check Connection In ROSIn a new terminal,roscoreIn a new terminal, use roslaunch to start nodes for two joy sticks,roslaunch ros_launch_file.launchLaunch file to launch two joy_node,&lt;?xml version=\"1.0\"?&gt;&lt;launch&gt;    &lt;group ns=\"j0\"&gt;        &lt;node name=\"ds4_joystick\" pkg=\"joy\" type=\"joy_node\"&gt;                &lt;param name=\"dev\" value=\"/dev/input/js0\" /&gt;        &lt;/node&gt;    &lt;/group&gt;    &lt;group ns=\"j1\"&gt;        &lt;node name=\"ds4_joystick\" pkg=\"joy\" type=\"joy_node\"&gt;                &lt;param name=\"dev\" value=\"/dev/input/js1\" /&gt;        &lt;/node&gt;    &lt;/group&gt;&lt;/launch&gt;4. Check joysticks’ outputUse ROSIn two new terminals,rostopic echo /j0/joyrostopic echo /j1/joyand see print out changes as you press the buttons.OrUse jstestsudo apt-get install jstest-gtkjstest-gtk"
+                        } ,
+                     
+                        {
                           "title"    : "AprilTag Frame Transforms",
                           "category" : "In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it...",
                           "tags"     : " ROS, AprilTag, tf",
