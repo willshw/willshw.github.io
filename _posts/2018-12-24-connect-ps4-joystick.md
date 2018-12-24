@@ -48,7 +48,7 @@ roslaunch ros_launch_file.launch
 ```
 
 Launch file to launch two **joy_node**,
-```XML
+~~~xml
 <?xml version="1.0"?>
 <launch>
 
@@ -65,7 +65,7 @@ Launch file to launch two **joy_node**,
     </group>
 
 </launch>
-```
+~~~
 
 ---
 
