@@ -80,7 +80,7 @@ rostopic echo /j1/joy
 
 and see print out changes as you press the buttons.
 
-**Or**
+**Or Check Joystick Output without Using ROS**
 
 **Use jstest**
 ```bash
