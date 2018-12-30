@@ -2,7 +2,7 @@
 <section class="portfolio">
     <div class="row">
 
-        {% assign projects = (site.project | sort: 'date') | reverse %}
+        {% assign projects = (site.projects | sort: 'date') | reverse %}
         {% for item in projects %}
 
           {% assign num_project_hanging =  forloop.length | modulo: 3 %}

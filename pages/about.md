@@ -6,7 +6,7 @@ feature-img: "assets/img/pexels/circuit.jpeg"
 tags: [About]
 ---
 
-William is a student in [MS in Robotics][1] program at Northwestern University. He is especially interested in machine learning, computer vision, robot motion planning, and human-robot interaction, all of which could significantly improve a robot's ability to assist individuals.
+William was a student in [MS in Robotics][1] program at Northwestern University. He graduated from the MSR program in Dec 2018. During his study in MSR, he did a variety of projects involving robot manipulation, motion control, point cloud processing, machine learning, etc.
 
 William received his bachelor degree in mechanical engineering from the University of California, Berkeley in 2014. After graduating from UC Berkeley, he joined the [Graphics Lab][2] as a hardware engineer at the University of Southern California Institute for Creative Technologies ([USC ICT][3]) in Los Angeles.
 

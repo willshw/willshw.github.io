@@ -78,9 +78,9 @@ When solving for the control input needed for connecting current state and next 
 
 Here are two GIFs of vehicle following predefined states.
 
-- **Red Arrow**: Heading of Vehicle
+- **Red Arrow**: Heading of the Vehicle
 - **Black Arrow**: Steering Angle
-- **Green Arrow**: Veloity of Vehicle
+- **Green Arrow**: Velocity of the Vehicle
 
 <p align="center">
 <img src="../assets/img/project/kinodynamic-planning/kino-circle.gif" width="80%">

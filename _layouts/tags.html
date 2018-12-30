@@ -12,7 +12,7 @@ layout: page
 {% endfor %}
 
 <!-- cycles through project collection to get tags -->
-{% assign project =  site.project | map: 'tags' | join: ','  | split: ',' | uniq %}
+{% assign project =  site.projects | map: 'tags' | join: ','  | split: ',' | uniq %}
 {% for tag in project %}
 {% assign project_tags = tag | join:'|' | append:'|' %}
 {% assign rawtags = rawtags | append:project_tags %}
@@ -72,7 +72,7 @@ layout: page
             {% endfor %} 
             
             <!-- Portfolio -->
-            {% for note in site.project %} 
+            {% for note in site.projects %} 
                 {% if note.tags contains tag %}
                 <h5 class="tag-title">
                     <a href="{{ site.baseurl }}{{ note.url }}">

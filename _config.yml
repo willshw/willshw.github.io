@@ -1,13 +1,13 @@
 # SITE CONFIGURATION
 # baseurl: "/willshw"
-url: "https://willshw.github.io"
+# url: "https://willshw.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
   title: William Wang
-  avatar: assets/img/brain.svg
-  favicon: assets/favicon.ico
+  avatar: assets/img/gaussian.svg
+  favicon: assets/gaussian2d.ico
   gravatar: # Email MD5 hash
   description: "A growing roboticist" # used by search engines
 
@@ -32,12 +32,12 @@ theme_settings:
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname: willswang
   katex: false # Enable if using math markup
-  post: true
-  project: true
+  blog: true
+  projects: true
   search: true
   tags: true
   resume: true
-  credit: true
+  credit: false
 
 
   # Localization strings
@@ -72,7 +72,7 @@ pagination:
 
 # PROJECT
 collections:
-  project:
+  projects:
     output: true
     permalink: /:collection/:name
 

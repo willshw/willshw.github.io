@@ -28,7 +28,7 @@ layout: page
                           "content"  : "{{ post.content | strip_html | strip_newlines | replace: '"', '\\"' }}"
                         } {% unless forloop.last %},{% endunless %}
                      {% endfor %},
-                     {% for page in site.project %}
+                     {% for page in site.projects %}
                        {
                          {% if page.title != nil %}
                             "title"    : "{{ page.title | escape }}",
