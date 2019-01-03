@@ -19,7 +19,7 @@ Vehicle dynamics model employed in this project was a bicycle model, and Pacejka
 
 Here is an illustration of the bicycle model:
 
-<p align="center"><img src="../assets/img/project/kinodynamic-planning/kino-bicycle-model.png" width="100%"></p>
+<p align="center"><img src="../assets/img/project/kinodynamic-planning/kino-bicycle-model.png" width="80%"></p>
 <!-- ![BICYCLE-MODEL](../assets/img/project/bicycle-model.png=100x) -->
 
 **Notations:**
@@ -58,8 +58,8 @@ RRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure
 **RRT-Star Algorithm:**
 
 <p align="center">
-<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-1.png" width="80%">
-<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-2.png" width="80%">
+<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-1.png" width="60%">
+<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-2.png" width="60%">
 </p>
 
 <!-- ![RRT-STAR-ALGO-1](../assets/img/project/rrt-star-1.png) -->
@@ -83,8 +83,8 @@ Here are two GIFs of vehicle following predefined states.
 - **Green Arrow**: Velocity of the Vehicle
 
 <p align="center">
-<img src="../assets/img/project/kinodynamic-planning/kino-circle.gif" width="80%">
-<img src="../assets/img/project/kinodynamic-planning/kino-snake-manu.gif" width="80%">
+<img src="../assets/img/project/kinodynamic-planning/kino-circle.gif" width="70%">
+<img src="../assets/img/project/kinodynamic-planning/kino-snake-manu.gif" width="70%">
 </p>
 
 <!--

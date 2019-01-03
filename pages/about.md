@@ -6,7 +6,28 @@ feature-img: "assets/img/pexels/circuit.jpeg"
 tags: [About]
 ---
 
-William was a student in [MS in Robotics][1] program at Northwestern University. He graduated from the MSR program in Dec 2018. During his study in MSR, he did a variety of projects involving robot manipulation, motion control, point cloud processing, machine learning, etc.
+William is actively looking for robotics related opportunities.
+
+William graduated from the [MS in Robotics][1] program at Northwestern University in Dec 2018. During his study in MSR, he did a variety of [projects][Projects] involving
+* **robot manipulation**
+* **motion planning**
+* **point cloud processing**
+* **machine learning**
+* **computer vision**
+
+and developed applications using
+* **Linux**
+* **C++**
+* **Python**
+* **ROS**
+* **PCL**
+* **OpenCV**
+
+*To see more about his projects go to* **[here][Projects]**
+
+*To see more about his experience go to* **[here][Resume]** 
+
+---
 
 William received his bachelor degree in mechanical engineering from the University of California, Berkeley in 2014. After graduating from UC Berkeley, he joined the [Graphics Lab][2] as a hardware engineer at the University of Southern California Institute for Creative Technologies ([USC ICT][3]) in Los Angeles.
 
@@ -20,3 +41,5 @@ William enjoyed every aspect of working in a research lab, especially learning n
 [4]: http://vgl.ict.usc.edu/Research/VHC/
 [5]: http://vgl.ict.usc.edu/Research/SpecScanning/
 [6]: http://ict.usc.edu/prototypes/light-stages/
+[Projects]: http://willshw.me/projects/
+[Resume]: http://willshw.me/resume/

@@ -1,52 +1,67 @@
 <!-- Project Grid Section -->
 <section class="portfolio">
-    <div class="row">
+    {% assign projects = (site.projects | sort: 'date') | reverse %}
+    {% assign projectsSize = projects | size %}
+    {% assign forLoopUpper = projectsSize | minus: 1 %}
+    {% assign last_row_item_count = projectsSize | modulo: 3 %}
 
-        {% assign projects = (site.projects | sort: 'date') | reverse %}
-        {% for item in projects %}
+    {% for i in (0..forLoopUpper) %}
 
-          {% assign num_project_hanging =  forloop.length | modulo: 3 %}
-          {% if num_project_hanging == 0 %}
-            <!-- no item hanging -->
-            <div class="col-sm-4 col-xs-4 portfolio-item">
-              {% include project_grid.html %}
-            </div>
+        {% if forloop.rindex > last_row_item_count %}
+            <!-- Full Rows -->
+            {% assign modInd = i | modulo: 3 %}
+            {% if modInd == 0 %}
 
-          {% elsif num_project_hanging == 1 %}
-            <!-- one item hanging -->
-            {% if forloop.rindex > 1 %}
-              <div class="col-sm-4 col-xs-4 portfolio-item">
-                {% include project_grid.html %}
-              </div>
+                <div class="row">
+                    {% assign item = projects[i] %}
+                    <div class="col-sm-4 col-xs-4 portfolio-item">
+                        {% include project_grid.html %}
+                    </div>
+                    
+                    {% assign nextInd = i | plus: 1 %}
+                    {% assign item = projects[nextInd] %}
+                    <div class="col-sm-4 col-xs-4 portfolio-item">
+                        {% include project_grid.html %}
+                    </div>
 
-            {% else %}
-              <div class="col-sm-4 col-xs-4 col-sm-offset-4 col-xs-offset-4 portfolio-item">
-                {% include project_grid.html %}
-              </div>
+                    {% assign nextInd = i | plus: 2 %}
+                    {% assign item = projects[nextInd] %}
+                    <div class="col-sm-4 col-xs-4 portfolio-item">
+                        {% include project_grid.html %}
+                    </div>
+                </div>
+                
+            {% endif %}
+
+        {% else %}
+            <!-- Last Rows -->
+            {% assign modInd = i | modulo: 3 %}
+            {% if modInd == 0 %}
+
+                <div class="row">
+                    {% if last_row_item_count == 1 %}
+                        {% assign item = projects[i] %}
+                        <div class="col-sm-4 col-xs-4 col-sm-offset-4 col-xs-offset-4 portfolio-item">
+                            {% include project_grid.html %}
+                        </div>
+                    {% elsif last_row_item_count == 2  %}
+                        {% assign item = projects[i] %}
+                        <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 portfolio-item">
+                            {% include project_grid.html %}
+                        </div>
+
+                        {% assign nextInd = i | plus: 1 %}
+                        {% assign item = projects[nextInd] %}
+                        <div class="col-sm-4 col-xs-4 portfolio-item">
+                            {% include project_grid.html %}
+                        </div>
+                    {% endif %}
+                </div>
 
             {% endif %}
 
-          {% else %}
-            <!-- two items hanging -->
-            {% if forloop.rindex > 2 %}
-              <div class="col-sm-4 col-xs-4 portfolio-item">
-                {% include project_grid.html %}
-              </div>
+        {% endif %}
 
-            {% elsif forloop.rindex > 1 %}
-              <div class="col-sm-4 col-xs-4 col-sm-offset-2 col-xs-offset-2 portfolio-item">
-                {% include project_grid.html %}
-              </div>
+    {% endfor %}
 
-            {% else %}
-              <div class="col-sm-4 col-xs-4 portfolio-item">
-                {% include project_grid.html %}
-              </div>
-
-            {% endif %}
-
-          {% endif %}
-
-        {% endfor %}
-    </div>
 </section>

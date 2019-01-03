@@ -1,12 +1,6 @@
-gem "type-on-strap"
-# gem "sskatex"
-# gem "katex"
-# gem "execjs"
-# gem "therubyracer"
-# gem "therubyrhino"
-# gem "duktape"
+gem 'type-on-strap', '0.4.1'
+gem 'katex'
 
 group :jekyll_plugins do
-  gem "jekyll-redirect-from"
-  gem "jekyll-paginate-v2"
+  gem 'jekyll-paginate-v2', '2.0.0'
 end

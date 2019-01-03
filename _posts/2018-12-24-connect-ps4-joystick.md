@@ -24,12 +24,12 @@ sudo ds4drv
 
 Hold **SHARE** and **PS** button untill joystick indicator flashes. **ds4drv** will automatically search for device and establish connection.
 (If there is more than one joystick need to connect, just repeat the connection process for the first joystick.)
-![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-joystick.jpg)
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-joystick.jpg" width="100%"></p> -->
+<!-- ![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-joystick.jpg) -->
+<p align="center"><img src="{{site.url}}/assets/img/post/2018-12-24-ds4-connection-joystick.jpg" width="100%"></p>
 
 You can see print out like:
-![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-ds4drv.png)
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-ds4drv.png" width="100%"></p> -->
+<!-- ![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-ds4drv.png) -->
+<p align="center"><img src="{{site.url}}/assets/img/post/2018-12-24-ds4-connection-ds4drv.png" width="100%"></p>
 
 Joysticks has been assigned to **/dev/input/js0** and **/dev/input/js1**.
 
@@ -48,7 +48,7 @@ roslaunch ros_launch_file.launch
 ```
 
 Launch file to launch two **joy_node**,
-~~~xml
+```xml
 <?xml version="1.0"?>
 <launch>
 
@@ -65,7 +65,7 @@ Launch file to launch two **joy_node**,
     </group>
 
 </launch>
-~~~
+```
 
 ---
 
@@ -88,13 +88,11 @@ sudo apt-get install jstest-gtk
 jstest-gtk
 ```
 
-![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png)
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" width="100%"></p> -->
+<!-- ![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png) -->
+<p align="center"><img src="{{site.url}}/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" width="60%"></p>
 
-![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png)
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" width="100%"></p> -->
-
-
+<!-- ![ds4drv_connection]({{site.url}}/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png) -->
+<p align="center"><img src="{{site.url}}/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" width="100%"></p>
 
 
 

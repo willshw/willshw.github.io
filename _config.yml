@@ -1,13 +1,13 @@
 # SITE CONFIGURATION
 # baseurl: "/willshw"
-# url: "https://willshw.github.io"
+url: "https://willshw.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
   title: William Wang
   avatar: assets/img/gaussian.svg
-  favicon: assets/gaussian2d.ico
+  favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
   description: "A growing roboticist" # used by search engines
 
@@ -84,7 +84,6 @@ sass:
   sass_dir: _sass
   style: :compressed
 
-plugins: [jekyll-paginate-v2, jekyll-seo-tag, jekyll-redirect-from]
+plugins: [jekyll-paginate-v2, jekyll-seo-tag]
 theme: type-on-strap # If using the theme as a jekyll theme gem
-# remote_theme: Sylhare/Type-on-Strap
 exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png"]
