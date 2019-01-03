@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="/assets/gaussian2d.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/2018/12/24/connect-ps4-joystick.html">
+    <link rel="canonical" href="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html">
 
     <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="William Wang" href="///feed.xml"/>
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
 
     <!-- Font Awesome -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
@@ -53,17 +53,19 @@
     </script>
 
     <!-- seo tags -->
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Connect Sony PlayStation DualShock 4 Joystick to ROS</title>
-<meta name="generator" content="Jekyll v3.6.2" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Connect Sony PlayStation DualShock 4 Joystick to ROS" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4." />
 <meta property="og:description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4." />
+<link rel="canonical" href="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html" />
+<meta property="og:url" content="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-12-24T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.","@type":"BlogPosting","url":"/2018/12/24/connect-ps4-joystick.html","headline":"Connect Sony PlayStation DualShock 4 Joystick to ROS","dateModified":"2018-12-24T00:00:00-06:00","datePublished":"2018-12-24T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"/2018/12/24/connect-ps4-joystick.html"},"@context":"http://schema.org"}</script>
+{"description":"I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.","@type":"BlogPosting","url":"https://willshw.github.io/2018/12/24/connect-ps4-joystick.html","headline":"Connect Sony PlayStation DualShock 4 Joystick to ROS","dateModified":"2018-12-24T00:00:00-06:00","datePublished":"2018-12-24T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/2018/12/24/connect-ps4-joystick.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -122,8 +124,6 @@
         
         
         
-        
-        
         <li>
             <a class="clear" href="/blog/index.html">
                 Blog
@@ -134,7 +134,7 @@
 
         
         <li>
-            <a class="clear" href="/projects">
+            <a class="clear" href="https://willshw.github.io/projects">
                 Projects
             </a>
         </li>
@@ -142,7 +142,7 @@
 
         
         <li>
-            <a class="clear" href="/resume">
+            <a class="clear" href="https://willshw.github.io/resume">
                 Résumé
             </a>
         </li>
@@ -150,7 +150,7 @@
 
         
         <li>
-            <a class="clear" href="/search">
+            <a class="clear" href="https://willshw.github.io/search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </li>
@@ -158,7 +158,7 @@
 
         
         <li>
-            <a class="clear" href="/tags">
+            <a class="clear" href="https://willshw.github.io/tags">
                 <i class="fa fa-tags" aria-hidden="true"></i>
             </a>
         </li>
@@ -191,7 +191,7 @@
 
 <p><strong>1. Install &amp; Run <em>ds4drv</em></strong>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pip install ds4drv
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pip <span class="nb">install </span>ds4drv
 <span class="nb">sudo </span>ds4drv
 </code></pre></div></div>
 
@@ -201,12 +201,12 @@
 
 <p>Hold <strong>SHARE</strong> and <strong>PS</strong> button untill joystick indicator flashes. <strong>ds4drv</strong> will automatically search for device and establish connection.
 (If there is more than one joystick need to connect, just repeat the connection process for the first joystick.)
-<img src="/assets/img/post/2018-12-24-ds4-connection-joystick.jpg" alt="ds4drv_connection" />
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-joystick.jpg" width="100%"></p> --></p>
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-joystick.jpg) --></p>
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-joystick.jpg" width="100%" /></p>
 
 <p>You can see print out like:
-<img src="/assets/img/post/2018-12-24-ds4-connection-ds4drv.png" alt="ds4drv_connection" />
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-ds4drv.png" width="100%"></p> --></p>
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-ds4drv.png) --></p>
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-ds4drv.png" width="100%" /></p>
 
 <p>Joysticks has been assigned to <strong>/dev/input/js0</strong> and <strong>/dev/input/js1</strong>.</p>
 
@@ -256,15 +256,15 @@ rostopic <span class="nb">echo</span> /j1/joy
 <p><strong>Or Check Joystick Output without Using ROS</strong></p>
 
 <p><strong>Use jstest</strong></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install jstest-gtk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>jstest-gtk
 jstest-gtk
 </code></pre></div></div>
 
-<p><img src="/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" alt="ds4drv_connection" />
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" width="100%"></p> --></p>
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png) -->
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" width="60%" /></p>
 
-<p><img src="/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" alt="ds4drv_connection" />
-<!-- <p align="center"><img src="../assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" width="100%"></p> --></p>
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png) -->
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" width="100%" /></p>
 
 
   </section>

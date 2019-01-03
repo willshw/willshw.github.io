@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="/assets/gaussian2d.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/search/">
+    <link rel="canonical" href="https://willshw.github.io/search/">
 
     <!-- RSS -->
-    <link rel="alternate" type="application/atom+xml" title="William Wang" href="///feed.xml"/>
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
 
     <!-- Font Awesome -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
@@ -53,13 +53,15 @@
     </script>
 
     <!-- seo tags -->
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Search</title>
-<meta name="generator" content="Jekyll v3.6.2" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Search" />
 <meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://willshw.github.io/search/" />
+<meta property="og:url" content="https://willshw.github.io/search/" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"/search/","headline":"Search","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"https://willshw.github.io/search/","headline":"Search","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <!-- Manual seo tags -->
@@ -118,8 +120,6 @@
         
         
         
-        
-        
         <li>
             <a class="clear" href="/blog/index.html">
                 Blog
@@ -130,7 +130,7 @@
 
         
         <li>
-            <a class="clear" href="/projects">
+            <a class="clear" href="https://willshw.github.io/projects">
                 Projects
             </a>
         </li>
@@ -138,7 +138,7 @@
 
         
         <li>
-            <a class="clear" href="/resume">
+            <a class="clear" href="https://willshw.github.io/resume">
                 Résumé
             </a>
         </li>
@@ -146,7 +146,7 @@
 
         
         <li>
-            <a class="clear" href="/search">
+            <a class="clear" href="https://willshw.github.io/search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </li>
@@ -154,7 +154,7 @@
 
         
         <li>
-            <a class="clear" href="/tags">
+            <a class="clear" href="https://willshw.github.io/tags">
                 <i class="fa fa-tags" aria-hidden="true"></i>
             </a>
         </li>
@@ -247,7 +247,7 @@
                             "category" : "AboutThis is a course project of ME449 Robotic Manipulation at Northwestern University. The course was developed and taught by Prof. Lynch. Prof. Lynch taught this...",
                             "tags"     : " Project, VREP, Robot, Manipulation, Kinematics, Velocity Kinematics",
                             "url"      : "/projects/me449-robot-manipulation",
-                            "date"     : "December 12, 2017",
+                            "date"     : "December 8, 2017",
                             "content"  : "AboutThis is a course project of ME449 Robotic Manipulation at Northwestern University. The course was developed and taught by Prof. Lynch. Prof. Lynch taught this course using a textbook he wrote, Modern Robotics, which includes a series of videos about the book material and an opensource software suite about robot manipulation. Project problem statement can be found in exercise 13.33(d) in Modern Robotics.In this project, I was given a target trajectory and I needed to develop a controller to control the end-effector of the Kuka youBot to follow the target trajectory. In order to achieve satisfactory target trajectory tracking, I used feedforward and PI controller to calculate the desired joint velocities.Implementation1.KinematicsThe target trajectory was defined as a function of time with time-scaling. First, I derived the derivative of this trajectory function. With the function of the trajectory and the derivative of this function, I could calculate the desired twist at a given time of this trajectory. Since the trajectory was given in the end-effector frame. I used modern robotics library to transform the end-effector twist frame into body frame with the current robot configuration such as wheel angles and joint angles.2.ControllerAfter the body frame twist was acquired, I calculated the twist error and applied feedforward control and PI control to calculate the twist needed to apply to minimize the error. Corresponding joint angles were calculated using the actuation twist and jacobian of the current robot configuration.Testing Feedforaward ControlPID Control and Feedforward ControlPerformance Difference of Two PID ControllersVisualizationTo visualize the movement of the youBot, I generated a CSV file with the joint configuration at each time step and used VREP to playback the trajectory generated by my codes."
                          
                        } ,
@@ -260,6 +260,17 @@
                             "url"      : "/projects/kinodynamic-planning",
                             "date"     : "March 23, 2018",
                             "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning algorithms in a program. The program used sampling-based method to generate a motion plan for a dynamic vehicle.In this project, I aimed at reproducing the result from a research paper, Anytime computation of time-optimal off-road vehicle maneuvers using the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for an off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star could find a plan that satisfied the vehicle dynamics. At extreme cases, motion plan for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project was a bicycle model, and Pacejka’s Magic Formula was used for tire dynamics. The vehicle model had 8 states ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$), and 3 input value ($T_F$, $T_R$, $\delta$)Here is an illustration of the bicycle model:Notations:  $x$, $y$, $\dot{x}$, $\dot{y}$, $\ddot{x}$, $\ddot{y}$: Position, velocity, acceleration at the center of the vehicle  $m$: Mass of vehicle  $I_z$: Inertia of vehicle  $I_i$, $r_i$, $\omega_i$, $i =(F, R)$: Moment of inertia, radius, angular velocity of front and rear wheels  $f_{ij}$, $i=(F, R), j=(x, y)$: Longitudinal and lateral front and rear tire forces:  $\Psi$: Vehicle orientation/ yaw angle  $\beta$: Slip angle  $T_i$, $i=(F, R)$: Torque input at front and rear wheels  $\delta$: Steering angle inputEquation of motion:  $m\ddot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)$  $m\ddot{y} = f_{Fx}sin(\Psi + \delta) + f_{Fy}cos(\Psi + \delta) + f_{Rx}sin(\Psi) + f_{Ry}cos(\Psi)$  $I_z\ddot{\Psi} = (f_{Fy}cos(\delta) + f_{Fx}sin(\delta))l_F - f_{Ry}l_R$  $I_F\dot{\omega}_ F = T_F - f_{Fx}r_F$  $I_R\dot{\omega}_ R = T_R - f_{Rx}r_R$Tire force $f_{ij}$ depends on normal force $f_z$ and friction coefficient $\mu_{ij}$ determined by Pacejka’s Magic Formula:  $f_{ij} = \mu_{ij}f_{iz} $  $(i = F,R, j=x,y)$  $\mu_{ij} = -\frac{s_{ij}}{s_i}\mu_i(s_i) $  $(i = F,R, j=x,y)$  $\mu_i(s_i) = D_i sin(C_i arctan(B_i s_i)) $   $(i = F,R)$For more details about the vehicle dynamic model, please refer to Anytime computation of time-optimal off-road vehicle maneuversusing the RRT*RRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure looks for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure garantees the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star Algorithm:RRT-Star with 10K Node (Path Planning):Planning SpaceThe full dynamic model of the car had 8 DOF ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$). Keeping track of 8 dimensional state space was rather complicated. To deal with this problem, planner only plans in a 4D task space in $x$, $y$, $V$($\sqrt{\dot{x}^2+\dot{y}^2}$), $\Psi$assuming the there was an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, I only solve for a constant control applied to the system. (Constant steering angle and constant acceleration) To solve for control, the vehicle dynamic equations were integrate to certain amount of time with initial conditions. Integration and optimization were all done using scipy functions. Since solving for an optimal control required integrating the stiff and non-linear ODE iteratively, it took some time to find the control that can take the vehicle from the current state to the new state.Here are two GIFs of vehicle following predefined states.  Red Arrow: Heading of the Vehicle  Black Arrow: Steering Angle  Green Arrow: Velocity of the VehicleCurrent StateThis project is expected to continue. This motion planning problem is rather complicated. The program was not efficient enough to find a complete motion plan in reasonable amount of time.Dfficulties Encountered:  The planner suffers from the performance issues of low efficiecy at searching for a set of constant control to connect two states  The rate of sampling a valid and reachable state was low thus sampling time was too long.  A valid cost to go function was also a key component to the solution missed.The planner was not able to finish the whole planning task as shown in following figures:                        Things to be worked on:  A fast numerical solver for the stiff problem must need to implemented to improve the state connection calculation time.  Instead of looking for a fast ODE solver, utilizing a physics simulation engine to handle the state integration can be a great approach, since physics simulation engines are often fast at solving for complex physics model with some sacrifices on accuracy. (Focus on sovling motion planning instead of solving physics model)  Employing some probabilistic sampling techniques can improve the chance of sampling valid states.  In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.Reference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Lane Detection in Point Cloud",
+                            "category" : "AboutThe goal of this project is to detect lane markings in the point cloud of a road segment and derive the mathematical representation of the...",
+                            "tags"     : " Project, Point Cloud, Lane Detection",
+                            "url"      : "/projects/pointcloud-lane-detection",
+                            "date"     : "June 11, 2018",
+                            "content"  : "AboutThe goal of this project is to detect lane markings in the point cloud of a road segment and derive the mathematical representation of the lane markings in latitude and longitude coordinate. More detail please see GitHub repository."
                          
                        } ,
                      
@@ -279,9 +290,20 @@
                             "title"    : "Visual Servoing of Objects without Object Models",
                             "category" : "AboutThis is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a...",
                             "tags"     : " Final Project, Project, Visual Servoing, Grasping, ROS, Kinematics, Control, Point Cloud, PCL, RGBD, Depth Camera",
-                            "url"      : "/projects/visual-servoing",
+                            "url"      : "/projects/mfvs",
                             "date"     : "June 13, 2018",
                             "content"  : "AboutThis is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping household objects without prior knowledge of the objects (E.g. shape, size, color of the object). The ROS package is designed to be generic and modular so it can be easily adapted to different types of robotic arms.ChallengesThe challenges in this project mostly come from two aspects, visual servoing, and point cloud processing.Visual ServoingVisual servoing control uses a vision feedback loop to enable reactive control, which makes visual servoing ideal for tracking. There are two basic types of visual servoing, image based visual servoing, and position based visual servoing; there control laws were derived in image space and Cartesian space respectively. If you want to know more about visual servoing, Visual servo control, Part I: Basic approaches by François Chaumette, S. Hutchinson is introductory literature.An important prerequisite of visual servoing is the known geometry of objects or known size of features. However, the geometry of objects and the size of the features are not provided in this project. This limitation rules out the use of image based visual servoing, and position based visual servoing is only possible with the vision feedback from RGBD sensor. However, position based visual servoing’s tendency to lose objects in the sensor frame is not ideal for real-world application. A more predictable and reliable version of position based visual servoing will be needed.Point Cloud ProcessingA point cloud of a scene can be obtained easily with an RGBD sensor. RGBD sensors are great for midrange and large-scale application but a portable size RGBD sensor will have a hard time to obtain detailed point clouds of household objects. In addition to the limited detailed feature in the point cloud, RGBD sensors will perform poorly on highly reflective surfaces. So the quality of the point cloud return from a portable size RGBD sensor (Intel Realsense D435 in our case) is greatly depended on the size of the object and the material of the object.Despite the quality of the point cloud, the pose of the point cloud can be difficult to estimate because of the occlusion of the object. Parts of the Objects are covered by people’s hands when the robot is doing visual servoing on the object. This kind of occlusion may reduce the accuracy of object point cloud pose estimation. To solve this problem, a very accurate point cloud segmentation may be needed, and a step further, an online object point cloud registration process will be ideal.In addition to occlusion, poses of highly symmetric objects are difficult to estimate if a certain orientation is required.ImplementationPlease see Github for ROS implementation.This a flowchart of the implemetation pipline,Visual ServoingIn this project, we used Kinova Mico as our experimental platform and the package developed by the Argall Lab. The robot can subscribe to an end-effector velocity control input and calculate the corresponding joint velocity that drives the end-effector to closely matches the commanded end-effector velocity.Here I used ViSP which was developed specifically for visual servoing. In the package, the visual seroving subscribes to a target pose and publishes an end-effector velocity. The target get pose is the 6 DOF pre-grasp pose (${x}$, ${y}$, ${z}$, ${roll}$, ${pitch}$, ${yaw}$) and the end-effector velocity is a 6DOF twist ($\dot{x}$, $\dot{y}$, $\dot{z}$, $\dot{roll}$, $\dot{pitch}$, $\dot{yaw}$).Point Cloud ProcessingThe point cloud processing includes four essenstial parts,  Object Recognition and Tracking  Point Cloud Extraction  Point cloud segmentation and template generation  Point Cloud Pose Estimation1. Object Recognition and TrackingThis part handles the task of finding the object of interest, keep track of this object in the RGB image. A robust tracking was achieved by combining information from object recognition and object tracking. The conjunction of object recognition and object tracking enhanced the tracking robustness and reliability; it outperforms approaches only use object recognition or object tracking.Object recognition algorithms like YOLO was implemented to recognize the object of interest in the image and continue to do it on every frame. However, object recognition will often fail to detect the object in some frames due to poor pre-trained model. I added a non-deep-learning type image tracker to locate the object when recognition fails. The RGB tracker will be reinitialized whenever the object can be detected. The reinitialization of the image tracker also alleviates the drifting of the image tracker. The amalgamation of object recognition and tracking enables robust and accurate tracking. With a Kalman filter implemented to predict object position in between frames, consistent object location information can be sent to point cloud extraction node to extract points are closely bounded by the tracking bounding box.To better explain this process here is a flowchart representation of the process,2. Point Cloud ExtractionThe point cloud extraction node can use this information to remove unwanted point cloud, which reduces unnecessary computation. The point cloud retrieved from RGBD sensor is structured which mean each point in the point cloud corresponds to one pixel in the RGB image, and they can be accessed by using row and column positions. With the location and size of the bounding box, point clouds enclosed in the bounding box region can be extracted easily. Therefore I can have a point cloud of the object with only a few unwanted points which can be eliminated by simple segmentation.3. Point Cloud Segmentation and Template GenerationThis part of the point cloud processing can take the closely bounded point cloud and apply segmentation techniques to eliminate point clouds that are not part of the object and create a clean object point cloud template for pose estimation.4. Point Cloud Pose EstimationIn pose estimation, particle filter or ICP can be used with a template provided from the last part. The algorithms use the template to match the extracted point cloud and calculate a rigid transform. And pre-grasp pose can be set relative to the matched template. It is not necessary to create a template before the pose estimation when accurate point cloud segmentation and online object point cloud registration are available.Future Work  Choose a better sensor for small objects  Add filter to process raw point cloud input  Design and automate calibration process  Train better object recognition DL model for faster and more robust detection on household objects  Use better tracking algorithm to work with object recognition  Refine object recognition and tracking node to increase tracking frequency  Develop fast and robust segmentation algorithm for point cloud  Online point cloud registration to build object model"
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Estimation Filter Visualizer",
+                            "category" : "AboutI used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI...",
+                            "tags"     : " Project, Kalman Filter, Estimation Filter, Python, GUI",
+                            "url"      : "/projects/filter-visualizer",
+                            "date"     : "January 1, 2019",
+                            "content"  : "AboutI used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and see the instance performance update of the filter. The application takes noise injected mouse pointer position as input and uses the assigned estimation filter to estimates the states of the pointer.In the GIF above, the red dots are the noisy mouse pointer position measurements, and the blue dots are the filter predicted mouse pointer position. The darker color stands for more recent measurement or prediction.As the mouse pointer glides around in the graph area, noise is added to the mouse pointer position to emulate the real world scenario where data streams are noisy. The estimation filter calculates the predicted mouse states iteratively with mouse pointer position updates.New estimation filters can be added to the application easily in the future. So, the application can serve as a good to visualize a filter’s performance.Kalman filter is the default estimation filter implemented.ImplementationPlease see GitHub repo for more detail."
                          
                        } 
                      
