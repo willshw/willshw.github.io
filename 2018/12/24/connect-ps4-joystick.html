@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Connect Sony PlayStation DualShock 4 Joystick to ROS</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Connect Sony PlayStation DualShock 4 Joystick to ROS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4." />
+<meta property="og:description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4." />
+<link rel="canonical" href="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html" />
+<meta property="og:url" content="https://willshw.github.io/2018/12/24/connect-ps4-joystick.html" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-12-24T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.","@type":"BlogPosting","url":"https://willshw.github.io/2018/12/24/connect-ps4-joystick.html","headline":"Connect Sony PlayStation DualShock 4 Joystick to ROS","dateModified":"2018-12-24T00:00:00-06:00","datePublished":"2018-12-24T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/2018/12/24/connect-ps4-joystick.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Connect Sony PlayStation DualShock 4 Joystick to ROS | William Wang</title>
+    <meta name="description" content="I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drive...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<article >
+  <header id="main" style="background-image: url('/')">
+    <h1 id="Connect+Sony+PlayStation+DualShock+4+Joystick+to+ROS" class="title">Connect Sony PlayStation DualShock 4 Joystick to ROS</h1>
+    <p class="meta">
+    December 24, 2018
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <p>I bought two <a href="https://en.wikipedia.org/wiki/DualShock#DualShock_4">Sony PlayStation DualShock 4 joysticks</a> (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current <a href="http://wiki.ros.org/joystick_drivers">joystick_drivers</a> in ROS does not support DS4.</p>
+
+<p>To connect DS4 to Linux, I need to installl <a href="ds4drv">ds4drv</a> to connect to the DS4 joysticks.</p>
+
+<p>Following are the steps to connect joysticks:</p>
+
+<p><strong>1. Install &amp; Run <em>ds4drv</em></strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pip install ds4drv
+<span class="nb">sudo </span>ds4drv
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>2. Connect DS4 joystick</strong></p>
+
+<p>Hold <strong>SHARE</strong> and <strong>PS</strong> button untill joystick indicator flashes. <strong>ds4drv</strong> will automatically search for device and establish connection.
+(If there is more than one joystick need to connect, just repeat the connection process for the first joystick.)
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-joystick.jpg) --></p>
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-joystick.jpg" width="100%" /></p>
+
+<p>You can see print out like:
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-ds4drv.png) --></p>
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-ds4drv.png" width="100%" /></p>
+
+<p>Joysticks has been assigned to <strong>/dev/input/js0</strong> and <strong>/dev/input/js1</strong>.</p>
+
+<hr />
+
+<p><strong>3. Check Connection In ROS</strong></p>
+
+<p>In a new terminal,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roscore
+</code></pre></div></div>
+
+<p>In a new terminal, use roslaunch to start nodes for two joy sticks,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>roslaunch ros_launch_file.launch
+</code></pre></div></div>
+
+<p>Launch file to launch two <strong>joy_node</strong>,</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;launch&gt;</span>
+
+    <span class="nt">&lt;group</span> <span class="na">ns=</span><span class="s">"j0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"ds4_joystick"</span> <span class="na">pkg=</span><span class="s">"joy"</span> <span class="na">type=</span><span class="s">"joy_node"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"dev"</span> <span class="na">value=</span><span class="s">"/dev/input/js0"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/node&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+
+    <span class="nt">&lt;group</span> <span class="na">ns=</span><span class="s">"j1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">"ds4_joystick"</span> <span class="na">pkg=</span><span class="s">"joy"</span> <span class="na">type=</span><span class="s">"joy_node"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"dev"</span> <span class="na">value=</span><span class="s">"/dev/input/js1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/node&gt;</span>
+    <span class="nt">&lt;/group&gt;</span>
+
+<span class="nt">&lt;/launch&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>4. Check joysticks’ output</strong></p>
+
+<p><strong>Use ROS</strong>
+In two new terminals,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rostopic <span class="nb">echo</span> /j0/joy
+rostopic <span class="nb">echo</span> /j1/joy
+</code></pre></div></div>
+
+<p>and see print out changes as you press the buttons.</p>
+
+<p><strong>Or Check Joystick Output without Using ROS</strong></p>
+
+<p><strong>Use jstest</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install jstest-gtk
+jstest-gtk
+</code></pre></div></div>
+
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png) -->
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-00.png" width="60%" /></p>
+
+<!-- ![ds4drv_connection](https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png) -->
+<p align="center"><img src="https://willshw.github.io/assets/img/post/2018-12-24-ds4-connection-jstest-gtk-01.png" width="100%" /></p>
+
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/tags#Joystick">
+            <p><i class="fa fa-tag fa-fw"></i> Joystick</p>
+          </a>
+        
+          <a class="button" href="/tags#ROS">
+            <p><i class="fa fa-tag fa-fw"></i> ROS</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/2018/04/27/apriltag2-ros-frame.html">
+        AprilTag Frame Transforms
+      </a>
+  </div>
+  
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
+</footer>
+
+
+  </body>
+</html>

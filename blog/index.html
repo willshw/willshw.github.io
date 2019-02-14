@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/blog/">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Blog</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Blog" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://willshw.github.io/blog/" />
+<meta property="og:url" content="https://willshw.github.io/blog/" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"https://willshw.github.io/blog/","headline":"Blog","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Blog | William Wang</title>
+    <meta name="description" content="A growing roboticist">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/pexels/book-coffee.jpeg')">
+    <h1 id="Blog" class="title">
+        Blog
+    </h1>
+
+    
+  </header>
+</article>
+
+<div class="post_page">
+
+  <div class="posts">
+    
+    <div class="post-teaser">
+      
+      <span>
+          <header>
+            <h2>
+              <a class="post-link" href="/2018/12/24/connect-ps4-joystick.html">
+                Connect Sony PlayStation DualShock 4 Joystick to ROS
+              </a>
+            </h2>
+            <p class="meta">
+              December 24, 2018
+            </p>
+          </header>
+          <div class="excerpt">
+            I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.
+
+To connect DS4 to Linux, I need to installl ds4drv to con...
+            <!-- <a class="button" href="/2018/12/24/connect-ps4-joystick.html">
+              Continue reading
+            </a> -->
+          </div>
+      </span>
+    </div>
+    
+    <div class="post-teaser">
+      
+      <span>
+          <header>
+            <h2>
+              <a class="post-link" href="/2018/04/27/apriltag2-ros-frame.html">
+                AprilTag Frame Transforms
+              </a>
+            </h2>
+            <p class="meta">
+              April 27, 2018
+            </p>
+          </header>
+          <div class="excerpt">
+            In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great for detecting tags or tag bundles and getting the transform between the camera and the tag ...
+            <!-- <a class="button" href="/2018/04/27/apriltag2-ros-frame.html">
+              Continue reading
+            </a> -->
+          </div>
+      </span>
+    </div>
+    
+    <div class="post-teaser">
+      
+      <span>
+          <header>
+            <h2>
+              <a class="post-link" href="/2018/04/27/ad-removal.html">
+                Remove Ad in Free Sport Live Stream
+              </a>
+            </h2>
+            <p class="meta">
+              April 27, 2018
+            </p>
+          </header>
+          <div class="excerpt">
+            I like watching English Premier League soccer on weekend mornings. Because I don’t have cable and I don’t want to pay for online sport channel, I usually go to the free live steam websites to watch soccer games. While the free live stream websites...
+            <!-- <a class="button" href="/2018/04/27/ad-removal.html">
+              Continue reading
+            </a> -->
+          </div>
+      </span>
+    </div>
+    
+  </div>
+
+  
+
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
+</footer>
+
+
+  </body>
+</html>

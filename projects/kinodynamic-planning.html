@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/projects/kinodynamic-planning">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Kinodynamic Motion Planning</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Kinodynamic Motion Planning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About" />
+<meta property="og:description" content="About" />
+<link rel="canonical" href="https://willshw.github.io/projects/kinodynamic-planning" />
+<meta property="og:url" content="https://willshw.github.io/projects/kinodynamic-planning" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-23T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"About","@type":"BlogPosting","url":"https://willshw.github.io/projects/kinodynamic-planning","headline":"Kinodynamic Motion Planning","dateModified":"2018-03-23T00:00:00-05:00","datePublished":"2018-03-23T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/projects/kinodynamic-planning"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Kinodynamic Motion Planning | William Wang</title>
+    <meta name="description" content="About">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/pexels/search-map.jpeg')">
+    <h1 id="Kinodynamic+Motion+Planning" class="title">Kinodynamic Motion Planning</h1>
+    <p class="meta">
+    March 23, 2018
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <h3 id="about">About</h3>
+
+<p><strong>Kinodynamic Motion Planning</strong> was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning algorithms in a program. The program used sampling-based method to generate a motion plan for a dynamic vehicle.</p>
+
+<p>In this project, I aimed at reproducing the result from a research paper, <a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">Anytime computation of time-optimal off-road vehicle maneuvers using the RRT*</a> from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for an off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star could find a plan that satisfied the vehicle dynamics. At extreme cases, motion plan for the vehicle is to slide from a state to another state.</p>
+
+<h3 id="vehicle-dynamics-model">Vehicle Dynamics Model</h3>
+
+<p>Vehicle dynamics model employed in this project was a bicycle model, and Pacejka’s Magic Formula was used for tire dynamics. The vehicle model had 8 states ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$), and 3 input value ($T_F$, $T_R$, $\delta$)</p>
+
+<p>Here is an illustration of the bicycle model:</p>
+
+<p align="center"><img src="../assets/img/project/kinodynamic-planning/kino-bicycle-model.png" width="80%" /></p>
+<!-- ![BICYCLE-MODEL](../assets/img/project/bicycle-model.png=100x) -->
+
+<p><strong>Notations:</strong></p>
+
+<ul>
+  <li>$x$, $y$, $\dot{x}$, $\dot{y}$, $\ddot{x}$, $\ddot{y}$: Position, velocity, acceleration at the center of the vehicle</li>
+  <li>$m$: Mass of vehicle</li>
+  <li>$I_z$: Inertia of vehicle</li>
+  <li>$I_i$, $r_i$, $\omega_i$, $i =(F, R)$: Moment of inertia, radius, angular velocity of front and rear wheels</li>
+  <li>$f_{ij}$, $i=(F, R), j=(x, y)$: Longitudinal and lateral front and rear tire forces:</li>
+  <li>$\Psi$: Vehicle orientation/ yaw angle</li>
+  <li>$\beta$: Slip angle</li>
+  <li>$T_i$, $i=(F, R)$: Torque input at front and rear wheels</li>
+  <li>$\delta$: Steering angle input</li>
+</ul>
+
+<p><strong>Equation of motion:</strong></p>
+
+<ul>
+  <li>$m\ddot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)$</li>
+  <li>$m\ddot{y} = f_{Fx}sin(\Psi + \delta) + f_{Fy}cos(\Psi + \delta) + f_{Rx}sin(\Psi) + f_{Ry}cos(\Psi)$</li>
+  <li>$I_z\ddot{\Psi} = (f_{Fy}cos(\delta) + f_{Fx}sin(\delta))l_F - f_{Ry}l_R$</li>
+  <li>$I_F\dot{\omega}_ F = T_F - f_{Fx}r_F$</li>
+  <li>$I_R\dot{\omega}_ R = T_R - f_{Rx}r_R$</li>
+</ul>
+
+<p>Tire force $f_{ij}$ depends on normal force $f_z$ and friction coefficient $\mu_{ij}$ determined by <strong>Pacejka’s Magic Formula</strong>:</p>
+
+<ul>
+  <li>$f_{ij} = \mu_{ij}f_{iz} $  $(i = F,R, j=x,y)$</li>
+  <li>$\mu_{ij} = -\frac{s_{ij}}{s_i}\mu_i(s_i) $  $(i = F,R, j=x,y)$</li>
+  <li>$\mu_i(s_i) = D_i sin(C_i arctan(B_i s_i)) $   $(i = F,R)$</li>
+</ul>
+
+<p>For more details about the vehicle dynamic model, please refer to <a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">Anytime computation of time-optimal off-road vehicle maneuvers
+using the RRT*</a></p>
+
+<h3 id="rrt-star">RRT-Star</h3>
+
+<p>RRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure looks for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure garantees the sampling-based planner can find an solution and the solution is asymptotically optimal.</p>
+
+<p><strong>RRT-Star Algorithm:</strong></p>
+
+<p align="center">
+<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-1.png" width="60%" />
+<img src="../assets/img/project/kinodynamic-planning/kino-rrt-star-algo-2.png" width="60%" />
+</p>
+
+<!-- ![RRT-STAR-ALGO-1](../assets/img/project/rrt-star-1.png) -->
+<!-- ![RRT-STAR-ALGO-2](../assets/img/project/rrt-star-2.png) -->
+
+<p><strong>RRT-Star with 10K Node (Path Planning):</strong></p>
+<p align="center"><img src="../assets/img/project/kinodynamic-planning/kino-n-rrt-star.png" width="80%" /></p>
+
+<h3 id="planning-space">Planning Space</h3>
+
+<p>The full dynamic model of the car had 8 DOF ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$). Keeping track of 8 dimensional state space was rather complicated. To deal with this problem, planner only plans in a 4D task space in $x$, $y$, $V$($\sqrt{\dot{x}^2+\dot{y}^2}$), $\Psi$assuming the there was an mapping of the free space in 8 dimension state space to 4 dimension task space.</p>
+
+<h3 id="control">Control</h3>
+
+<p>When solving for the control input needed for connecting current state and next state, I only solve for a constant control applied to the system. (Constant steering angle and constant acceleration) To solve for control, the vehicle dynamic equations were integrate to certain amount of time with initial conditions. Integration and optimization were all done using <strong>scipy</strong> functions. Since solving for an optimal control required integrating the stiff and non-linear ODE iteratively, it took some time to find the control that can take the vehicle from the current state to the new state.</p>
+
+<p>Here are two GIFs of vehicle following predefined states.</p>
+
+<ul>
+  <li><strong>Red Arrow</strong>: Heading of the Vehicle</li>
+  <li><strong>Black Arrow</strong>: Steering Angle</li>
+  <li><strong>Green Arrow</strong>: Velocity of the Vehicle</li>
+</ul>
+
+<p align="center">
+<img src="../assets/img/project/kinodynamic-planning/kino-circle.gif" width="70%" />
+<img src="../assets/img/project/kinodynamic-planning/kino-snake-manu.gif" width="70%" />
+</p>
+
+<!--
+![KINO-CIRCLE](../assets/img/project/kino-circle.gif)
+![KINO-SNAKE ](../assets/img/project/snake-manu.gif) -->
+
+<h3 id="current-state">Current State</h3>
+
+<p>This project is expected to continue. This motion planning problem is rather complicated. The program was not efficient enough to find a complete motion plan in reasonable amount of time.</p>
+
+<p><strong>Dfficulties Encountered:</strong></p>
+
+<ul>
+  <li>The planner suffers from the performance issues of low efficiecy at searching for a set of constant control to connect two states</li>
+  <li>The rate of sampling a valid and reachable state was low thus sampling time was too long.</li>
+  <li>A valid cost to go function was also a key component to the solution missed.</li>
+</ul>
+
+<p>The planner was not able to finish the whole planning task as shown in following figures:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="../assets/img/project/kinodynamic-planning/kino-corner-1.png" width="100%" /></td>
+      <td><img src="../assets/img/project/kinodynamic-planning/kino-corner-2.png" width="100%" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Things to be worked on:</strong></p>
+
+<ul>
+  <li>A fast numerical solver for the stiff problem must need to implemented to improve the state connection calculation time.</li>
+  <li>Instead of looking for a fast ODE solver, utilizing a physics simulation engine to handle the state integration can be a great approach, since physics simulation engines are often fast at solving for complex physics model with some sacrifices on accuracy. (Focus on sovling motion planning instead of solving physics model)</li>
+  <li>Employing some probabilistic sampling techniques can improve the chance of sampling valid states.</li>
+  <li>In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.</li>
+</ul>
+
+<h3 id="reference">Reference</h3>
+
+<ol>
+  <li><a href="https://dspace.mit.edu/openaccess-disseminate/1721.1/81445">hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.</a></li>
+  <li><a href="http://arl.cs.utah.edu/pubs/ICRA2013-1.pdf">Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.</a></li>
+  <li><a href="http://msl.cs.uiuc.edu/~lavalle/papers/LavKuf01b.pdf">LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400.</a></li>
+</ol>
+
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/tags#Class Project">
+            <p><i class="fa fa-tag fa-fw"></i> Class Project</p>
+          </a>
+        
+          <a class="button" href="/tags#MSR">
+            <p><i class="fa fa-tag fa-fw"></i> MSR</p>
+          </a>
+        
+          <a class="button" href="/tags#Motion Planning">
+            <p><i class="fa fa-tag fa-fw"></i> Motion Planning</p>
+          </a>
+        
+          <a class="button" href="/tags#Northwestern University">
+            <p><i class="fa fa-tag fa-fw"></i> Northwestern University</p>
+          </a>
+        
+          <a class="button" href="/tags#Project">
+            <p><i class="fa fa-tag fa-fw"></i> Project</p>
+          </a>
+        
+          <a class="button" href="/tags#Robotics">
+            <p><i class="fa fa-tag fa-fw"></i> Robotics</p>
+          </a>
+        
+          <a class="button" href="/tags#Winter Project">
+            <p><i class="fa fa-tag fa-fw"></i> Winter Project</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/projects/me449-robot-manipulation">
+        KUKA youBot Manipulation
+      </a>
+  </div>
+  
+  
+  <div id="next-post" class="post-nav-post">
+      <p>Next post</p>
+      <a href="/projects/pointcloud-lane-detection">
+        Lane Detection in Point Cloud
+      </a>
+  </div>
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
+</footer>
+
+
+  </body>
+</html>

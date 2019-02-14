@@ -6,6 +6,7 @@
 
     <!-- JQuery (used for bootstrap and jekyll search) -->
     <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 
     <!-- Main JS (navbar.js and katex_init.js)-->
     <script defer=true src="/assets/js/main.min.js"></script>
@@ -31,17 +32,25 @@
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
     
 
-    <!-- KaTeX 0.8.3 -->
-    
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/katex.min.css">
-    <script src="/assets/js/katex.min.js">
-    </script>
+    <!-- KaTeX -->
     
 
     <!-- Google Analytics -->
     
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
 
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
@@ -68,16 +77,17 @@
     <!-- Logo and title -->
 	<div class="branding">
 		<a href="/">
-			<img class="avatar" src="/assets/img/brain.svg" alt=""/>
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
 		</a>
 
 		<h1 class="site-title">
 			<a href="/">William Wang</a>
-		</h1>
+        </h1>
 	</div>
 
     <!-- Toggle menu -->
     <nav class="clear">
+
     <a id="pull" class="toggle" href="#">
     <i class="fa fa-bars fa-lg"></i>
     </a>
@@ -110,20 +120,26 @@
         
         
         
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
         
 
         
         <li>
-            <a class="clear" href="https://willshw.github.io/portfolio">
-                Portfolio
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
             </a>
         </li>
         
 
         
         <li>
-            <a class="clear" href="https://willshw.github.io/cv">
-                CV
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
             </a>
         </li>
         
@@ -143,7 +159,6 @@
             </a>
         </li>
         
-
     </ul>
 
 	</nav>
@@ -159,13 +174,38 @@
     
       
   </header>
-  <section class="post-content"><p>William is a student in <a href="http://www.mccormick.northwestern.edu/robotics/">MS in Robotics</a> program at Northwestern University. He is especially interested in machine learning, computer vision, robot motion planning, and human-robot interaction, all of which could significantly improve a robot’s ability to assist individuals.</p>
+  <section class="post-content"><p>William is actively looking for robotics related opportunities.</p>
 
-<p>William received his bachelor degree in mechanical engineering from the University of California, Berkeley in 2014. After graduating from UC Berkeley, he joined the <a href="http://gl.ict.usc.edu/">Graphics Lab</a> as a hardware engineer at the University of Southern California Institute for Creative Technologies (<a href="http://ict.usc.edu/">USC ICT</a>) in Los Angeles.</p>
+<p>William graduated from the <a href="http://www.mccormick.northwestern.edu/robotics/">MS in Robotics</a> program at Northwestern University in Dec 2018. During his study in MSR, he did a variety of <a href="http://willshw.me/projects/">projects</a> involving</p>
+<ul>
+  <li><strong>robot manipulation</strong></li>
+  <li><strong>motion planning</strong></li>
+  <li><strong>point cloud processing</strong></li>
+  <li><strong>machine learning</strong></li>
+  <li><strong>computer vision</strong></li>
+</ul>
+
+<p>and developed applications using</p>
+<ul>
+  <li><strong>Linux</strong></li>
+  <li><strong>C++</strong></li>
+  <li><strong>Python</strong></li>
+  <li><strong>ROS</strong></li>
+  <li><strong>PCL</strong></li>
+  <li><strong>OpenCV</strong></li>
+</ul>
+
+<p><em>To see more about his projects go to</em> <strong><a href="http://willshw.me/projects/">here</a></strong></p>
+
+<p><em>To see more about his experience go to</em> <strong><a href="http://willshw.me/resume/">here</a></strong></p>
+
+<hr />
+
+<p>William received his engineering bachelor degree from the University of California, Berkeley in 2014. After graduating from UC Berkeley, he joined the <a href="http://gl.ict.usc.edu/">Graphics Lab</a> as a research engineer at the University of Southern California Institute for Creative Technologies (<a href="http://ict.usc.edu/">USC ICT</a>) in Los Angeles.</p>
 
 <p>At USC ICT, William worked on various projects where he applied mechanical design, mechatronics and software engineering knowledge to design, engineer, and prototype new hardware and software systems. The projects he worked on include <a href="http://vgl.ict.usc.edu/Research/VHC/">Virtual Headcam</a>, <a href="http://vgl.ict.usc.edu/Research/SpecScanning/">Specular Object Scanner</a>, <a href="http://ict.usc.edu/prototypes/light-stages/">Light Stage X</a>, camera network system, etc. In Virtual Headcam project, he and his colleagues engineered a dual motorized mirror device to redirect the optical path of a stationary camera for human facial-tracking purposes. The project was presented at ACM SIGGRAPH 2015 and achieved great results.</p>
 
-<p>William enjoyed every aspect of working in a research lab, especially learning new technologies and solving challenging problems. Starting off his career in research immediately exposed him to a wide variety of technologies and great minds in research, and this experience helped him identify the type of work he wants to pursue in the future. William wishes to apply his robotics knowledge to different fields and continue to work as an engineer and adventurer in R&amp;D in the future.</p>
+<p>William enjoyed every aspect of working in a research lab, especially learning new technologies and solving challenging problems. Starting off his career in research immediately exposed him to a wide variety of technologies and great minds in research, and this experience helped him identify the type of work he wants to pursue in the future. William wishes to apply his robotics knowledge to real work applications and continue to work as an engineer and adventurer in robotics application and product R&amp;D in the future.</p>
 
 </section>
     
@@ -196,14 +236,6 @@
     </div>
     
 <footer class="site-footer">
-  <p class="text">
-    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a>
-
-    
-    <a href="https://willshw.github.io/credit/">Website Credit</a>
-    
-  </p>
-
   <div class="footer-icons">
       <ul>
       <!-- Social icons from Font Awesome, if enabled -->
@@ -249,7 +281,7 @@
 
 
 <li>
-	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -282,15 +314,6 @@
 
 
 
-<li>
-	<a href="https://twitter.com/willshwang" title="Follow on Twitter" class="type">
-        <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
-
 
 
 
@@ -300,6 +323,12 @@
 
       </ul>
   </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
 </footer>
 
 

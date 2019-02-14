@@ -6,6 +6,7 @@
 
     <!-- JQuery (used for bootstrap and jekyll search) -->
     <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 
     <!-- Main JS (navbar.js and katex_init.js)-->
     <script defer=true src="/assets/js/main.min.js"></script>
@@ -31,17 +32,25 @@
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
     
 
-    <!-- KaTeX 0.8.3 -->
-    
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/katex.min.css">
-    <script src="/assets/js/katex.min.js">
-    </script>
+    <!-- KaTeX -->
     
 
     <!-- Google Analytics -->
     
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
 
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
@@ -68,16 +77,17 @@
     <!-- Logo and title -->
 	<div class="branding">
 		<a href="/">
-			<img class="avatar" src="/assets/img/brain.svg" alt=""/>
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
 		</a>
 
 		<h1 class="site-title">
 			<a href="/">William Wang</a>
-		</h1>
+        </h1>
 	</div>
 
     <!-- Toggle menu -->
     <nav class="clear">
+
     <a id="pull" class="toggle" href="#">
     <i class="fa fa-bars fa-lg"></i>
     </a>
@@ -110,20 +120,26 @@
         
         
         
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
         
 
         
         <li>
-            <a class="clear" href="https://willshw.github.io/portfolio">
-                Portfolio
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
             </a>
         </li>
         
 
         
         <li>
-            <a class="clear" href="https://willshw.github.io/cv">
-                CV
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
             </a>
         </li>
         
@@ -143,7 +159,6 @@
             </a>
         </li>
         
-
     </ul>
 
 	</nav>
@@ -165,7 +180,7 @@
 
 
 
-<!-- cycles through portfolio collection to get tags -->
+<!-- cycles through project collection to get tags -->
 
 
 
@@ -187,12 +202,72 @@
             <p><i class="fa fa-tag fa-fw"></i> AboutCredit</p>
           </a>
         
+          <a class="button" href="/tags#AprilTag">
+            <p><i class="fa fa-tag fa-fw"></i> AprilTag</p>
+          </a>
+        
+          <a class="button" href="/tags#Calibration">
+            <p><i class="fa fa-tag fa-fw"></i> Calibration</p>
+          </a>
+        
+          <a class="button" href="/tags#Camera">
+            <p><i class="fa fa-tag fa-fw"></i> Camera</p>
+          </a>
+        
           <a class="button" href="/tags#Class Project">
             <p><i class="fa fa-tag fa-fw"></i> Class Project</p>
           </a>
         
+          <a class="button" href="/tags#Control">
+            <p><i class="fa fa-tag fa-fw"></i> Control</p>
+          </a>
+        
+          <a class="button" href="/tags#Depth Camera">
+            <p><i class="fa fa-tag fa-fw"></i> Depth Camera</p>
+          </a>
+        
+          <a class="button" href="/tags#Estimation Filter">
+            <p><i class="fa fa-tag fa-fw"></i> Estimation Filter</p>
+          </a>
+        
+          <a class="button" href="/tags#Final Project">
+            <p><i class="fa fa-tag fa-fw"></i> Final Project</p>
+          </a>
+        
+          <a class="button" href="/tags#GUI">
+            <p><i class="fa fa-tag fa-fw"></i> GUI</p>
+          </a>
+        
+          <a class="button" href="/tags#Grasping">
+            <p><i class="fa fa-tag fa-fw"></i> Grasping</p>
+          </a>
+        
+          <a class="button" href="/tags#IFM">
+            <p><i class="fa fa-tag fa-fw"></i> IFM</p>
+          </a>
+        
+          <a class="button" href="/tags#Joystick">
+            <p><i class="fa fa-tag fa-fw"></i> Joystick</p>
+          </a>
+        
+          <a class="button" href="/tags#Kalman Filter">
+            <p><i class="fa fa-tag fa-fw"></i> Kalman Filter</p>
+          </a>
+        
+          <a class="button" href="/tags#Kinematics">
+            <p><i class="fa fa-tag fa-fw"></i> Kinematics</p>
+          </a>
+        
+          <a class="button" href="/tags#Lane Detection">
+            <p><i class="fa fa-tag fa-fw"></i> Lane Detection</p>
+          </a>
+        
           <a class="button" href="/tags#MSR">
             <p><i class="fa fa-tag fa-fw"></i> MSR</p>
+          </a>
+        
+          <a class="button" href="/tags#Manipulation">
+            <p><i class="fa fa-tag fa-fw"></i> Manipulation</p>
           </a>
         
           <a class="button" href="/tags#Motion Planning">
@@ -203,16 +278,56 @@
             <p><i class="fa fa-tag fa-fw"></i> Northwestern University</p>
           </a>
         
-          <a class="button" href="/tags#Portfolio">
-            <p><i class="fa fa-tag fa-fw"></i> Portfolio</p>
+          <a class="button" href="/tags#PCL">
+            <p><i class="fa fa-tag fa-fw"></i> PCL</p>
+          </a>
+        
+          <a class="button" href="/tags#Point Cloud">
+            <p><i class="fa fa-tag fa-fw"></i> Point Cloud</p>
+          </a>
+        
+          <a class="button" href="/tags#Project">
+            <p><i class="fa fa-tag fa-fw"></i> Project</p>
+          </a>
+        
+          <a class="button" href="/tags#Python">
+            <p><i class="fa fa-tag fa-fw"></i> Python</p>
+          </a>
+        
+          <a class="button" href="/tags#RGBD">
+            <p><i class="fa fa-tag fa-fw"></i> RGBD</p>
+          </a>
+        
+          <a class="button" href="/tags#ROS">
+            <p><i class="fa fa-tag fa-fw"></i> ROS</p>
+          </a>
+        
+          <a class="button" href="/tags#Robot">
+            <p><i class="fa fa-tag fa-fw"></i> Robot</p>
           </a>
         
           <a class="button" href="/tags#Robotics">
             <p><i class="fa fa-tag fa-fw"></i> Robotics</p>
           </a>
         
+          <a class="button" href="/tags#UR Robot">
+            <p><i class="fa fa-tag fa-fw"></i> UR Robot</p>
+          </a>
+        
           <a class="button" href="/tags#USC ICT">
             <p><i class="fa fa-tag fa-fw"></i> USC ICT</p>
+          </a>
+        
+          <a class="button" href="/tags#VREP">
+            <p><i class="fa fa-tag fa-fw"></i> VREP</p>
+          </a>
+        
+          <a class="button" href="/tags#Velocity Kinematics">
+            <p><i class="fa fa-tag fa-fw"></i> Velocity Kinematics</p>
+          </a>
+        
+          <a class="button" href="/tags#Visual Servoing">
+            <p><i class="fa fa-tag fa-fw"></i> Visual Servoing</p>
           </a>
         
           <a class="button" href="/tags#Winter Project">
@@ -221,6 +336,18 @@
         
           <a class="button" href="/tags#Work Project">
             <p><i class="fa fa-tag fa-fw"></i> Work Project</p>
+          </a>
+        
+          <a class="button" href="/tags#hack">
+            <p><i class="fa fa-tag fa-fw"></i> hack</p>
+          </a>
+        
+          <a class="button" href="/tags#sport">
+            <p><i class="fa fa-tag fa-fw"></i> sport</p>
+          </a>
+        
+          <a class="button" href="/tags#tf">
+            <p><i class="fa fa-tag fa-fw"></i> tf</p>
           </a>
         
         </div>
@@ -265,9 +392,244 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="AprilTag" class="tag-anchor">
+            <a href="#AprilTag"><i class="fa fa-tag fa-fw"></i> AprilTag</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/04/27/apriltag2-ros-frame.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        AprilTag Frame Transforms
+                    </a>
+                    
+                    <div class="meta">
+                        April 27, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Calibration" class="tag-anchor">
+            <a href="#Calibration"><i class="fa fa-tag fa-fw"></i> Calibration</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Camera" class="tag-anchor">
+            <a href="#Camera"><i class="fa fa-tag fa-fw"></i> Camera</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
                  
              
                  
@@ -311,6 +673,12 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
@@ -318,7 +686,7 @@
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/sawyerstravels">
+                    <a href="/projects/sawyerstravels">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Sawyer's Travels
                     </a>
@@ -329,17 +697,852 @@
                 </h5>
                  
              
+                 
+             
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/kinodynamic-planning">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
                         March 23, 2018
                     </div>
                 </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Control" class="tag-anchor">
+            <a href="#Control"><i class="fa fa-tag fa-fw"></i> Control</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Depth+Camera" class="tag-anchor">
+            <a href="#Depth+Camera"><i class="fa fa-tag fa-fw"></i> Depth Camera</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Estimation+Filter" class="tag-anchor">
+            <a href="#Estimation+Filter"><i class="fa fa-tag fa-fw"></i> Estimation Filter</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/filter-visualizer">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Estimation Filter Visualizer
+                    </a>
+                
+                    <div class="meta">
+                        January 1, 2019
+                    </div>
+                </h5>
+                 
+            
+
+        </div>
+        
+        <h3 id="Final+Project" class="tag-anchor">
+            <a href="#Final+Project"><i class="fa fa-tag fa-fw"></i> Final Project</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="GUI" class="tag-anchor">
+            <a href="#GUI"><i class="fa fa-tag fa-fw"></i> GUI</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/filter-visualizer">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Estimation Filter Visualizer
+                    </a>
+                
+                    <div class="meta">
+                        January 1, 2019
+                    </div>
+                </h5>
+                 
+            
+
+        </div>
+        
+        <h3 id="Grasping" class="tag-anchor">
+            <a href="#Grasping"><i class="fa fa-tag fa-fw"></i> Grasping</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="IFM" class="tag-anchor">
+            <a href="#IFM"><i class="fa fa-tag fa-fw"></i> IFM</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Joystick" class="tag-anchor">
+            <a href="#Joystick"><i class="fa fa-tag fa-fw"></i> Joystick</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/12/24/connect-ps4-joystick.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        Connect Sony PlayStation DualShock 4 Joystick to ROS
+                    </a>
+                    
+                    <div class="meta">
+                        December 24, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Kalman+Filter" class="tag-anchor">
+            <a href="#Kalman+Filter"><i class="fa fa-tag fa-fw"></i> Kalman Filter</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/filter-visualizer">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Estimation Filter Visualizer
+                    </a>
+                
+                    <div class="meta">
+                        January 1, 2019
+                    </div>
+                </h5>
+                 
+            
+
+        </div>
+        
+        <h3 id="Kinematics" class="tag-anchor">
+            <a href="#Kinematics"><i class="fa fa-tag fa-fw"></i> Kinematics</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/me449-robot-manipulation">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        KUKA youBot Manipulation
+                    </a>
+                
+                    <div class="meta">
+                        December 8, 2017
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Lane+Detection" class="tag-anchor">
+            <a href="#Lane+Detection"><i class="fa fa-tag fa-fw"></i> Lane Detection</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/pointcloud-lane-detection">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Lane Detection in Point Cloud
+                    </a>
+                
+                    <div class="meta">
+                        June 11, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
                  
             
 
@@ -379,6 +1582,12 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
@@ -386,7 +1595,7 @@
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/sawyerstravels">
+                    <a href="/projects/sawyerstravels">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Sawyer's Travels
                     </a>
@@ -397,17 +1606,100 @@
                 </h5>
                  
              
+                 
+             
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/kinodynamic-planning">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
                         March 23, 2018
                     </div>
                 </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Manipulation" class="tag-anchor">
+            <a href="#Manipulation"><i class="fa fa-tag fa-fw"></i> Manipulation</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/me449-robot-manipulation">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        KUKA youBot Manipulation
+                    </a>
+                
+                    <div class="meta">
+                        December 8, 2017
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
                  
             
 
@@ -447,6 +1739,12 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
@@ -454,17 +1752,27 @@
              
                  
              
+                 
+             
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/kinodynamic-planning">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
                         March 23, 2018
                     </div>
                 </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
                  
             
 
@@ -504,6 +1812,12 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
@@ -511,7 +1825,7 @@
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/sawyerstravels">
+                    <a href="/projects/sawyerstravels">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Sawyer's Travels
                     </a>
@@ -522,11 +1836,13 @@
                 </h5>
                  
              
+                 
+             
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/kinodynamic-planning">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
@@ -534,12 +1850,20 @@
                     </div>
                 </h5>
                  
+             
+                 
+             
+                 
+             
+                 
+             
+                 
             
 
         </div>
         
-        <h3 id="Portfolio" class="tag-anchor">
-            <a href="#Portfolio"><i class="fa fa-tag fa-fw"></i> Portfolio</a>
+        <h3 id="PCL" class="tag-anchor">
+            <a href="#PCL"><i class="fa fa-tag fa-fw"></i> PCL</a>
             <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
 
         </h3>
@@ -572,12 +1896,175 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Point+Cloud" class="tag-anchor">
+            <a href="#Point+Cloud"><i class="fa fa-tag fa-fw"></i> Point Cloud</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/pointcloud-lane-detection">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Lane Detection in Point Cloud
+                    </a>
+                
+                    <div class="meta">
+                        June 11, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Project" class="tag-anchor">
+            <a href="#Project"><i class="fa fa-tag fa-fw"></i> Project</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/virtualheadcam">
+                    <a href="/projects/virtualheadcam">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Virtual Headcam
                     </a>
@@ -590,7 +2077,7 @@
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/sawyerstravels">
+                    <a href="/projects/sawyerstravels">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Sawyer's Travels
                     </a>
@@ -603,15 +2090,405 @@
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/me449-robot-manipulation">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        KUKA youBot Manipulation
+                    </a>
+                
+                    <div class="meta">
+                        December 8, 2017
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/kinodynamic-planning">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
                         March 23, 2018
                     </div>
                 </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/pointcloud-lane-detection">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Lane Detection in Point Cloud
+                    </a>
+                
+                    <div class="meta">
+                        June 11, 2018
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/filter-visualizer">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Estimation Filter Visualizer
+                    </a>
+                
+                    <div class="meta">
+                        January 1, 2019
+                    </div>
+                </h5>
+                 
+            
+
+        </div>
+        
+        <h3 id="Python" class="tag-anchor">
+            <a href="#Python"><i class="fa fa-tag fa-fw"></i> Python</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/filter-visualizer">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Estimation Filter Visualizer
+                    </a>
+                
+                    <div class="meta">
+                        January 1, 2019
+                    </div>
+                </h5>
+                 
+            
+
+        </div>
+        
+        <h3 id="RGBD" class="tag-anchor">
+            <a href="#RGBD"><i class="fa fa-tag fa-fw"></i> RGBD</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="ROS" class="tag-anchor">
+            <a href="#ROS"><i class="fa fa-tag fa-fw"></i> ROS</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/12/24/connect-ps4-joystick.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        Connect Sony PlayStation DualShock 4 Joystick to ROS
+                    </a>
+                    
+                    <div class="meta">
+                        December 24, 2018
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/04/27/apriltag2-ros-frame.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        AprilTag Frame Transforms
+                    </a>
+                    
+                    <div class="meta">
+                        April 27, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Robot" class="tag-anchor">
+            <a href="#Robot"><i class="fa fa-tag fa-fw"></i> Robot</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/me449-robot-manipulation">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        KUKA youBot Manipulation
+                    </a>
+                
+                    <div class="meta">
+                        December 8, 2017
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
                  
             
 
@@ -651,6 +2528,12 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
@@ -658,7 +2541,7 @@
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/sawyerstravels">
+                    <a href="/projects/sawyerstravels">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Sawyer's Travels
                     </a>
@@ -669,17 +2552,100 @@
                 </h5>
                  
              
+                 
+             
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/kinodynamic-planning">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
                         March 23, 2018
                     </div>
                 </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="UR+Robot" class="tag-anchor">
+            <a href="#UR+Robot"><i class="fa fa-tag fa-fw"></i> UR Robot</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/ifm-calibration">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Camera Angle Calibration
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
                  
             
 
@@ -719,12 +2685,18 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/virtualheadcam">
+                    <a href="/projects/virtualheadcam">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Virtual Headcam
                     </a>
@@ -735,6 +2707,235 @@
                 </h5>
                  
              
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="VREP" class="tag-anchor">
+            <a href="#VREP"><i class="fa fa-tag fa-fw"></i> VREP</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/me449-robot-manipulation">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        KUKA youBot Manipulation
+                    </a>
+                
+                    <div class="meta">
+                        December 8, 2017
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Velocity+Kinematics" class="tag-anchor">
+            <a href="#Velocity+Kinematics"><i class="fa fa-tag fa-fw"></i> Velocity Kinematics</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/me449-robot-manipulation">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        KUKA youBot Manipulation
+                    </a>
+                
+                    <div class="meta">
+                        December 8, 2017
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="Visual+Servoing" class="tag-anchor">
+            <a href="#Visual+Servoing"><i class="fa fa-tag fa-fw"></i> Visual Servoing</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/projects/mfvs">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                        Visual Servoing of Objects without Object Models
+                    </a>
+                
+                    <div class="meta">
+                        June 13, 2018
+                    </div>
+                </h5>
                  
              
                  
@@ -776,6 +2977,12 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
@@ -783,17 +2990,27 @@
              
                  
              
+                 
+             
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/kinodynamic-planning">
+                    <a href="/projects/kinodynamic-planning">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
-                        Kinodynamic Planning
+                        Kinodynamic Motion Planning
                     </a>
                 
                     <div class="meta">
                         March 23, 2018
                     </div>
                 </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
                  
             
 
@@ -833,12 +3050,18 @@
             
             <!-- Posts -->
              
+                 
+             
+                 
+             
+                 
+             
             
             <!-- Portfolio -->
              
                 
                 <h5 class="tag-title">
-                    <a href="/portfolio/virtualheadcam">
+                    <a href="/projects/virtualheadcam">
                         <i class="fa fa-file-o" aria-hidden="true"></i>
                         Virtual Headcam
                     </a>
@@ -847,6 +3070,235 @@
                         August 12, 2015
                     </div>
                 </h5>
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="hack" class="tag-anchor">
+            <a href="#hack"><i class="fa fa-tag fa-fw"></i> hack</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/04/27/ad-removal.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        Remove Ad in Free Sport Live Stream
+                    </a>
+                    
+                    <div class="meta">
+                        April 27, 2018
+                    </div>
+                </h5>
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="sport" class="tag-anchor">
+            <a href="#sport"><i class="fa fa-tag fa-fw"></i> sport</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/04/27/ad-removal.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        Remove Ad in Free Sport Live Stream
+                    </a>
+                    
+                    <div class="meta">
+                        April 27, 2018
+                    </div>
+                </h5>
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+            
+
+        </div>
+        
+        <h3 id="tf" class="tag-anchor">
+            <a href="#tf"><i class="fa fa-tag fa-fw"></i> tf</a>
+            <a href="#Tags" style="float: right"><i class="fa fa-chevron-up" aria-hidden="true"> </i> </a>
+
+        </h3>
+
+        <!-- Posts and collection for each tags -->
+        <div class="tag-posts">
+
+            <!-- Pages -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+            
+            <!-- Posts -->
+             
+                 
+             
+                
+                <h5 class="tag-title">
+                    <a href="/2018/04/27/apriltag2-ros-frame.html">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        AprilTag Frame Transforms
+                    </a>
+                    
+                    <div class="meta">
+                        April 27, 2018
+                    </div>
+                </h5>
+                 
+             
+                 
+             
+            
+            <!-- Portfolio -->
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
+                 
+             
                  
              
                  
@@ -874,14 +3326,6 @@
     </div>
     
 <footer class="site-footer">
-  <p class="text">
-    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a>
-
-    
-    <a href="https://willshw.github.io/credit/">Website Credit</a>
-    
-  </p>
-
   <div class="footer-icons">
       <ul>
       <!-- Social icons from Font Awesome, if enabled -->
@@ -927,7 +3371,7 @@
 
 
 <li>
-	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -960,15 +3404,6 @@
 
 
 
-<li>
-	<a href="https://twitter.com/willshwang" title="Follow on Twitter" class="type">
-        <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
-
 
 
 
@@ -978,6 +3413,12 @@
 
       </ul>
   </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
 </footer>
 
 

@@ -6,6 +6,7 @@
 
     <!-- JQuery (used for bootstrap and jekyll search) -->
     <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 
     <!-- Main JS (navbar.js and katex_init.js)-->
     <script defer=true src="/assets/js/main.min.js"></script>
@@ -31,17 +32,25 @@
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
     
 
-    <!-- KaTeX 0.8.3 -->
-    
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js"></script> -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/katex.min.css">
-    <script src="/assets/js/katex.min.js">
-    </script>
+    <!-- KaTeX -->
     
 
     <!-- Google Analytics -->
     
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
 
     <!-- seo tags -->
     <!-- Begin Jekyll SEO tag v2.4.0 -->
@@ -68,16 +77,17 @@
     <!-- Logo and title -->
 	<div class="branding">
 		<a href="/">
-			<img class="avatar" src="/assets/img/brain.svg" alt=""/>
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
 		</a>
 
 		<h1 class="site-title">
 			<a href="/">William Wang</a>
-		</h1>
+        </h1>
 	</div>
 
     <!-- Toggle menu -->
     <nav class="clear">
+
     <a id="pull" class="toggle" href="#">
     <i class="fa fa-bars fa-lg"></i>
     </a>
@@ -110,20 +120,26 @@
         
         
         
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
         
 
         
         <li>
-            <a class="clear" href="https://willshw.github.io/portfolio">
-                Portfolio
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
             </a>
         </li>
         
 
         
         <li>
-            <a class="clear" href="https://willshw.github.io/cv">
-                CV
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
             </a>
         </li>
         
@@ -143,7 +159,6 @@
             </a>
         </li>
         
-
     </ul>
 
 	</nav>
@@ -167,7 +182,7 @@
 
 <section>
     <!-- Script pointing to jekyll-search.js -->
-    <script src="/assets/js/jekyll-search.min.js" type="text/javascript"></script>
+    <script src="/assets/js/simple-jekyll-search.min.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         SimpleJekyllSearch({
@@ -175,14 +190,41 @@
             resultsContainer: document.getElementById('results-container'),
             json: [
                     
+                     
+                        {
+                          "title"    : "Connect Sony PlayStation DualShock 4 Joystick to ROS",
+                          "category" : "I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers...",
+                          "tags"     : " ROS, Joystick",
+                          "url"      : "/2018/12/24/connect-ps4-joystick.html",
+                          "date"     : "December 24, 2018",
+                          "content"  : "I bought two Sony PlayStation DualShock 4 joysticks (DS4) recently. I’m planning to connect my Linux computer and use them in ROS. The current joystick_drivers in ROS does not support DS4.To connect DS4 to Linux, I need to installl ds4drv to connect to the DS4 joysticks.Following are the steps to connect joysticks:1. Install &amp; Run ds4drv:sudo pip install ds4drvsudo ds4drv2. Connect DS4 joystickHold SHARE and PS button untill joystick indicator flashes. ds4drv will automatically search for device and establish connection.(If there is more than one joystick need to connect, just repeat the connection process for the first joystick.)You can see print out like:Joysticks has been assigned to /dev/input/js0 and /dev/input/js1.3. Check Connection In ROSIn a new terminal,roscoreIn a new terminal, use roslaunch to start nodes for two joy sticks,roslaunch ros_launch_file.launchLaunch file to launch two joy_node,&lt;?xml version=\"1.0\"?&gt;&lt;launch&gt;    &lt;group ns=\"j0\"&gt;        &lt;node name=\"ds4_joystick\" pkg=\"joy\" type=\"joy_node\"&gt;                &lt;param name=\"dev\" value=\"/dev/input/js0\" /&gt;        &lt;/node&gt;    &lt;/group&gt;    &lt;group ns=\"j1\"&gt;        &lt;node name=\"ds4_joystick\" pkg=\"joy\" type=\"joy_node\"&gt;                &lt;param name=\"dev\" value=\"/dev/input/js1\" /&gt;        &lt;/node&gt;    &lt;/group&gt;&lt;/launch&gt;4. Check joysticks’ outputUse ROSIn two new terminals,rostopic echo /j0/joyrostopic echo /j1/joyand see print out changes as you press the buttons.Or Check Joystick Output without Using ROSUse jstestsudo apt-get install jstest-gtkjstest-gtk"
+                        } ,
+                     
+                        {
+                          "title"    : "AprilTag Frame Transforms",
+                          "category" : "In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it...",
+                          "tags"     : " ROS, AprilTag, tf",
+                          "url"      : "/2018/04/27/apriltag2-ros-frame.html",
+                          "date"     : "April 27, 2018",
+                          "content"  : "In recent work, I used the apriltags2_ros ros package for apriltag detection and post estimation. The package is very easy to setup and use; it works great for detecting tags or tag bundles and getting the transform between the camera and the tag on tag bundle.In my application, I had a camera attached to a robot arm, and the camera pointed to the AprilTags. With the apriltag2_ros package, I can easily lookup the transform from tag to the camera, and tag to the baselink of the robot.When the tf was initially setup from the tag to the baselink of the robot, the tag to baselink transform was not correct. The transform showed the tag had movements in x-axis and y-axis but there was only y-axis movement. In rviz, I noticed that the frame of the robot’s end effector didn’t align with the camera frame (they had a 90 degree difference around the z-axis), so I applied a static transform to tf to fix the problem.The AprilTag frame and camera frame are illustrated as below:(This should apply to all apriltags. Origin locates at the first pixel of the image sensor; it follows the convention of image coordinate.)The lesson here is to make sure you know the frame orientation of your camera and tag when using packages like apriltag2_ros, especially when the camera or tag needs to be attached to other tf nodes.UPDATE 12/22/2018:The left handed camera frame had been corrected. Now it’s right handed and fixed to correct location."
+                        } ,
+                     
+                        {
+                          "title"    : "Remove Ad in Free Sport Live Stream",
+                          "category" : "I like watching English Premier League soccer on weekend mornings. Because I don’t have cable and I don’t want to pay for online sport channel,...",
+                          "tags"     : " hack, sport",
+                          "url"      : "/2018/04/27/ad-removal.html",
+                          "date"     : "April 27, 2018",
+                          "content"  : "I like watching English Premier League soccer on weekend mornings. Because I don’t have cable and I don’t want to pay for online sport channel, I usually go to the free live steam websites to watch soccer games. While the free live stream websites do provide you live streams, a lot of annoying Ads will be placed in the middle of the stream window to block a big part of the stream, and these suckers are often cannot be closed.Here is my trick to get rid of them, as long as the Ads are not embeded into the steam video. You should be able to get rid of them if you are using browser like Chrome, maybe Firefox will work too.Follow the steps (in Chrome):  Open the live stream page with Chrome.  Right click on the streaming page.      Select Inspect, Chrome developer tools window will show up in your browser.        Go to the developer tools window, find elements tap on the very top, and select.  Now, a boat load of html code shows up. Don’t panic, stay calm. We are almost there.  You will see sections of the web page are highlighted as you place the pointer on the code blocks. Keep moving until the Ad is highlighted. Sometime you need to click on the little triangle to expand the code block and search for the code block for the Ad.      Right click on the Ad html code section, select hide element.            BOOM!!! The Ad is gone!!!.        Repeat 6 and 7 until all Ads are gone.For most Ads, AdBlock extensions can handle them, but there are always some Ads cannot be blocked.This hack may not be new to some people. I just discovered it recently and wanted to share with people who watch free sports livestream. This hack works on my favorite soccer streaming website. The only problem I have is I cannot enlarge the stream into full screen, and this may just be a problem of the web player. Also, I tried to find the live steam video url, and use VLC player to open and stream that url, but I coun’t find the right url. It would be much better to watch the game on VLC player.I will keep searching for better hacks for better viewing experience. For now, let’s just enjoy the games."
+                        } 
                      ,
                      
                        {
                          
                             "title"    : "Virtual Headcam",
                             "category" : "AboutVirtual Headcam (VHC) is a device designed for facial performance capture. VHC equips with two motorized mirrors (mirrors mounted on motors) with rotational axes aligned...",
-                            "tags"     : " Work Project, Portfolio, USC ICT",
-                            "url"      : "/portfolio/virtualheadcam",
+                            "tags"     : " Work Project, Project, USC ICT",
+                            "url"      : "/projects/virtualheadcam",
                             "date"     : "August 12, 2015",
                             "content"  : "AboutVirtual Headcam (VHC) is a device designed for facial performance capture. VHC equips with two motorized mirrors (mirrors mounted on motors) with rotational axes aligned perpendicularly and a fixed camera pointing at one of the mirrors. The two motorized mirrors can redirect the optical path of the mounted camera. With a motor controller, the stationary camera can virtually pan and tilt in a certain angular range in a tracked space volume.VHC can be integrated into a motion capture space where the location of actors and actresses can be accurately tracked in high refresh rate. VHC can quickly adjust the mirror angles, zoom, and focus, according to the motion tracking data centered the subject in the camera frame. A system of multiple VHCs installed in a motion tracking space can potentially replace the traditional head mounted camera system.This research project was one of my work projects at USC ICT, and it was presented at SIGGRAPH 2015 poster session.For more detailed of this project, please visit the project page on USC ICT Graphics Lab website."
                          
@@ -192,8 +234,8 @@
                          
                             "title"    : "Sawyer&#39;s Travels",
                             "category" : "AboutSawyer’s Travels was one of the final projects of Northwestern University’s ME 495: Embedded Systems in Robotics in Fall 2017. The goal of this project...",
-                            "tags"     : " Class Project, Portfolio, MSR, Robotics, Northwestern University",
-                            "url"      : "/portfolio/sawyerstravels",
+                            "tags"     : " Class Project, Project, MSR, Robotics, Northwestern University",
+                            "url"      : "/projects/sawyerstravels",
                             "date"     : "December 6, 2017",
                             "content"  : "AboutSawyer’s Travels was one of the final projects of Northwestern University’s ME 495: Embedded Systems in Robotics in Fall 2017. The goal of this project was to write a ROS program for Sawyer to navigate a ball through a labyrinth using vision feedback.The ROS program written in this project included three major parts, computer vision, path planning, and robot control. At first, computer vision part of the program took care of extracting maze, ball tracking and final goal recognition. With all the vision information, then path planning program could solve for a global path plan to reach goal and dynamically solve for local path plans when the ball drifts off the global path plan. Finally, robot control program implemented PID controller on both joint velocity control and joint position control of the robot to manipulate the end effector to control the movement of the ball.In this project, I was responsible for writing the control program. It was my first exposure to ROS and Sawyer robot.For more details, please view the README and source code of this project on Github.Credit: Mazes were generated by Maze Generator."
                          
@@ -201,12 +243,67 @@
                      
                        {
                          
-                            "title"    : "Kinodynamic Planning",
+                            "title"    : "KUKA youBot Manipulation",
+                            "category" : "AboutThis is a course project of ME449 Robotic Manipulation at Northwestern University. The course was developed and taught by Prof. Lynch. Prof. Lynch taught this...",
+                            "tags"     : " Project, VREP, Robot, Manipulation, Kinematics, Velocity Kinematics",
+                            "url"      : "/projects/me449-robot-manipulation",
+                            "date"     : "December 8, 2017",
+                            "content"  : "AboutThis is a course project of ME449 Robotic Manipulation at Northwestern University. The course was developed and taught by Prof. Lynch. Prof. Lynch taught this course using a textbook he wrote, Modern Robotics, which includes a series of videos about the book material and an opensource software suite about robot manipulation. Project problem statement can be found in exercise 13.33(d) in Modern Robotics.In this project, I was given a target trajectory and I needed to develop a controller to control the end-effector of the Kuka youBot to follow the target trajectory. In order to achieve satisfactory target trajectory tracking, I used feedforward and PI controller to calculate the desired joint velocities.Implementation1.KinematicsThe target trajectory was defined as a function of time with time-scaling. First, I derived the derivative of this trajectory function. With the function of the trajectory and the derivative of this function, I could calculate the desired twist at a given time of this trajectory. Since the trajectory was given in the end-effector frame. I used modern robotics library to transform the end-effector twist frame into body frame with the current robot configuration such as wheel angles and joint angles.2.ControllerAfter the body frame twist was acquired, I calculated the twist error and applied feedforward control and PI control to calculate the twist needed to apply to minimize the error. Corresponding joint angles were calculated using the actuation twist and jacobian of the current robot configuration.Testing Feedforaward ControlPID Control and Feedforward ControlPerformance Difference of Two PID ControllersVisualizationTo visualize the movement of the youBot, I generated a CSV file with the joint configuration at each time step and used VREP to playback the trajectory generated by my codes."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Kinodynamic Motion Planning",
                             "category" : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion...",
-                            "tags"     : " Class Project, Winter Project, Motion Planning, Portfolio, MSR, Robotics, Northwestern University",
-                            "url"      : "/portfolio/kinodynamic-planning",
+                            "tags"     : " Class Project, Winter Project, Motion Planning, Project, MSR, Robotics, Northwestern University",
+                            "url"      : "/projects/kinodynamic-planning",
                             "date"     : "March 23, 2018",
-                            "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning program. The program uses sampling-based method to generate a motion plan for a dynamic vehicle.OverviewIn this project, I aimed at reproducing result from a research paper, Anytime computation of time-optimal off-road vehicle maneuversusing the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star can find a plan that satisfy the vehicle dynamics. At extreme cases, motion plans for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project is called bicycle model, and Pacejka’s Magic Formula was used for tire friction. Vehicle model has 8 states (, , , , , , , ), and 3 input value (, , )Here is an illustration of the bicycle model:Notations:(, , , , , ): Position, velocity, acceleration at the center of the vehicle: Mass of vehicle: Inertia of vehicle, , , : Moment of inertia, radius, angular velocity of front and rear wheels, : Longitudinal and lateral front and rear tire forces:: Vehicle orientation/ yaw angle: Slip angle, : Torque input at front and rear wheels: Steering angle inputEquation of motion:Tire force  depends on normal force  and friction coefficient  determined by Pacejka’s Magic Formula:               For more details about the vehicle dynamic model, please refer to Anytime computation of time-optimal off-road vehicle maneuversusing the RRT*RRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure will look for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure guarantee  the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star Algorithm:RRT-Star with 10K Node:Planning SpaceThe full dynamic model of the car has 8 DOF (, , , , , , , ). Keeping track of 8 dimensional state space is rather complicated. To deal with this problem, planner only plans in a 4D task space in , ,  (),  assuming the there is an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, a constant control was applied to the system. To solve for control, the vehicle dynamic equations were integrate to certain amount of time with know initial conditions.more to typeConclusion and Future WorkA motion planning problem is rather complicated even the planning scenario is simple. In this project, planner suffers from the performance issue when searching for a set of constant control to connect two states. A fast numerical algorithm must need to implemented to improvement the state connection calculation time.In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.more to typeReference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
+                            "content"  : "AboutKinodynamic Motion Planning was my projects in winter quarter. The goal of this project was to learn and explore motion planning, and implement a motion planning algorithms in a program. The program used sampling-based method to generate a motion plan for a dynamic vehicle.In this project, I aimed at reproducing the result from a research paper, Anytime computation of time-optimal off-road vehicle maneuvers using the RRT* from MIT. Authors of the paper proposed a solution to generate a kinodynamic motion plan for an off-road vehicle to drive through tight corners at high speed to achieve time-optimality. In the paper, authors employed a full dynamic model of a car which had taken the tire-road contact into account. With the full dynamic model, RRT-Star could find a plan that satisfied the vehicle dynamics. At extreme cases, motion plan for the vehicle is to slide from a state to another state.Vehicle Dynamics ModelVehicle dynamics model employed in this project was a bicycle model, and Pacejka’s Magic Formula was used for tire dynamics. The vehicle model had 8 states ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$), and 3 input value ($T_F$, $T_R$, $\delta$)Here is an illustration of the bicycle model:Notations:  $x$, $y$, $\dot{x}$, $\dot{y}$, $\ddot{x}$, $\ddot{y}$: Position, velocity, acceleration at the center of the vehicle  $m$: Mass of vehicle  $I_z$: Inertia of vehicle  $I_i$, $r_i$, $\omega_i$, $i =(F, R)$: Moment of inertia, radius, angular velocity of front and rear wheels  $f_{ij}$, $i=(F, R), j=(x, y)$: Longitudinal and lateral front and rear tire forces:  $\Psi$: Vehicle orientation/ yaw angle  $\beta$: Slip angle  $T_i$, $i=(F, R)$: Torque input at front and rear wheels  $\delta$: Steering angle inputEquation of motion:  $m\ddot{x} = f_{Fx}cos(\Psi + \delta) - f_{Fy}sin(\Psi + \delta) + f_{Rx}cos(\Psi) - f_{Ry}sin(\Psi)$  $m\ddot{y} = f_{Fx}sin(\Psi + \delta) + f_{Fy}cos(\Psi + \delta) + f_{Rx}sin(\Psi) + f_{Ry}cos(\Psi)$  $I_z\ddot{\Psi} = (f_{Fy}cos(\delta) + f_{Fx}sin(\delta))l_F - f_{Ry}l_R$  $I_F\dot{\omega}_ F = T_F - f_{Fx}r_F$  $I_R\dot{\omega}_ R = T_R - f_{Rx}r_R$Tire force $f_{ij}$ depends on normal force $f_z$ and friction coefficient $\mu_{ij}$ determined by Pacejka’s Magic Formula:  $f_{ij} = \mu_{ij}f_{iz} $  $(i = F,R, j=x,y)$  $\mu_{ij} = -\frac{s_{ij}}{s_i}\mu_i(s_i) $  $(i = F,R, j=x,y)$  $\mu_i(s_i) = D_i sin(C_i arctan(B_i s_i)) $   $(i = F,R)$For more details about the vehicle dynamic model, please refer to Anytime computation of time-optimal off-road vehicle maneuversusing the RRT*RRT-StarRRT-Star is a departure from the RRT. RRT-Star has modified the extend procedure which allows it to replan the nodes close to the newly inserted one. This procedure looks for the nodes that will have lower cost to reach from root after rewiring this node to the newly inserted one. This procedure garantees the sampling-based planner can find an solution and the solution is asymptotically optimal.RRT-Star Algorithm:RRT-Star with 10K Node (Path Planning):Planning SpaceThe full dynamic model of the car had 8 DOF ($x$, $\dot{x}$, $y$, $\dot{y}$, $\Psi$, $\dot{\Psi}$, $\omega_F$, $\omega_R$). Keeping track of 8 dimensional state space was rather complicated. To deal with this problem, planner only plans in a 4D task space in $x$, $y$, $V$($\sqrt{\dot{x}^2+\dot{y}^2}$), $\Psi$assuming the there was an mapping of the free space in 8 dimension state space to 4 dimension task space.ControlWhen solving for the control input needed for connecting current state and next state, I only solve for a constant control applied to the system. (Constant steering angle and constant acceleration) To solve for control, the vehicle dynamic equations were integrate to certain amount of time with initial conditions. Integration and optimization were all done using scipy functions. Since solving for an optimal control required integrating the stiff and non-linear ODE iteratively, it took some time to find the control that can take the vehicle from the current state to the new state.Here are two GIFs of vehicle following predefined states.  Red Arrow: Heading of the Vehicle  Black Arrow: Steering Angle  Green Arrow: Velocity of the VehicleCurrent StateThis project is expected to continue. This motion planning problem is rather complicated. The program was not efficient enough to find a complete motion plan in reasonable amount of time.Dfficulties Encountered:  The planner suffers from the performance issues of low efficiecy at searching for a set of constant control to connect two states  The rate of sampling a valid and reachable state was low thus sampling time was too long.  A valid cost to go function was also a key component to the solution missed.The planner was not able to finish the whole planning task as shown in following figures:                        Things to be worked on:  A fast numerical solver for the stiff problem must need to implemented to improve the state connection calculation time.  Instead of looking for a fast ODE solver, utilizing a physics simulation engine to handle the state integration can be a great approach, since physics simulation engines are often fast at solving for complex physics model with some sacrifices on accuracy. (Focus on sovling motion planning instead of solving physics model)  Employing some probabilistic sampling techniques can improve the chance of sampling valid states.  In the future, the vehicle geometry also need to be taken into account for more realistic collision detection.Reference  hwan Jeon, Jeong, Sertac Karaman, and Emilio Frazzoli. “Anytime computation of time-optimal off-road vehicle maneuvers using the RRT.” Decision and Control and European Control Conference (CDC-ECC), 2011 50th IEEE Conference on. IEEE, 2011.  Webb, Dustin J., and Jur van den Berg. “Kinodynamic RRT*: Asymptotically optimal motion planning for robots with linear dynamics.” Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.  LaValle, Steven M., and James J. Kuffner Jr. “Randomized kinodynamic planning.” The international journal of robotics research 20.5 (2001): 378-400."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Lane Detection in Point Cloud",
+                            "category" : "AboutThe goal of this project is to detect lane markings in the point cloud of a road segment and derive the mathematical representation of the...",
+                            "tags"     : " Project, Point Cloud, Lane Detection",
+                            "url"      : "/projects/pointcloud-lane-detection",
+                            "date"     : "June 11, 2018",
+                            "content"  : "AboutThe goal of this project is to detect lane markings in the point cloud of a road segment and derive the mathematical representation of the lane markings in latitude and longitude coordinate. More detail please see GitHub repository."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Camera Angle Calibration",
+                            "category" : "AboutThis is a project in collaboration with Intelligent Flying Machine (IFM) where I worked with IFM on a proprietary camera calibration process using a robot...",
+                            "tags"     : " IFM, Project, Calibration, Camera, ROS, Kinematics, UR Robot",
+                            "url"      : "/projects/ifm-calibration",
+                            "date"     : "June 13, 2018",
+                            "content"  : "AboutThis is a project in collaboration with Intelligent Flying Machine (IFM) where I worked with IFM on a proprietary camera calibration process using a robot arm.In this project, I programmed UR3 robot to automate extrinsic and intrinsic calibrations of camera rigs deployed in IFM’s forklift vision systems Onetrack. Also, I developed and refined proprietary camera calibration pipeline to enhance usability and calibration accuracy. In the calibration pipeline, my program optimized image data processing to locate camera rotational center at subpixel accuracy and generated maps for calibrated cameras to improve localization and estimation.The calibration pipeline was developed in ROS environment.Click on the link to get more detail about IFM and their Onetrack forklift vision systems."
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Visual Servoing of Objects without Object Models",
+                            "category" : "AboutThis is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a...",
+                            "tags"     : " Final Project, Project, Visual Servoing, Grasping, ROS, Kinematics, Control, Point Cloud, PCL, RGBD, Depth Camera",
+                            "url"      : "/projects/mfvs",
+                            "date"     : "June 13, 2018",
+                            "content"  : "AboutThis is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping household objects without prior knowledge of the objects (E.g. shape, size, color of the object). The ROS package is designed to be generic and modular so it can be easily adapted to different types of robotic arms.ChallengesThe challenges in this project mostly come from two aspects, visual servoing, and point cloud processing.Visual ServoingVisual servoing control uses a vision feedback loop to enable reactive control, which makes visual servoing ideal for tracking. There are two basic types of visual servoing, image based visual servoing, and position based visual servoing; there control laws were derived in image space and Cartesian space respectively. If you want to know more about visual servoing, Visual servo control, Part I: Basic approaches by François Chaumette, S. Hutchinson is introductory literature.An important prerequisite of visual servoing is the known geometry of objects or known size of features. However, the geometry of objects and the size of the features are not provided in this project. This limitation rules out the use of image based visual servoing, and position based visual servoing is only possible with the vision feedback from RGBD sensor. However, position based visual servoing’s tendency to lose objects in the sensor frame is not ideal for real-world application. A more predictable and reliable version of position based visual servoing will be needed.Point Cloud ProcessingA point cloud of a scene can be obtained easily with an RGBD sensor. RGBD sensors are great for midrange and large-scale application but a portable size RGBD sensor will have a hard time to obtain detailed point clouds of household objects. In addition to the limited detailed feature in the point cloud, RGBD sensors will perform poorly on highly reflective surfaces. So the quality of the point cloud return from a portable size RGBD sensor (Intel Realsense D435 in our case) is greatly depended on the size of the object and the material of the object.Despite the quality of the point cloud, the pose of the point cloud can be difficult to estimate because of the occlusion of the object. Parts of the Objects are covered by people’s hands when the robot is doing visual servoing on the object. This kind of occlusion may reduce the accuracy of object point cloud pose estimation. To solve this problem, a very accurate point cloud segmentation may be needed, and a step further, an online object point cloud registration process will be ideal.In addition to occlusion, poses of highly symmetric objects are difficult to estimate if a certain orientation is required.ImplementationPlease see Github for ROS implementation.This a flowchart of the implemetation pipline,Visual ServoingIn this project, we used Kinova Mico as our experimental platform and the package developed by the Argall Lab. The robot can subscribe to an end-effector velocity control input and calculate the corresponding joint velocity that drives the end-effector to closely matches the commanded end-effector velocity.Here I used ViSP which was developed specifically for visual servoing. In the package, the visual seroving subscribes to a target pose and publishes an end-effector velocity. The target get pose is the 6 DOF pre-grasp pose (${x}$, ${y}$, ${z}$, ${roll}$, ${pitch}$, ${yaw}$) and the end-effector velocity is a 6DOF twist ($\dot{x}$, $\dot{y}$, $\dot{z}$, $\dot{roll}$, $\dot{pitch}$, $\dot{yaw}$).Point Cloud ProcessingThe point cloud processing includes four essenstial parts,  Object Recognition and Tracking  Point Cloud Extraction  Point cloud segmentation and template generation  Point Cloud Pose Estimation1. Object Recognition and TrackingThis part handles the task of finding the object of interest, keep track of this object in the RGB image. A robust tracking was achieved by combining information from object recognition and object tracking. The conjunction of object recognition and object tracking enhanced the tracking robustness and reliability; it outperforms approaches only use object recognition or object tracking.Object recognition algorithms like YOLO was implemented to recognize the object of interest in the image and continue to do it on every frame. However, object recognition will often fail to detect the object in some frames due to poor pre-trained model. I added a non-deep-learning type image tracker to locate the object when recognition fails. The RGB tracker will be reinitialized whenever the object can be detected. The reinitialization of the image tracker also alleviates the drifting of the image tracker. The amalgamation of object recognition and tracking enables robust and accurate tracking. With a Kalman filter implemented to predict object position in between frames, consistent object location information can be sent to point cloud extraction node to extract points are closely bounded by the tracking bounding box.To better explain this process here is a flowchart representation of the process,2. Point Cloud ExtractionThe point cloud extraction node can use this information to remove unwanted point cloud, which reduces unnecessary computation. The point cloud retrieved from RGBD sensor is structured which mean each point in the point cloud corresponds to one pixel in the RGB image, and they can be accessed by using row and column positions. With the location and size of the bounding box, point clouds enclosed in the bounding box region can be extracted easily. Therefore I can have a point cloud of the object with only a few unwanted points which can be eliminated by simple segmentation.3. Point Cloud Segmentation and Template GenerationThis part of the point cloud processing can take the closely bounded point cloud and apply segmentation techniques to eliminate point clouds that are not part of the object and create a clean object point cloud template for pose estimation.4. Point Cloud Pose EstimationIn pose estimation, particle filter or ICP can be used with a template provided from the last part. The algorithms use the template to match the extracted point cloud and calculate a rigid transform. And pre-grasp pose can be set relative to the matched template. It is not necessary to create a template before the pose estimation when accurate point cloud segmentation and online object point cloud registration are available.Future Work  Choose a better sensor for small objects  Add filter to process raw point cloud input  Design and automate calibration process  Train better object recognition DL model for faster and more robust detection on household objects  Use better tracking algorithm to work with object recognition  Refine object recognition and tracking node to increase tracking frequency  Develop fast and robust segmentation algorithm for point cloud  Online point cloud registration to build object model"
+                         
+                       } ,
+                     
+                       {
+                         
+                            "title"    : "Estimation Filter Visualizer",
+                            "category" : "AboutI used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI...",
+                            "tags"     : " Project, Kalman Filter, Estimation Filter, Python, GUI",
+                            "url"      : "/projects/filter-visualizer",
+                            "date"     : "January 1, 2019",
+                            "content"  : "AboutI used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and see the instance performance update of the filter. The application takes noise injected mouse pointer position as input and uses the assigned estimation filter to estimates the states of the pointer.In the GIF above, the red dots are the noisy mouse pointer position measurements, and the blue dots are the filter predicted mouse pointer position. The darker color stands for more recent measurement or prediction.As the mouse pointer glides around in the graph area, noise is added to the mouse pointer position to emulate the real world scenario where data streams are noisy. The estimation filter calculates the predicted mouse states iteratively with mouse pointer position updates.New estimation filters can be added to the application easily in the future. So, the application can serve as a good to visualize a filter’s performance.Kalman filter is the default estimation filter implemented.ImplementationPlease see GitHub repo for more detail."
                          
                        } 
                      
@@ -235,14 +332,6 @@
     </div>
     
 <footer class="site-footer">
-  <p class="text">
-    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a>
-
-    
-    <a href="https://willshw.github.io/credit/">Website Credit</a>
-    
-  </p>
-
   <div class="footer-icons">
       <ul>
       <!-- Social icons from Font Awesome, if enabled -->
@@ -288,7 +377,7 @@
 
 
 <li>
-	<a href="https://www.linkedin.com/in/williamswang/" title="Follow on LinkedIn">
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
 		<span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -321,15 +410,6 @@
 
 
 
-<li>
-	<a href="https://twitter.com/willshwang" title="Follow on Twitter" class="type">
-        <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-        </span>
-	</a>
-</li>
-
 
 
 
@@ -339,6 +419,12 @@
 
       </ul>
   </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
 </footer>
 
 

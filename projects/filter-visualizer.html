@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/projects/filter-visualizer">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Estimation Filter Visualizer</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Estimation Filter Visualizer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About I used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and see the instance performance update of the filter. The application takes noise injected mouse pointer position as input and uses the assigned estimation filter to estimates the states of the pointer." />
+<meta property="og:description" content="About I used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and see the instance performance update of the filter. The application takes noise injected mouse pointer position as input and uses the assigned estimation filter to estimates the states of the pointer." />
+<link rel="canonical" href="https://willshw.github.io/projects/filter-visualizer" />
+<meta property="og:url" content="https://willshw.github.io/projects/filter-visualizer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-01T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"About I used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and see the instance performance update of the filter. The application takes noise injected mouse pointer position as input and uses the assigned estimation filter to estimates the states of the pointer.","@type":"BlogPosting","url":"https://willshw.github.io/projects/filter-visualizer","headline":"Estimation Filter Visualizer","dateModified":"2019-01-01T00:00:00-06:00","datePublished":"2019-01-01T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/projects/filter-visualizer"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Estimation Filter Visualizer | William Wang</title>
+    <meta name="description" content="AboutI used Python 2.7, NumPy and PyQtGraph to build a GUI application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/project/filter-visualizer/feature.gif')">
+    <h1 id="Estimation+Filter+Visualizer" class="title">Estimation Filter Visualizer</h1>
+    <p class="meta">
+    January 1, 2019
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <div class="video_container" align="middle">
+      <iframe src="https://www.youtube.com/embed/22_4n9s8zQs?rel=0" class="video" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+    <hr>
+    
+    <h2 id="about">About</h2>
+<p>I used <strong>Python 2.7</strong>, <strong><a href="http://www.numpy.org/">NumPy</a></strong> and <strong><a href="(http://www.pyqtgraph.org/">PyQtGraph</a></strong> to build a <strong>GUI</strong> application for visualizing estimation filters. A user can edit filter’s parameters in the GUI and see the instance performance update of the filter. The application takes noise injected mouse pointer position as input and uses the assigned estimation filter to estimates the states of the pointer.</p>
+
+<p align="center">
+<img src="../assets/img/project/filter-visualizer/icon.gif" width="100%" />
+</p>
+
+<p>In the GIF above, the <strong>red dots</strong> are the noisy mouse pointer position measurements, and the <strong>blue dots</strong> are the filter predicted mouse pointer position. The darker color stands for more recent measurement or prediction.</p>
+
+<p>As the mouse pointer glides around in the graph area, noise is added to the mouse pointer position to emulate the real world scenario where data streams are noisy. The estimation filter calculates the predicted mouse states iteratively with mouse pointer position updates.</p>
+
+<p>New estimation filters can be added to the application easily in the future. So, the application can serve as a good to visualize a filter’s performance.</p>
+
+<p>Kalman filter is the default estimation filter implemented.</p>
+
+<h2 id="implementation">Implementation</h2>
+<p>Please see <strong><a href="https://github.com/willshw/filter-viz">GitHub repo</a></strong> for more detail.</p>
+
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/tags#Estimation Filter">
+            <p><i class="fa fa-tag fa-fw"></i> Estimation Filter</p>
+          </a>
+        
+          <a class="button" href="/tags#GUI">
+            <p><i class="fa fa-tag fa-fw"></i> GUI</p>
+          </a>
+        
+          <a class="button" href="/tags#Kalman Filter">
+            <p><i class="fa fa-tag fa-fw"></i> Kalman Filter</p>
+          </a>
+        
+          <a class="button" href="/tags#Project">
+            <p><i class="fa fa-tag fa-fw"></i> Project</p>
+          </a>
+        
+          <a class="button" href="/tags#Python">
+            <p><i class="fa fa-tag fa-fw"></i> Python</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/projects/mfvs">
+        Visual Servoing of Objects without Object Models
+      </a>
+  </div>
+  
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/projects/virtualheadcam">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Virtual Headcam</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Virtual Headcam" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About" />
+<meta property="og:description" content="About" />
+<link rel="canonical" href="https://willshw.github.io/projects/virtualheadcam" />
+<meta property="og:url" content="https://willshw.github.io/projects/virtualheadcam" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-08-12T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"About","@type":"BlogPosting","url":"https://willshw.github.io/projects/virtualheadcam","headline":"Virtual Headcam","dateModified":"2015-08-12T00:00:00-05:00","datePublished":"2015-08-12T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/projects/virtualheadcam"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Virtual Headcam | William Wang</title>
+    <meta name="description" content="About">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/project/vhc/vhc-feature-camera-array.jpg')">
+    <h1 id="Virtual+Headcam" class="title">Virtual Headcam</h1>
+    <p class="meta">
+    August 12, 2015
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <div class="video_container" align="middle">
+      <iframe src="https://www.youtube.com/embed/dYVtsQsaA-g?rel=0" class="video" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+    <hr>
+    
+    <h2 id="about">About</h2>
+
+<p><strong><a href="http://vgl.ict.usc.edu/Research/VHC/">Virtual Headcam (VHC)</a></strong> is a device designed for facial performance capture. VHC equips with two motorized mirrors (mirrors mounted on motors) with rotational axes aligned perpendicularly and a fixed camera pointing at one of the mirrors. The two motorized mirrors can redirect the optical path of the mounted camera. With a motor controller, the stationary camera can virtually pan and tilt in a certain angular range in a tracked space volume.</p>
+
+<p><a href="http://vgl.ict.usc.edu/Research/VHC/">VHC</a> can be integrated into a motion capture space where the location of actors and actresses can be accurately tracked in high refresh rate. VHC can quickly adjust the mirror angles, zoom, and focus, according to the motion tracking data centered the subject in the camera frame. A system of multiple VHCs installed in a motion tracking space can potentially replace the traditional head mounted camera system.</p>
+
+<p>This research project was one of my work projects at <a href="http://ict.usc.edu/">USC ICT</a>, and it was presented at <a href="https://www.siggraph.org/attend/events/siggraph-2015">SIGGRAPH 2015</a> poster session.</p>
+
+<p><strong>For more detailed of this project, please visit the <a href="http://vgl.ict.usc.edu/Research/VHC/">project page on USC ICT Graphics Lab website</a></strong>.</p>
+
+<hr />
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/tags#Project">
+            <p><i class="fa fa-tag fa-fw"></i> Project</p>
+          </a>
+        
+          <a class="button" href="/tags#USC ICT">
+            <p><i class="fa fa-tag fa-fw"></i> USC ICT</p>
+          </a>
+        
+          <a class="button" href="/tags#Work Project">
+            <p><i class="fa fa-tag fa-fw"></i> Work Project</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  
+  <div id="next-post" class="post-nav-post">
+      <p>Next post</p>
+      <a href="/projects/sawyerstravels">
+        Sawyer's Travels
+      </a>
+  </div>
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
+</footer>
+
+
+  </body>
+</html>

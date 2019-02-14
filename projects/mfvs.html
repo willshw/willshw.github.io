@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JQuery (used for bootstrap and jekyll search) -->
+    <script src="/assets/js/jquery-3.2.1.min.js" ></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- Main JS (navbar.js and katex_init.js)-->
+    <script defer=true src="/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://willshw.github.io/projects/mfvs">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="William Wang" href="https://willshw.github.io///feed.xml"/>
+
+    <!-- Font Awesome -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+    
+
+    <!-- KaTeX -->
+    
+
+    <!-- Google Analytics -->
+    
+
+    <!-- MathJax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Kramdown inline $$ work around -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+                displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <!-- seo tags -->
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Visual Servoing of Objects without Object Models</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Visual Servoing of Objects without Object Models" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About This is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping household objects without prior knowledge of the objects (E.g. shape, size, color of the object). The ROS package is designed to be generic and modular so it can be easily adapted to different types of robotic arms." />
+<meta property="og:description" content="About This is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping household objects without prior knowledge of the objects (E.g. shape, size, color of the object). The ROS package is designed to be generic and modular so it can be easily adapted to different types of robotic arms." />
+<link rel="canonical" href="https://willshw.github.io/projects/mfvs" />
+<meta property="og:url" content="https://willshw.github.io/projects/mfvs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-13T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"About This is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping household objects without prior knowledge of the objects (E.g. shape, size, color of the object). The ROS package is designed to be generic and modular so it can be easily adapted to different types of robotic arms.","@type":"BlogPosting","url":"https://willshw.github.io/projects/mfvs","headline":"Visual Servoing of Objects without Object Models","dateModified":"2018-06-13T00:00:00-05:00","datePublished":"2018-06-13T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://willshw.github.io/projects/mfvs"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- Manual seo tags -->
+    <!--
+    <title>Visual Servoing of Objects without Object Models | William Wang</title>
+    <meta name="description" content="AboutThis is my MSR capstone project with Prof. Argall’s at research lab at Shirley Ryan AbilityLab. The goal of this project is to build a ROS package that ...">
+    -->
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+		<a href="/">
+			<img class="avatar" src="/assets/img/gaussian.svg" alt=""/>
+		</a>
+
+		<h1 class="site-title">
+			<a href="/">William Wang</a>
+        </h1>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+
+    <a id="pull" class="toggle" href="#">
+    <i class="fa fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul>
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/about/">
+                About
+            </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li>
+            <a class="clear" href="/blog/index.html">
+                Blog
+            </a>
+        </li>
+        
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/projects">
+                Projects
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/resume">
+                Résumé
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a class="clear" href="https://willshw.github.io/tags">
+                <i class="fa fa-tags" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
+
+<article class="feature-image">
+  <header id="main" style="background-image: url('/assets/img/project/mfvs/visual-servoing-feature.jpeg')">
+    <h1 id="Visual+Servoing+of+Objects+without+Object+Models" class="title">Visual Servoing of Objects without Object Models</h1>
+    <p class="meta">
+    June 13, 2018
+    
+    </p>
+  </header>
+
+  <section class="post-content">
+    
+    <div class="video_container" align="middle">
+      <iframe src="https://www.youtube.com/embed/veAIuLdbgJU" class="video" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+    <hr>
+    
+    <h2 id="about">About</h2>
+<p>This is my MSR capstone project with <a href="http://users.eecs.northwestern.edu/~argall/">Prof. Argall</a>’s at research lab at <a href="https://www.sralab.org/">Shirley Ryan AbilityLab</a>. The goal of this project is to build a ROS package that uses visual servoing technique and RGBD sensor to guide robotic arm to a pre-grasp pose for grasping household objects without prior knowledge of the objects (E.g. shape, size, color of the object). The ROS package is designed to be generic and modular so it can be easily adapted to different types of robotic arms.</p>
+
+<hr />
+
+<h2 id="challenges">Challenges</h2>
+<p>The challenges in this project mostly come from two aspects, <strong>visual servoing</strong>, and <strong>point cloud processing</strong>.</p>
+
+<h4 id="visual-servoing">Visual Servoing</h4>
+<p>Visual servoing control uses a vision feedback loop to enable reactive control, which makes visual servoing ideal for tracking. There are two basic types of visual servoing, image based visual servoing, and position based visual servoing; there control laws were derived in image space and Cartesian space respectively. If you want to know more about visual servoing, <a href="https://hal.inria.fr/inria-00350283/document">Visual servo control, Part I: Basic approaches</a> by <em>François Chaumette, S. Hutchinson</em> is introductory literature.</p>
+
+<p>An important prerequisite of visual servoing is the known geometry of objects or known size of features. However, the geometry of objects and the size of the features are not provided in this project. This limitation rules out the use of image based visual servoing, and position based visual servoing is only possible with the vision feedback from RGBD sensor. However, position based visual servoing’s tendency to lose objects in the sensor frame is not ideal for real-world application. A more predictable and reliable version of position based visual servoing will be needed.</p>
+
+<h4 id="point-cloud-processing">Point Cloud Processing</h4>
+<p>A point cloud of a scene can be obtained easily with an RGBD sensor. RGBD sensors are great for midrange and large-scale application but a portable size RGBD sensor will have a hard time to obtain detailed point clouds of household objects. In addition to the limited detailed feature in the point cloud, RGBD sensors will perform poorly on highly reflective surfaces. So the quality of the point cloud return from a portable size RGBD sensor (Intel Realsense D435 in our case) is greatly depended on the size of the object and the material of the object.</p>
+
+<p>Despite the quality of the point cloud, the pose of the point cloud can be difficult to estimate because of the occlusion of the object. Parts of the Objects are covered by people’s hands when the robot is doing visual servoing on the object. This kind of occlusion may reduce the accuracy of object point cloud pose estimation. To solve this problem, a very accurate point cloud segmentation may be needed, and a step further, an online object point cloud registration process will be ideal.</p>
+
+<p>In addition to occlusion, poses of highly symmetric objects are difficult to estimate if a certain orientation is required.</p>
+
+<hr />
+
+<h2 id="implementation">Implementation</h2>
+
+<p>Please see <a href="https://github.com/willshw/mfvs">Github</a> for ROS implementation.</p>
+
+<p>This a flowchart of the implemetation pipline,</p>
+
+<p align="center"><img src="../assets/img/project/mfvs/visual-servoing-implementation-flowchart.png" width="100%" /></p>
+<!-- ![Implementation-Flowchart](https://willshw.github.io/assets/img/project/visual-servoing-implementation-flowchart.png) -->
+
+<h4 id="visual-servoing-1">Visual Servoing</h4>
+<p>In this project, we used Kinova Mico as our experimental platform and the package developed by the Argall Lab. The robot can subscribe to an end-effector velocity control input and calculate the corresponding joint velocity that drives the end-effector to closely matches the commanded end-effector velocity.</p>
+
+<p>Here I used ViSP which was developed specifically for visual servoing. In the package, the visual seroving subscribes to a target pose and publishes an end-effector velocity. The target get pose is the 6 DOF pre-grasp pose (${x}$, ${y}$, ${z}$, ${roll}$, ${pitch}$, ${yaw}$) and the end-effector velocity is a 6DOF twist ($\dot{x}$, $\dot{y}$, $\dot{z}$, $\dot{roll}$, $\dot{pitch}$, $\dot{yaw}$).</p>
+
+<h4 id="point-cloud-processing-1">Point Cloud Processing</h4>
+
+<p>The point cloud processing includes four essenstial parts,</p>
+
+<ol>
+  <li>Object Recognition and Tracking</li>
+  <li>Point Cloud Extraction</li>
+  <li>Point cloud segmentation and template generation</li>
+  <li>Point Cloud Pose Estimation</li>
+</ol>
+
+<p><strong>1. Object Recognition and Tracking</strong></p>
+
+<p>This part handles the task of finding the object of interest, keep track of this object in the RGB image. A robust tracking was achieved by combining information from object recognition and object tracking. The conjunction of object recognition and object tracking enhanced the tracking robustness and reliability; it outperforms approaches only use object recognition or object tracking.</p>
+
+<p>Object recognition algorithms like YOLO was implemented to recognize the object of interest in the image and continue to do it on every frame. However, object recognition will often fail to detect the object in some frames due to poor pre-trained model. I added a non-deep-learning type image tracker to locate the object when recognition fails. The RGB tracker will be reinitialized whenever the object can be detected. The reinitialization of the image tracker also alleviates the drifting of the image tracker. The amalgamation of object recognition and tracking enables robust and accurate tracking. With a Kalman filter implemented to predict object position in between frames, consistent object location information can be sent to point cloud extraction node to extract points are closely bounded by the tracking bounding box.</p>
+
+<p>To better explain this process here is a flowchart representation of the process,</p>
+<p align="center"><img src="../assets/img/project/mfvs/visual-servoing-tracking-node-flowchart.png" width="100%" /></p>
+
+<p><strong>2. Point Cloud Extraction</strong></p>
+
+<p>The point cloud extraction node can use this information to remove unwanted point cloud, which reduces unnecessary computation. The point cloud retrieved from RGBD sensor is structured which mean each point in the point cloud corresponds to one pixel in the RGB image, and they can be accessed by using row and column positions. With the location and size of the bounding box, point clouds enclosed in the bounding box region can be extracted easily. Therefore I can have a point cloud of the object with only a few unwanted points which can be eliminated by simple segmentation.</p>
+
+<p><strong>3. Point Cloud Segmentation and Template Generation</strong></p>
+
+<p>This part of the point cloud processing can take the closely bounded point cloud and apply segmentation techniques to eliminate point clouds that are not part of the object and create a clean object point cloud template for pose estimation.</p>
+
+<p><strong>4. Point Cloud Pose Estimation</strong></p>
+
+<p>In pose estimation, particle filter or ICP can be used with a template provided from the last part. The algorithms use the template to match the extracted point cloud and calculate a rigid transform. And pre-grasp pose can be set relative to the matched template. It is not necessary to create a template before the pose estimation when accurate point cloud segmentation and online object point cloud registration are available.</p>
+
+<hr />
+
+<h2 id="future-work">Future Work</h2>
+<ol>
+  <li>Choose a better sensor for small objects</li>
+  <li>Add filter to process raw point cloud input</li>
+  <li>Design and automate calibration process</li>
+  <li>Train better object recognition DL model for faster and more robust detection on household objects</li>
+  <li>Use better tracking algorithm to work with object recognition</li>
+  <li>Refine object recognition and tracking node to increase tracking frequency</li>
+  <li>Develop fast and robust segmentation algorithm for point cloud</li>
+  <li>Online point cloud registration to build object model</li>
+</ol>
+
+
+  </section>
+
+   <!-- Tag list -->
+  
+  
+
+
+    <footer>
+        <div class="tag-list">
+        
+          <div class="meta">Tags</div>
+        
+            
+        
+          <a class="button" href="/tags#Control">
+            <p><i class="fa fa-tag fa-fw"></i> Control</p>
+          </a>
+        
+          <a class="button" href="/tags#Depth Camera">
+            <p><i class="fa fa-tag fa-fw"></i> Depth Camera</p>
+          </a>
+        
+          <a class="button" href="/tags#Final Project">
+            <p><i class="fa fa-tag fa-fw"></i> Final Project</p>
+          </a>
+        
+          <a class="button" href="/tags#Grasping">
+            <p><i class="fa fa-tag fa-fw"></i> Grasping</p>
+          </a>
+        
+          <a class="button" href="/tags#Kinematics">
+            <p><i class="fa fa-tag fa-fw"></i> Kinematics</p>
+          </a>
+        
+          <a class="button" href="/tags#PCL">
+            <p><i class="fa fa-tag fa-fw"></i> PCL</p>
+          </a>
+        
+          <a class="button" href="/tags#Point Cloud">
+            <p><i class="fa fa-tag fa-fw"></i> Point Cloud</p>
+          </a>
+        
+          <a class="button" href="/tags#Project">
+            <p><i class="fa fa-tag fa-fw"></i> Project</p>
+          </a>
+        
+          <a class="button" href="/tags#RGBD">
+            <p><i class="fa fa-tag fa-fw"></i> RGBD</p>
+          </a>
+        
+          <a class="button" href="/tags#ROS">
+            <p><i class="fa fa-tag fa-fw"></i> ROS</p>
+          </a>
+        
+          <a class="button" href="/tags#Visual Servoing">
+            <p><i class="fa fa-tag fa-fw"></i> Visual Servoing</p>
+          </a>
+        
+        </div>
+    </footer>
+  
+
+
+</article>
+
+<!-- Disqus -->
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+	var disqus_shortname = 'willswang';
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view comments.</noscript>
+
+</div>
+
+
+<!-- Post navigation -->
+
+  <div id="post-nav">
+  
+  <div id="previous-post" class="post-nav-post">
+      <p>Previous post</p>
+      <a href="/projects/ifm-calibration">
+        Camera Angle Calibration
+      </a>
+  </div>
+  
+  
+  <div id="next-post" class="post-nav-post">
+      <p>Next post</p>
+      <a href="/projects/filter-visualizer">
+        Estimation Filter Visualizer
+      </a>
+  </div>
+  
+</div>
+
+    </div>
+    
+<footer class="site-footer">
+  <div class="footer-icons">
+      <ul>
+      <!-- Social icons from Font Awesome, if enabled -->
+      
+
+
+<li>
+	<a href="mailto:shanhewang@gmail.com" title="Email">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://github.com/willshw" title="Follow on GitHub">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.linkedin.com/in/willshw/" title="Follow on LinkedIn">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://stackoverflow.com/users/4926659/william-wang" title="Follow on Stack Exchange">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-stack-exchange fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+  </div>
+
+  <p class="text">
+    <p>Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a></p>
+
+    
+  </p>
+</footer>
+
+
+  </body>
+</html>
